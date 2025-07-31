@@ -53,6 +53,7 @@ const steps = [
     },
 ];
 
+
 const ServiceDetails = () => {
     const { slug } = useParams();
     const service = servicePagesData.find((item) => item.path === slug);
@@ -60,11 +61,13 @@ const ServiceDetails = () => {
     if (!service) {
         return <div className="text-center py-20 text-gray-500">Service not found.</div>;
     }
+    
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
 
     return (
         <div className="bg-gray-100 lg:mt-[450px] sm:my-[380px] my-[420px]">
             {/* Section 1: Text */}
-            <div className="fixed top-16 left-0 w-full -z-1 bg-white lg:p-12 p-8">
+            <div className="fixed sm:top-16 top-20 left-0 w-full -z-1 bg-white lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">
                     <h4 className="text-[#F68D13] font-semibold tracking-wide uppercase mb-4 text-base md:text-lg">
                         {service.tag}
@@ -86,7 +89,7 @@ const ServiceDetails = () => {
             </div>
 
             {/* Section 2: Sticky Image */}
-            <div className="sticky top-0 h-[100vh] z-0">
+            <div className="sticky top-0 h-screen z-0">
                 <div className="w-full overflow-hidden">
                     <img
                         src={serviceBg}
@@ -118,35 +121,35 @@ const ServiceDetails = () => {
 
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-lg font-semibold lg:mb-2 mb-1">1. <span className="text-[#F68D13]">First Impressions Matter</span></h3>
-                                <p className="text-gray-600 lg:text-base text-sm">
+                                <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Your logo is often the first thing people see. A clean, smart design instantly communicates professionalism, credibility, and trust.
                                 </p>
                             </div>
 
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">2. <span className="text-[#F68D13]">Brand Recognition Starts Here</span></h3>
-                                <p className="text-gray-600 lg:text-base text-sm">
+                                <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Think of your logo as your signature. We design for memorability, so your brand sticks in the feed, on packaging, on storefronts, and beyond.
                                 </p>
                             </div>
 
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">3. <span className="text-[#F68D13]">Consistency Across Platforms</span></h3>
-                                <p className="text-gray-600 lg:text-base text-sm">
+                                <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Whether it’s your website, social media, or business card we craft logos that are responsive, scalable, and versatile.
                                 </p>
                             </div>
 
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">4. <span className="text-[#F68D13]">Tailored to Your Brand Personality</span></h3>
-                                <p className="text-gray-600 lg:text-base text-sm">
+                                <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Minimal, bold, playful, or luxury your logo should reflect your identity. No templates. No shortcuts. Just a custom identity built from the ground up.
                                 </p>
                             </div>
 
                             <div>
                                 <h3 className="font-semibold mb-2 lg:text-lg text-[#F68D13]">5. <span className="text-[#F68D13]">Built for Longevity</span></h3>
-                                <p className="text-gray-600 lg:text-base text-sm">
+                                <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     We don’t follow trends. We design for the long game with timeless visuals that grow with your brand.
                                 </p>
                             </div>

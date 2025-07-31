@@ -41,7 +41,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link to="/contact">
-                        <button className="bg-[#F68D13] hover:bg-orange-600 text-white px-5 py-2 rounded-sm transition">
+                        <button className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white px-5 py-2 rounded-sm transition">
                             Contact us
                         </button>
                     </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                        <button className="bg-[#F68D13] hover:bg-orange-600 text-white px-5 py-2 rounded-sm transition w-full text-left">
+                        <button className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white px-5 py-2 rounded-sm transition w-full text-left">
                             Contact us
                         </button>
                     </Link>

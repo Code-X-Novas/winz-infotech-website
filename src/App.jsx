@@ -5,6 +5,8 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import ServiceDetails from "./components/ServiceDetails";
+import CaseStudy from "./pages/CaseStudy";
+import CaseStudyDetails from "./components/CaseStudyDetails";
 
 function App() {
     return (
@@ -14,7 +16,9 @@ function App() {
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="services" element={<Service />} />
-                <Route path="services/:slug" element={<ServiceDetails />} /> {/* dynamic route */}
+                <Route path="services/:slug" element={<ServiceDetails />} /> 
+                <Route path="case-study" element={<CaseStudy />} />
+                <Route path="case-study/:slug" element={<CaseStudyDetails />} /> 
                 <Route path="*" element={<div>404 Not Found</div>} />
             </Route>
         </Routes>

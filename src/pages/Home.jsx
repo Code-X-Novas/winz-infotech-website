@@ -16,6 +16,7 @@ import TextType from "../components/Animations/TextType";
 import InfiniteScroll from "../components/Animations/InfiniteScroll";
 import Testimonial from "../components/Testimonial";
 import OrangeCard from "../components/OrangeCard";
+import { useNavigate } from "react-router-dom";
 
 const services = [
     {
@@ -90,6 +91,7 @@ const caseStudies = [
 
 const Home = () => {
     const ref = useRef(null);
+    const navigate = useNavigate();
     const isInView = useInView(ref, { once: true }); // only run once when it comes into view
 
     const [startTyping, setStartTyping] = useState(false);
@@ -142,7 +144,8 @@ const Home = () => {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.4 }}
-                        className="bg-[#F68D13] hover:bg-orange-600 text-white lg:px-6 px-4 lg:py-3 sm:py-2 py-1 rounded-sm text-sm font-medium flex items-center gap-2"
+                        className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white lg:px-6 px-4 lg:py-3 sm:py-2 py-1 rounded-sm text-sm font-medium flex items-center gap-2"
+                        onClick={() => navigate('/contact')}
                     >
                         Let’s Talk <span className="text-lg">→</span>
                     </motion.button>
@@ -366,7 +369,7 @@ const Home = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] md:py-10 lg:px-10 xl:px-16 px-6">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
                 <OrangeCard
                     title="Big ideas? Stuck brand? Half-done website?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
