@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import caseStudy from "../assets/case-study.png";
 import OrangeCard from "../components/OrangeCard";
+import { motion } from "framer-motion";
 
 const caseStudies = [
     {
@@ -53,62 +54,88 @@ const caseStudies = [
 const CaseStudy = () => {
     const navigate = useNavigate();
 
+    const containerVariants = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    };
+
     return (
         <div>
             {/* heading */}
             <section className="w-full mt-20 bg-white py-10">
-                <div className="lg:px-10 xl:px-16 px-5">
-                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-bold">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="lg:px-10 xl:px-16 px-5"
+                >
+                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-bold">
                         Our Clients’ <span className="text-[#F68D13]">Journey</span>
                     </h2>
-                    <p className="text-gray-600 tracking-wide max-w-2xl leading-relaxed mt-4">
+                    <p className="max-w-3xl md:text-lg text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                         From boosting bookings to scaling revenue and building unforgettable brands explore
                         real stories of real results with Winz Infotech.
                     </p>
-                </div>
+                </motion.div>
             </section>
 
             {/* Case Studies */}
-            <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {caseStudies.map((study) => (
-                    <div key={study.id} className="bg-white rounded-sm shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2
-                    flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3">
-                        {/* Left Image */}
-                        <div className="w-1/2 overflow-hidden">
-                            <img
-                                src={study.image}
-                                alt={study.title}
-                                className="w-full h-full object-cover transition-transform duration-200 hover:scale-150"
-                            />
-                        </div>
-
-                        {/* Right Content */}
-                        <div className="w-1/2 flex flex-col justify-center h-full xl:space-y-5 lg:space-y-1 sm:space-y-5 space-y-1">
-                            <span className="xl:text-xs lg:text-[10px] md:text-sm sm:text-xs text-[8px] uppercase
-                                xl:p-2 lg:p-1 sm:p-2 p-1 bg-[#F0F4F7] w-fit text-gray-500">
-                                {study.tag}
-                            </span>
-                            <h2 className="xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight
-                                font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
-                                {study.title}
-                            </h2>
-                            <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4
-                                hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
-                                {study.description}
-                            </p>
-                            <div 
-                                onClick={() => {
-                                    const slug = study.title.toLowerCase().replace(/\s+/g, "-"); // Creates slug like "digital-branding"
-                                    navigate(`/case-study/${slug}`);
-                                }}
-                                className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm
-                                text-[10px] font-semibold hover:underline cursor-pointer"
-                            >
-                                Read more
+            <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 ">
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    {caseStudies.map((study) => (
+                        <motion.div
+                            key={study.id}
+                            variants={cardVariants}
+                            className="bg-white rounded-sm shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                        >
+                            {/* Left Image */}
+                            <div className="w-1/2 overflow-hidden">
+                                <img
+                                    src={study.image}
+                                    alt={study.title}
+                                    className="w-full h-full object-cover transition-transform duration-400 hover:scale-150"
+                                />
                             </div>
-                        </div>
-                    </div>
-                ))}
+
+                            {/* Right Content */}
+                            <div className="w-1/2 flex flex-col justify-center h-full xl:space-y-5 lg:space-y-1 sm:space-y-5 space-y-1">
+                                <span className="xl:text-xs lg:text-[10px] md:text-sm sm:text-xs text-[8px] uppercase xl:p-2 lg:p-1 sm:p-2 p-1 bg-[#F0F4F7] w-fit text-gray-500">
+                                    {study.tag}
+                                </span>
+                                <h2 className="xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
+                                    {study.title}
+                                </h2>
+                                <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
+                                    {study.description}
+                                </p>
+                                <div
+                                    onClick={() => {
+                                        const slug = study.title.toLowerCase().replace(/\s+/g, "-");
+                                        navigate(`/case-study/${slug}`);
+                                    }}
+                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-semibold hover:underline cursor-pointer"
+                                >
+                                    Read more
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </section>
 
             {/* Orange Box */}

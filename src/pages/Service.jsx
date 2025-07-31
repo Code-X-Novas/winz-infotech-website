@@ -5,8 +5,8 @@ const Service = () => {
     return (
         <div className="bg-gray-100 md:mt-85 sm:my-65 my-75">   
             {/* Header Section */}
-            <header className="fixed top-18 left-0 w-full -z-1 bg-white lg:p-12 md:p-8 p-6">
-                <h1 className="lg:text-5xl md:text-4xl font-bold text-3xl ">Our <span className="text-[#F68D13]">Services</span></h1>
+            <header className="fixed top-18 left-0 w-full -z-1 bg-white mt-10 lg:px-10 xl:px-16 px-6">
+                <h1 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-bold">Our <span className="text-[#F68D13]">Services</span></h1>
                 <p className="max-w-3xl md:text-lg text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                     We deliver design, branding, and marketing solutions tailored to elevate your digital presence. Thoughtfully built. Creatively executed.We deliver design, branding, and marketing solutions tailored to elevate your digital presence. 
                 </p>
