@@ -1,0 +1,31 @@
+.card-slide .slide-card {
+    height: 400px;
+    transform: scale(0.9) translateY(0px);
+    transform-origin: center center;
+    transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.swiper-slide-active .slide-card {
+    transform: scale(1.1) translateY(-20px);
+}
+
+/* Mobile view (default): height stays 400px */
+.swiper-slide-active .slide-card {
+    height: 380px;
+}
+
+.swiper-slide-active .slide-top {
+    top: 0px;
+    transition: top 0.5s ease-in-out;
+}
+
+/* Laptop and up: height becomes 500px */
+@media (min-width: 1024px) {
+    .swiper-slide-active .slide-card {
+        height: 500px;
+    }
+    .swiper-slide-active .slide-top {
+        top: -10px;
+        transition: top 0.5s ease-out;
+    }
+}
