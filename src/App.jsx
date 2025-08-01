@@ -8,6 +8,7 @@ import ServiceDetails from "./components/ServiceDetails";
 import CaseStudy from "./pages/CaseStudy";
 import CaseStudyDetails from "./components/CaseStudyDetails";
 import Blogs from "./pages/Blogs";
+import BlogDetails from "./components/BlogDetails";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="case-study" element={<CaseStudy />} />
                 <Route path="case-study/:slug" element={<CaseStudyDetails />} />
                 <Route path="blogs" element={<Blogs />} />
+                <Route path="blogs/:slug" element={<BlogDetails />} />
                 <Route path="*" element={<div>404 Not Found</div>} />
             </Route>
         </Routes>

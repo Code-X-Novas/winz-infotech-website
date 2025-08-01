@@ -71,17 +71,17 @@ const CaseStudy = () => {
     return (
         <div>
             {/* heading */}
-            <section className="w-full mt-20 bg-white py-10">
+            <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     className="lg:px-10 xl:px-16 px-5"
                 >
-                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-bold">
+                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-semibold">
                         Our Clients’ <span className="text-[#F68D13]">Journey</span>
                     </h2>
-                    <p className="max-w-3xl md:text-lg text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
+                    <p className="max-w-3xl md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                         From boosting bookings to scaling revenue and building unforgettable brands explore
                         real stories of real results with Winz Infotech.
                     </p>

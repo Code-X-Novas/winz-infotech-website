@@ -20,7 +20,7 @@ const CaseStudyDetails = () => {
             <section className="xl:h-[85vh] h-screen flex md:flex-row flex-col">
                 {/* Left Side - Fixed */}
                 <div className="md:w-1/2 md:h-[30vh] h-[18vh] bg-white sticky top-16 flex items-start justify-start md:pl-12 md:py-12 p-6 z-1">
-                    <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-bold text-black mb-4 leading-snug">
+                    <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-semibold text-black mb-4 leading-snug">
                         {before} – <span className="text-[#F68D13]">{after}</span>
                     </h1>
                 </div>

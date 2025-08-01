@@ -105,10 +105,10 @@ const Blogs = () => {
     return (
         <div>
             {/* heading */}
-            <section className="w-full mt-20 bg-white py-10">
+            <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <div className="lg:px-10 xl:px-16 px-5">
                     <motion.h2
-                        className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-bold"
+                        className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-semibold"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -120,7 +120,7 @@ const Blogs = () => {
                     </motion.h2>
 
                     <motion.p
-                        className="max-w-4xl md:text-lg text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
+                        className="max-w-4xl md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -135,7 +135,7 @@ const Blogs = () => {
                     <br className='md:hidden block' />
 
                     <motion.p
-                        className="max-w-4xl md:text-lg text-sm font-normal md:leading-9 leading-6"
+                        className="max-w-4xl md:text-[17px] text-sm font-normal md:leading-9 leading-6"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -201,7 +201,7 @@ const Blogs = () => {
                                 <div
                                     onClick={() => {
                                         const slug = study.title.toLowerCase().replace(/\s+/g, "-");
-                                        navigate(`/case-study/${slug}`);
+                                        navigate(`/blogs/${slug}`);
                                     }}
                                     className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-semibold hover:underline cursor-pointer"
                                 >

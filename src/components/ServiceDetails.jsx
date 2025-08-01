@@ -4,7 +4,7 @@ import OrangeCard from "./OrangeCard";
 import { motion } from "framer-motion";
 
 // data/servicePagesData.js
-const servicePagesData = [
+const service = [
     {
         path: "logo-design",
         tag: "Logo Design",
@@ -14,16 +14,6 @@ const servicePagesData = [
         description:
             "At Winz Infotech, we create logos that do more than look good they work hard. They tell stories, build trust, and make your brand memorable across every touchpoint.",
     },
-    {
-        path: "brand-strategy",
-        tag: "Brand Strategy",
-        heading: "Build a Brand That Stands for",
-        highlight: "Something",
-        tagline: "Your brand is more than a logo — it’s a promise.",
-        description:
-            "We help you craft a clear, compelling brand identity and messaging framework to win loyalty and drive business growth.",
-    },
-    // Add more objects for each service
 ];
 
 const features = [
@@ -53,14 +43,8 @@ const steps = [
     },
 ];
 
-
 const ServiceDetails = () => {
-    const { slug } = useParams();
-    const service = servicePagesData.find((item) => item.path === slug);
-
-    if (!service) {
-        return <div className="text-center py-20 text-gray-500">Service not found.</div>;
-    }
+    // const { slug } = useParams();
     
     window.scrollTo({ top: 0, behavior: "smooth" }); 
 
@@ -70,20 +54,20 @@ const ServiceDetails = () => {
             <div className="fixed sm:top-16 top-20 left-0 w-full -z-1 bg-white lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">
                     <h4 className="text-[#F68D13] font-semibold tracking-wide uppercase mb-4 text-base md:text-lg">
-                        {service.tag}
+                        {service[0].tag}
                     </h4>
 
-                    <h1 className="text-4xl lg:text-6xl font-bold text-black leading-tight mb-4">
-                        {service.heading} <br className="sm:block hidden" />
-                        <span className="text-[#F68D13]">{service.highlight}</span>
+                    <h1 className="text-4xl lg:text-6xl font-semibold text-black leading-tight mb-4">
+                        {service[0].heading} <br className="sm:block hidden" />
+                        <span className="text-[#F68D13]">{service[0].highlight}</span>
                     </h1>
 
                     <p className="text-[#F68D13] font-medium text-sm md:text-base mb-4">
-                        {service.tagline}
+                        {service[0].tagline}
                     </p>
 
-                    <p className="text-gray-700 max-w-[870px] text-sm md:text-sm leading-relaxed">
-                        {service.description}
+                    <p className="text-gray-700 max-w-[870px] text-sm md:text-base leading-relaxed">
+                        {service[0].description}
                     </p>
                 </div>
             </div>
@@ -104,7 +88,7 @@ const ServiceDetails = () => {
                 {/* Left Side - Fixed */}
                 <div className="md:w-1/2 md:h-[40vh] h-[25vh] bg-white sticky top-14 flex items-start justify-start md:p-12 p-8 z-1">
                     <div>
-                        <h1 className="lg:text-5xl text-3xl font-bold text-black mb-4 leading-snug">
+                        <h1 className="lg:text-5xl text-3xl font-semibold text-black mb-4 leading-snug">
                             Why Invest in a <br /> <span className="text-[#F68D13]">Professional</span> Logo?
                         </h1>
                         <p className="text-gray-500 lg:text-base text-sm max-w-md">
@@ -165,7 +149,7 @@ const ServiceDetails = () => {
                 <section className="px-8 lg:px-12 py-16 flex md:flex-row flex-col bg-white">
                     {/* left part */}
                     <div className="md:w-1/2 flex flex-col ">
-                        <h2 className="lg:text-5xl text-3xl md:max-w-md lg:leading-16 font-bold text-black mb-2">
+                        <h2 className="lg:text-5xl text-3xl md:max-w-md lg:leading-16 font-semibold text-black mb-2">
                             Our Logo <span className="text-[#F68D13]">Design Process</span>
                         </h2>
                         <p className="text-gray-700 text-sm mb-10">
@@ -229,7 +213,7 @@ const ServiceDetails = () => {
                 {/* Section 5: Who We Design For */}
                 <section className="bg-cover bg-center text-black">
                     <div className="bg-white/70 px-8 lg:px-12 backdrop-blur-xs p-8 shadow-lg">
-                        <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold mb-4">
+                        <h2 className="lg:text-5xl md:text-4xl text-3xl font-semibold mb-4">
                             <span className="text-[#F68D13]">Who</span> We Design For
                         </h2>
                         <p className="text-gray-700 md:text-base text-sm max-w-3xl leading-relaxed">
@@ -254,7 +238,7 @@ const ServiceDetails = () => {
                         }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
                             <span className="text-[#F68D13]">What</span>{" "}
                             <span className="text-black">You Get</span>
                         </h2>

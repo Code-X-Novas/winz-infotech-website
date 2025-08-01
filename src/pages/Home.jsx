@@ -110,7 +110,7 @@ const Home = () => {
     return (
         <div>
             {/* Main Section */}
-            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 py-10 bg-white">
+            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 py-5 bg-white">
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 mt-10 md:mt-0">
                     {/* Hero Title */}
@@ -190,7 +190,7 @@ const Home = () => {
             <section className="bg-[#f5f5f5] px-6 lg:px-10 xl:px-16 py-10">
                 {/* heading */}
                 <div className="mb-12">
-                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-bold">
+                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-semibold">
                         Our <span className="text-[#F68D13]">Services</span>
                     </h2>
                     <p className="text-gray-600 tracking-wide max-w-3xl mt-4">
@@ -296,7 +296,7 @@ const Home = () => {
             <section className="w-full bg-white py-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
-                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-bold">
+                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-semibold">
                         <span className="text-[#F68D13]">Clients</span> Who Trust Us
                     </h2>
                     <p className="text-gray-600 tracking-wide max-w-2xl leading-relaxed mt-4">
@@ -323,7 +323,7 @@ const Home = () => {
             <section className="bg-[#f5f5f5] py-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
-                    <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-bold">
+                    <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-semibold">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>
