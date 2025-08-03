@@ -53,11 +53,11 @@ const ServiceDetails = () => {
             {/* Section 1: Text */}
             <div className="fixed sm:top-16 top-20 left-0 w-full -z-1 bg-white lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">
-                    <h4 className="text-[#F68D13] font-semibold tracking-wide uppercase mb-4 text-base md:text-lg">
+                    <h4 className="text-[#F68D13] font-medium tracking-wide uppercase mb-4 text-base md:text-lg">
                         {service[0].tag}
                     </h4>
 
-                    <h1 className="text-4xl lg:text-6xl font-semibold text-black leading-tight mb-4">
+                    <h1 className="text-4xl lg:text-6xl font-medium text-black leading-tight mb-4">
                         {service[0].heading} <br className="sm:block hidden" />
                         <span className="text-[#F68D13]">{service[0].highlight}</span>
                     </h1>
@@ -88,7 +88,7 @@ const ServiceDetails = () => {
                 {/* Left Side - Fixed */}
                 <div className="md:w-1/2 md:h-[40vh] h-[25vh] bg-white sticky top-14 flex items-start justify-start md:p-12 p-8 z-1">
                     <div>
-                        <h1 className="lg:text-5xl text-3xl font-semibold text-black mb-4 leading-snug">
+                        <h1 className="lg:text-5xl text-3xl font-medium text-black mb-4 leading-snug">
                             Why Invest in a <br /> <span className="text-[#F68D13]">Professional</span> Logo?
                         </h1>
                         <p className="text-gray-500 lg:text-base text-sm max-w-md">
@@ -104,35 +104,35 @@ const ServiceDetails = () => {
                             <h3>Here's why:</h3>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-lg font-semibold lg:mb-2 mb-1">1. <span className="text-[#F68D13]">First Impressions Matter</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-lg font-medium lg:mb-2 mb-1">1. <span className="text-[#F68D13]">First Impressions Matter</span></h3>
                                 <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Your logo is often the first thing people see. A clean, smart design instantly communicates professionalism, credibility, and trust.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">2. <span className="text-[#F68D13]">Brand Recognition Starts Here</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-lg font-medium mb-2">2. <span className="text-[#F68D13]">Brand Recognition Starts Here</span></h3>
                                 <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Think of your logo as your signature. We design for memorability, so your brand sticks in the feed, on packaging, on storefronts, and beyond.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">3. <span className="text-[#F68D13]">Consistency Across Platforms</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-lg font-medium mb-2">3. <span className="text-[#F68D13]">Consistency Across Platforms</span></h3>
                                 <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Whether it’s your website, social media, or business card we craft logos that are responsive, scalable, and versatile.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-lg font-semibold mb-2">4. <span className="text-[#F68D13]">Tailored to Your Brand Personality</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-lg font-medium mb-2">4. <span className="text-[#F68D13]">Tailored to Your Brand Personality</span></h3>
                                 <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     Minimal, bold, playful, or luxury your logo should reflect your identity. No templates. No shortcuts. Just a custom identity built from the ground up.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="font-semibold mb-2 lg:text-lg text-[#F68D13]">5. <span className="text-[#F68D13]">Built for Longevity</span></h3>
+                                <h3 className="font-medium mb-2 lg:text-lg text-[#F68D13]">5. <span className="text-[#F68D13]">Built for Longevity</span></h3>
                                 <p className="text-gray-600 lg:text-base md:text-xs text-sm">
                                     We don’t follow trends. We design for the long game with timeless visuals that grow with your brand.
                                 </p>
@@ -149,7 +149,7 @@ const ServiceDetails = () => {
                 <section className="px-8 lg:px-12 py-16 flex md:flex-row flex-col bg-white">
                     {/* left part */}
                     <div className="md:w-1/2 flex flex-col ">
-                        <h2 className="lg:text-5xl text-3xl md:max-w-md lg:leading-16 font-semibold text-black mb-2">
+                        <h2 className="lg:text-5xl text-3xl md:max-w-md lg:leading-16 font-medium text-black mb-2">
                             Our Logo <span className="text-[#F68D13]">Design Process</span>
                         </h2>
                         <p className="text-gray-700 text-sm mb-10">
@@ -213,11 +213,11 @@ const ServiceDetails = () => {
                 {/* Section 5: Who We Design For */}
                 <section className="bg-cover bg-center text-black">
                     <div className="bg-white/70 px-8 lg:px-12 backdrop-blur-xs p-8 shadow-lg">
-                        <h2 className="lg:text-5xl md:text-4xl text-3xl font-semibold mb-4">
+                        <h2 className="lg:text-5xl md:text-4xl text-3xl font-medium mb-4">
                             <span className="text-[#F68D13]">Who</span> We Design For
                         </h2>
                         <p className="text-gray-700 md:text-base text-sm max-w-3xl leading-relaxed">
-                            We’ve helped over <span className="text-[#F68D13] font-semibold">375+</span> businesses build meaningful identities across industries. From startups to established brands, we understand how to shape perception through powerful design.
+                            We’ve helped over <span className="text-[#F68D13] font-medium">375+</span> businesses build meaningful identities across industries. From startups to established brands, we understand how to shape perception through powerful design.
                         </p>
                     </div>
                 </section>
@@ -238,7 +238,7 @@ const ServiceDetails = () => {
                         }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
                             <span className="text-[#F68D13]">What</span>{" "}
                             <span className="text-black">You Get</span>
                         </h2>

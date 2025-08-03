@@ -78,7 +78,7 @@ const CaseStudy = () => {
                     transition={{ duration: 0.5 }}
                     className="lg:px-10 xl:px-16 px-5"
                 >
-                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-semibold">
+                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">
                         Our Clients’ <span className="text-[#F68D13]">Journey</span>
                     </h2>
                     <p className="max-w-3xl md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
@@ -117,10 +117,10 @@ const CaseStudy = () => {
                                 <span className="xl:text-xs lg:text-[10px] md:text-sm sm:text-xs text-[8px] uppercase xl:p-2 lg:p-1 sm:p-2 p-1 bg-[#F0F4F7] w-fit text-gray-500">
                                     {study.tag}
                                 </span>
-                                <h2 className="xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
+                                <h2 className="xl:text-2xl font-playfair lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
                                     {study.title}
                                 </h2>
-                                <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
+                                <p className="xl:text-base  lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
                                     {study.description}
                                 </p>
                                 <div
@@ -128,7 +128,7 @@ const CaseStudy = () => {
                                         const slug = study.title.toLowerCase().replace(/\s+/g, "-");
                                         navigate(`/case-study/${slug}`);
                                     }}
-                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-semibold hover:underline cursor-pointer"
+                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
                                 >
                                     Read more
                                 </div>

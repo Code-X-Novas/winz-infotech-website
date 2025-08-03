@@ -107,7 +107,7 @@ const Testimonial = () => {
                                         className="lg:size-10 size-7 rounded-full object-cover"
                                     />
                                     <div>
-                                        <p className="font-semibold lg:text-base text-sm text-gray-900">{t.name}</p>
+                                        <p className="font-medium lg:text-base text-sm text-gray-900">{t.name}</p>
                                         <p className="text-gray-600 lg:text-sm text-xs">{t.company}</p>
                                     </div>
                                 </div>

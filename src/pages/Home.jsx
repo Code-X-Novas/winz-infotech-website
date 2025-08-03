@@ -17,6 +17,7 @@ import InfiniteScroll from "../components/Animations/InfiniteScroll";
 import Testimonial from "../components/Testimonial";
 import OrangeCard from "../components/OrangeCard";
 import { useNavigate } from "react-router-dom";
+import TextAnimation from "../components/TextAnimation";
 
 const services = [
     {
@@ -118,11 +119,11 @@ const Home = () => {
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-6 text-black"
+                        className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight mb-6 text-black"
                     >
                         From Scroll to <br className="md:block hidden" />
                         Sale, We  {" "}
-                        <span className="relative inline-block"> DrIve
+                        <span className="relative inline-block"> Dr<span className="text-3xl lg:text-4xl xl:text-5xl">I</span>ve
                             <span className="absolute bottom-0 lg:left-[48%] left-[49%] transform -translate-x-1/2 xl:size-2.5 lg:size-2 size-1.5 bg-[#F68D13] rounded-full" />
                         </span> <br className="sm:block hidden" /> Results.
                     </motion.h1>
@@ -164,7 +165,7 @@ const Home = () => {
                                 transition={{ delay: 0.7 + i * 0.2 }}
                                 className="text-center relative"
                             >
-                                <p className="lg:text-5xl text-3xl font-semibold text-black">{item.count}</p>
+                                <p className="lg:text-5xl text-3xl font-medium text-black">{item.count}</p>
                                 <p className="text-gray-500 text-sm lg:mt-3 mt-1">{item.label}</p>
                             </motion.div>
                         ))}
@@ -190,7 +191,7 @@ const Home = () => {
             <section className="bg-[#f5f5f5] px-6 lg:px-10 xl:px-16 py-10">
                 {/* heading */}
                 <div className="mb-12">
-                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-semibold">
+                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         Our <span className="text-[#F68D13]">Services</span>
                     </h2>
                     <p className="text-gray-600 tracking-wide max-w-3xl mt-4">
@@ -210,7 +211,7 @@ const Home = () => {
                             className="bg-white md:p-6 p-3 rounded-md shadow-md text-center hover:shadow-lg transition-shadow duration-300"
                         >
                             <div className="md:mb-4 mb-2.5 flex justify-center">{service.icon}</div>
-                            <h3 className="md:text-xl font-semibold md:mb-2 mb-1">{service.title}</h3>
+                            <h3 className="md:text-xl font-medium md:mb-2 mb-1">{service.title}</h3>
                             <p className="text-gray-600 md:text-sm text-xs">{service.desc}</p>
                         </motion.div>
                     ))}
@@ -221,26 +222,15 @@ const Home = () => {
             <section ref={ref} className="bg-[#F68D13]">
                 <div className="transform p-8 backdrop-blur-sm rounded-lg shadow-lg w-full">
                     <p className="leading-relaxed text-center xl:text-6xl lg:text-5xl sm:text-4xl text-xl flex flex-col gap-[1px]">
-                        {startTyping && (
-                            <TextType
-                                text={["\"Driven by purpose, Powered by design, Delivered with love.\""]}
-                                typingSpeed={75}
-                                pauseDuration={1500}
-                                showCursor={false}
-                                cursorCharacter="|"
-                                initial={{ opacity: 0, y: 50 }}
-                                transition={{ duration: 0.6 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                className="xl:max-w-5xl lg:max-w-3xl md:max-w-xl mx-auto"
-                            />
-                        )}
+                        <TextAnimation />
                     </p>
                 </div>
             </section>
 
+
             {/* Swiper */}
             <section className="w-full bg-[#f5f5f5] mx-auto lg:px-12 px-6 md:py-12 py-8 relative">
-                <h2 className="xl:text-5xl md:text-4xl text-3xl font-semibold text-center mb-8">
+                <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium text-center mb-8">
                     <span className="text-[#F68D13]">Growth Stories</span>, Not Just Campaigns
                 </h2>
                 <Swiper
@@ -265,7 +255,7 @@ const Home = () => {
                             >
                                 <div className="bg-white rounded-xl shadow p-8 text-left">
                                     <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
-                                    <h2 className="text-2xl md:text-4xl max-w-xl font-semibold mb-6">{current.title}</h2>
+                                    <h2 className="text-2xl md:text-4xl max-w-xl font-medium mb-6">{current.title}</h2>
                                     <p className="text-gray-700 mb-6 md:text-base text-sm">{current.description}</p>
                                     <button className="bg-[#F68D13] text-white md:text-base text-sm px-4 py-2 rounded hover:bg-orange-600 transition">
                                         Read more
@@ -278,8 +268,8 @@ const Home = () => {
             </section>
 
             {/* Infinite Scroll */}
-            <section className="w-full bg-white mx-auto lg:px-16 px-6 md:py-12 py-8 relative">
-                <h3 className="lg:text-4xl md:text-3xl text-2xl sm:tracking-normal tracking-tighter font-semibold mb-8">
+            <section className="w-full bg-white mx-auto  md:py-12 py-8 relative">
+                <h3 className="lg:text-4xl md:text-3xl text-2xl sm:tracking-normal lg:px-16 px-6 tracking-tighter font-medium mb-8">
                     Industries We've Worked With
                 </h3>
                 <div style={{ position: 'relative' }}>
@@ -296,7 +286,7 @@ const Home = () => {
             <section className="w-full bg-white py-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
-                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-semibold">
+                    <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         <span className="text-[#F68D13]">Clients</span> Who Trust Us
                     </h2>
                     <p className="text-gray-600 tracking-wide max-w-2xl leading-relaxed mt-4">
@@ -308,7 +298,7 @@ const Home = () => {
             </section>
 
             {/* Infinite Scroll */}
-            <section className="w-full bg-white lg:py-10 sm:py-5 mx-auto lg:px-12 px-6 relative">
+            <section className="w-full bg-white lg:py-10 sm:py-5 mx-auto relative">
                 <div className="relative">
                     <InfiniteScroll
                         texts={['Strategy • Design • Performance •']}
@@ -323,7 +313,7 @@ const Home = () => {
             <section className="bg-[#f5f5f5] py-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
-                    <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-semibold">
+                    <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-medium">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>

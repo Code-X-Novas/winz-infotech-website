@@ -41,7 +41,7 @@ const BlogDetails = () => {
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <div className="lg:px-10 xl:px-16 px-5">
                     <motion.h2
-                        className="xl:text-6xl lg:text-5xl lg:leading-20 md:leading-14 leading-12 md:text-4xl text-3xl font-semibold"
+                        className="xl:text-6xl lg:text-5xl lg:leading-20 md:leading-14 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -94,7 +94,7 @@ const BlogDetails = () => {
             <section className="lg:px-10 xl:px-16 px-5 py-10 mx-auto md:space-y-8 space-y-6">
                 {/* Section 1 */}
                 <div className="md:space-y-4 space-y-3">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#F68D13]">{points[0].title}</h2>
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-[#F68D13]">{points[0].title}</h2>
                     <p className="text-base md:text-lg">{points[0].description}</p>
                     <p className="text-base md:text-lg text-[#F68D13] font-medium">
                         Pro Tip: <span className="text-black">{points[0].tip}</span>
@@ -105,7 +105,7 @@ const BlogDetails = () => {
                 <div className="md:space-y-8 space-y-6">
                     {[...Array(3)].map((_, idx) => (
                         <div key={idx} className="md:space-y-4 space-y-3">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#F68D13]">
+                            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-[#F68D13]">
                                 {points[1].title}
                             </h2>
                             <p className="text-base md:text-lg ">

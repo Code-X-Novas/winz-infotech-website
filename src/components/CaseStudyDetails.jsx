@@ -20,7 +20,7 @@ const CaseStudyDetails = () => {
             <section className="xl:h-[85vh] h-screen flex md:flex-row flex-col">
                 {/* Left Side - Fixed */}
                 <div className="md:w-1/2 md:h-[30vh] h-[18vh] bg-white sticky top-16 flex items-start justify-start md:pl-12 md:py-12 p-6 z-1">
-                    <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-semibold text-black mb-4 leading-snug">
+                    <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-medium text-black mb-4 leading-snug">
                         {before} – <span className="text-[#F68D13]">{after}</span>
                     </h1>
                 </div>
@@ -31,28 +31,28 @@ const CaseStudyDetails = () => {
                         <div className="md:w-1/2 md:p-12 p-6 lg:space-y-10 space-y-4">
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-semibold mb-2"><span className="text-[#F68D13] uppercase">Objective</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13] uppercase">Objective</span></h3>
                                 <p className=" lg:text-base text-sm">
                                     Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-semibold mb-2"><span className="text-[#F68D13] uppercase">Challenge</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13] uppercase">Challenge</span></h3>
                                 <p className=" lg:text-base text-sm">
                                     No digital presence, minimal portfolio online, and little differentiation in a crowded design market.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-semibold mb-2"><span className="text-[#F68D13]uppercase">Solution</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13]uppercase">Solution</span></h3>
                                 <p className=" lg:text-base text-sm">
                                     No digitDesigned a clean, visual-first website showcasing past projects. Developed brand-led graphic design assets and brochures. Ran performance marketing targeting local real estate developers and builders with portfolio ads.al presence, minimal portfolio online, and little differentiation in a crowded design market.
                                 </p>
                             </div>
 
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-semibold mb-2 uppercase">
+                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2 uppercase">
                                     Results
                                 </h3>
 

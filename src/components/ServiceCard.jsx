@@ -98,7 +98,7 @@ const ServiceCard = () => {
                                     const slug = service.title.toLowerCase().replace(/\s+/g, "-"); // Creates slug like "digital-branding"
                                     navigate(`/services/${slug}`);
                                 }}
-                                className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-semibold md:mb-4 mb-2"
+                                className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-medium md:mb-4 mb-2"
                             >
                                 {service.title}
                             </h2>
@@ -143,7 +143,7 @@ const ServiceCard = () => {
             {isMobile && !showAll && (
                 <button
                     onClick={() => setShowAll(true)}
-                    className="mx-auto px-6 py-2 text-white bg-[#F68D13] hover:bg-[#e77b0c] rounded-full font-semibold transition"
+                    className="mx-auto px-6 py-2 text-white bg-[#F68D13] hover:bg-[#e77b0c] rounded-full font-medium transition"
                 >
                     See all
                 </button>

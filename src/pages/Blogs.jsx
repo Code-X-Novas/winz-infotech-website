@@ -108,7 +108,7 @@ const Blogs = () => {
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <div className="lg:px-10 xl:px-16 px-5">
                     <motion.h2
-                        className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-semibold"
+                        className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -174,7 +174,7 @@ const Blogs = () => {
 
                             {/* Right Content */}
                             <div className="w-1/2 flex flex-col justify-evenly h-full xl:space-y-5 lg:space-y-1 sm:space-y-5 space-y-1">
-                                <h2 className="line-clamp-4 xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
+                                <h2 className="font-playfair line-clamp-4 xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
                                     {study.title}
                                 </h2>
 
@@ -203,7 +203,7 @@ const Blogs = () => {
                                         const slug = study.title.toLowerCase().replace(/\s+/g, "-");
                                         navigate(`/blogs/${slug}`);
                                     }}
-                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-semibold hover:underline cursor-pointer"
+                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
                                 >
                                     Read more
                                 </div>

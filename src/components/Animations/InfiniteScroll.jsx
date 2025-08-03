@@ -118,7 +118,7 @@ export const InfiniteScroll = ({
                 style={parallaxStyle}
             >
                 <motion.div
-                    className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans font-bold tracking-[-0.02em] drop-shadow`}
+                    className={`${scrollerClassName} flex whitespace-nowrap text-center font-bold tracking-[-0.02em] `}
                     style={{ x, ...scrollerStyle }}
                 >
                     {spans}
