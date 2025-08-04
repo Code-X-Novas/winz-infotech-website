@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import teamImage from "../assets/homeImage.png";
 import { FaBullhorn, FaPaintBrush, FaCamera } from "react-icons/fa";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -12,12 +11,12 @@ import "swiper/css/autoplay";
 import 'swiper/css/effect-coverflow';
 import "./swiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import TextType from "../components/Animations/TextType";
 import InfiniteScroll from "../components/Animations/InfiniteScroll";
 import Testimonial from "../components/Testimonial";
 import OrangeCard from "../components/OrangeCard";
 import { useNavigate } from "react-router-dom";
 import TextAnimation from "../components/TextAnimation";
+import TextHover from "../components/Animations/TextHover";
 
 const services = [
     {
@@ -93,9 +92,7 @@ const caseStudies = [
 const Home = () => {
     const ref = useRef(null);
     const navigate = useNavigate();
-    const isInView = useInView(ref, { once: true }); // only run once when it comes into view
 
-    const [startTyping, setStartTyping] = useState(false);
     const colors = [
         'bg-orange-400',
         'bg-orange-300',
@@ -103,10 +100,6 @@ const Home = () => {
         'bg-[#F68D13BF]',
         'bg-[#F68D1380]',
     ];
-
-    useEffect(() => {
-        if (isInView) setStartTyping(true);
-    }, [isInView]);
 
     return (
         <div>
@@ -122,10 +115,27 @@ const Home = () => {
                         className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight mb-6 text-black"
                     >
                         From Scroll to <br className="md:block hidden" />
-                        Sale, We  {" "}
-                        <span className="relative inline-block"> Dr<span className="text-3xl lg:text-4xl xl:text-5xl">I</span>ve
-                            <span className="absolute bottom-0 lg:left-[48%] left-[49%] transform -translate-x-1/2 xl:size-2.5 lg:size-2 size-1.5 bg-[#F68D13] rounded-full" />
-                        </span> <br className="sm:block hidden" /> Results.
+                        Sale, We {" "}
+                        <span className="relative inline-block">
+                            Dr
+                            <motion.span
+                                initial={{ y: -30, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
+                                className="text-3xl lg:text-4xl xl:text-5xl inline-block"
+                            >
+                                I
+                            </motion.span>
+                            <motion.span
+                                initial={{ y: -20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
+                                className="absolute bottom-0 lg:left-[48%] left-[49%] transform -translate-x-1/2 xl:size-2.5 lg:size-2 size-1.5 bg-[#F68D13] rounded-full"
+                            />
+                            ve
+                        </span>
+                        <br className="sm:block hidden" />
+                        Results.
                     </motion.h1>
 
                     {/* Description */}
@@ -145,10 +155,10 @@ const Home = () => {
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.4 }}
-                        className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white lg:px-6 px-4 lg:py-3 sm:py-2 py-1 rounded-sm text-sm font-medium flex items-center gap-2"
+                        className="bg-[#F68D13] cursor-pointer text-white text-sm font-medium flex items-center"
                         onClick={() => navigate('/contact')}
                     >
-                        Let’s Talk <span className="text-lg">→</span>
+                        <TextHover text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
                     </motion.button>
 
                     {/* Stats */}
@@ -208,7 +218,7 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white md:p-6 p-3 rounded-md shadow-md text-center hover:shadow-lg transition-shadow duration-300"
+                            className="bg-white md:p-6 p-3 shadow-[#ecad65] rounded-md shadow text-center transition-shadow duration-300"
                         >
                             <div className="md:mb-4 mb-2.5 flex justify-center">{service.icon}</div>
                             <h3 className="md:text-xl font-medium md:mb-2 mb-1">{service.title}</h3>
@@ -226,7 +236,6 @@ const Home = () => {
                     </p>
                 </div>
             </section>
-
 
             {/* Swiper */}
             <section className="w-full bg-[#f5f5f5] mx-auto lg:px-12 px-6 md:py-12 py-8 relative">
@@ -253,12 +262,12 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 className="mx-auto space-y-5"
                             >
-                                <div className="bg-white rounded-xl shadow p-8 text-left">
+                                <div className="bg-white h-[300px] justify-between flex flex-col rounded-xl shadow md:p-8 p-4 text-left">
                                     <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
                                     <h2 className="text-2xl md:text-4xl max-w-xl font-medium mb-6">{current.title}</h2>
-                                    <p className="text-gray-700 mb-6 md:text-base text-sm">{current.description}</p>
-                                    <button className="bg-[#F68D13] text-white md:text-base text-sm px-4 py-2 rounded hover:bg-orange-600 transition">
-                                        Read more
+                                    <p className="text-gray-700 mb-6 md:text-base text-sm line-clamp-3">{current.description}</p>
+                                    <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
+                                        <TextHover text="Read more" />
                                     </button>
                                 </div>
                             </motion.div>
@@ -317,7 +326,7 @@ const Home = () => {
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>
-                
+
                 {/* Card swiper color bg */}
                 <div className="w-full max-w-6xl xl:h-[70vh] lg:h-[90vh] md:h-[65vh] sm:h-[70vh] h-[55vh] mx-auto py-10 px-4">
                     <Swiper

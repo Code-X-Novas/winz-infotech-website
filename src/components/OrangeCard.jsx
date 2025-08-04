@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import image from '../assets/orange.png';
+import TextHover from './Animations/TextHover';
 
 const OrangeCard = ({ title, description, buttonText, onButtonClick }) => {
     const ref = useRef(null);
@@ -30,11 +31,9 @@ const OrangeCard = ({ title, description, buttonText, onButtonClick }) => {
                     
                     <motion.button
                         onClick={onButtonClick}
-                        className="bg-white text-[#F68D13] font-medium lg:px-6 lg:py-2 px-4 py-1 rounded hover:bg-gray-200 transition"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className="bg-white w-fit text-[#F68D13] font-medium rounded transition"
                     >
-                        {buttonText}
+                        <TextHover text={buttonText} />
                     </motion.button>
                 </motion.div>
 

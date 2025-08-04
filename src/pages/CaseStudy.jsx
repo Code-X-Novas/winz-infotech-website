@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import caseStudy from "../assets/case-study.png";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
+import TextHover from "../components/Animations/TextHover";
 
 const caseStudies = [
     {
@@ -93,8 +94,9 @@ const CaseStudy = () => {
                 <motion.div
                     className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                     variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                 >
                     {caseStudies.map((study) => (
@@ -120,7 +122,7 @@ const CaseStudy = () => {
                                 <h2 className="xl:text-2xl font-playfair lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
                                     {study.title}
                                 </h2>
-                                <p className="xl:text-base  lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
+                                <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
                                     {study.description}
                                 </p>
                                 <div
@@ -130,7 +132,7 @@ const CaseStudy = () => {
                                     }}
                                     className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
                                 >
-                                    Read more
+                                    <TextHover text="Read more" customClass="!text-left !px-0" />
                                 </div>
                             </div>
                         </motion.div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // optional: install with `npm i lucide-react`
+import TextHover from "./Animations/TextHover";
 
 const Navbar = () => {
     const location = useLocation();
@@ -26,7 +27,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center mt-2">
-                    <img src="/logo.svg" alt="Logo" className="lg:w-24 md:w-20 w-24 h-auto" />
+                    <img src="/logo.svg" alt="Logo" className="lg:w-24 w-20 h-auto" />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -41,8 +42,8 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link to="/contact">
-                        <button className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white px-5 py-2 rounded-sm transition">
-                            Contact us
+                        <button className="bg-[#F68D13] cursor-pointer text-white transition">
+                            <TextHover text="Contact us" />
                         </button>
                     </Link>
                 </div>
@@ -70,8 +71,8 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                        <button className="bg-[#F68D13] hover:bg-orange-500 cursor-pointer text-white px-5 py-2 rounded-sm transition w-full text-left">
-                            Contact us
+                        <button className="bg-[#F68D13] cursor-pointer text-white transition w-full text-left">
+                            <TextHover text="Contact us" />
                         </button>
                     </Link>
                 </div>

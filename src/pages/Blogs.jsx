@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
+import TextHover from "../components/Animations/TextHover";
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import 'react-horizontal-scrolling-menu/dist/styles.css';
+// import './hide-scrollbar.css'; // for hiding scrollbar if needed
 
 import blog1 from "../assets/case-study.png";
 import blog2 from "../assets/blog2.png";
@@ -36,7 +41,7 @@ const caseStudies = [
     {
         id: 5,
         title: "KIA’s New Logo: A Modern Win with a Readability Miss",
-        tag: "Branding",
+        tag: "Digital Marketing",
         image: blog3,
     },
     {
@@ -60,18 +65,29 @@ const caseStudies = [
     {
         id: 9,
         title: "AlmaBetter Allocates ₹50 Crore Fund",
-        tag: "Branding",
+        tag: "Logo design",
         image: blog5,
     },
     {
         id: 10,
         title: "AlmaBetter Allocates ₹50 Crore Fund",
-        tag: "Branding",
+        tag: "Landing Page",
         image: blog5,
     },
 ];
 
+const categories = [
+    'All',
+    'Branding',
+    'Logo Design',
+    'Digital Marketing',
+    'Social media Assets',
+    'Landing Page',
+    'Website',
+];
+
 const Blogs = () => {
+    const [selected, setSelected] = useState('All');
 
     const textVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -101,6 +117,16 @@ const Blogs = () => {
         hidden: { opacity: 0, y: 30 },
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     };
+
+    const filteredStudies =
+    selected === 'All'
+        ? caseStudies
+        : caseStudies.filter((study) =>
+            Array.isArray(study.tag)
+            ? study.tag.includes(selected)
+            : study.tag === selected
+        );
+
 
     return (
         <div>
@@ -147,17 +173,38 @@ const Blogs = () => {
                     </motion.p>
                 </div>
             </section>
-            
-            {/* Case Studies */}
+
+            {/* Categories */}
+            <section className="w-full bg-white ">
+                <div className="lg:px-7 xl:px-12 px-4 bg-white w-full">
+                    <ScrollMenu>
+                        {categories.map((item) => (
+                        <div
+                            key={item}
+                            onClick={() => setSelected(item)}
+                            className={`cursor-pointer lg:px-8 lg:py-3 px-4 py-2 lg:mx-4 mx-2 min-w-max text-sm font-medium 
+                            ${selected === item 
+                                ? 'bg-[#F68D13] text-white' 
+                                : 'bg-[#F0F4F7] text-[#565C63] hover:bg-gray-200 transition-all'}`}
+                        >
+                            {item}
+                        </div>
+                        ))}
+                    </ScrollMenu>
+                </div>
+            </section>
+
+            {/* Blogs */}
             <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 ">
                 <motion.div
                     className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                     variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                 >
-                    {caseStudies.map((study) => (
+                    {filteredStudies.map((study) => (
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
@@ -205,7 +252,7 @@ const Blogs = () => {
                                     }}
                                     className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
                                 >
-                                    Read more
+                                    <TextHover text="Read more" customClass="!text-left !px-0" />
                                 </div>
                             </div>
                         </motion.div>
