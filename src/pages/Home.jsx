@@ -230,7 +230,7 @@ const Home = () => {
 
             {/* Text animation */}
             <section ref={ref} className="bg-[#F68D13]">
-                <div className="p-8 w-full">
+                <div className="md:p-8 py-6 w-full">
                     <p className="leading-relaxed text-center xl:text-6xl lg:text-5xl sm:text-4xl text-xl flex flex-col gap-[1px]">
                         <TextAnimation />
                     </p>
@@ -284,7 +284,7 @@ const Home = () => {
                 <div style={{ position: 'relative' }}>
                     <InfiniteScroll
                         texts={['Gym • Cafe Fitness & Wellness • Hospital • Real Estate • Fashion • Food & Beverage • Education • E-commerce •']}
-                        velocity={200}
+                        velocity={80}
                         numCopies={2}
                         className="custom-scroll-text font-medium lg:text-5xl md:text-4xl text-3xl"
                     />
@@ -311,7 +311,7 @@ const Home = () => {
                 <div className="relative">
                     <InfiniteScroll
                         texts={['Strategy • Design • Performance •']}
-                        velocity={200}
+                        velocity={80}
                         numCopies={2}
                         className="custom-scroll-text font-medium lg:text-6xl md:text-5xl text-4xl"
                     />
