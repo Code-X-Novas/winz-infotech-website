@@ -1,8 +1,13 @@
 import serviceBg from "../assets/serviceBg.png";
 import { motion } from 'framer-motion'
 import OrangeCard from "./OrangeCard";
+import { useEffect } from "react";
 
 const BlogSection = ({ blogs, textVariants }) => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+    
     return (
         <div>
             {/* Section 1: Heading */}

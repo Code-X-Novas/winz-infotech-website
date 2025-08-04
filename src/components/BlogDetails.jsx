@@ -3,6 +3,7 @@ import OrangeCard from './OrangeCard';
 import { useLocation } from 'react-router-dom';
 import PointSection from './PointSection';
 import BlogSection from './BlogSection';
+import { useEffect } from 'react';
 
 const BlogDetails = () => {
     const location = useLocation();
@@ -21,7 +22,10 @@ const BlogDetails = () => {
             },
         }),
     };
-
+    
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <div>
             {points && <PointSection points={points} textVariants={textVariants} />}

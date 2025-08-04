@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
     {
@@ -83,9 +83,9 @@ const Testimonial = () => {
     });
 
     return (
-        <div className="max-w-7xl mx-auto sm:px-4 px-6 pt-12 relative">
+        <div className="max-w-7xl mx-auto sm:px-4 px-6 sm:pt-12 pt-5 relative">
             {/* Background circle gradient */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
+            <div className="sm:absolute hidden top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
                 bg-[conic-gradient(from_62deg_at_50%_50%,_rgba(252,138,16,0.25)_0deg,_rgba(254,226,195,0.19)_187.768deg,_rgba(253,197,135,0.19)_272.03deg,_rgba(255,255,255,0.19)_360deg)] 
                 rounded-full blur-lg bg-cover z-0 pointer-events-none"
                 style={{
@@ -95,7 +95,7 @@ const Testimonial = () => {
             />
 
             {/* Testimonial columns */}
-            <div className="flex flex-row relative z-[1] lg:gap-6 gap-3">
+            <div className="sm:flex hidden flex-row relative z-[1] lg:gap-6 gap-3">
                 {columns.map((column, colIndex) => (
                     <div
                         key={colIndex}
@@ -123,6 +123,28 @@ const Testimonial = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                ))}
+            </div>
+
+            <div className="flex sm:hidden space-x-6 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+                {testimonials.map((t, i) => (
+                    <div
+                        key={i}
+                        className="snap-center flex-shrink-0 w-[85vw] h-fit bg-white rounded-xl shadow-md p-6"
+                    >
+                        <p className="text-gray-700 text-sm leading-relaxed line-clamp-6 mb-4">“{t.text}”</p>
+                        <div className="flex items-center gap-4 mt-4 border-t pt-4">
+                            <img
+                                src={t.avatar}
+                                alt={t.name}
+                                className="w-10 h-10 rounded-full object-cover"
+                            />
+                            <div>
+                                <p className="font-semibold text-gray-900">{t.name}</p>
+                                <p className="text-sm text-gray-600">{t.company}</p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

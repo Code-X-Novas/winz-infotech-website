@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 function cn(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -8,6 +8,7 @@ function cn(...classes) {
 export default function TextAnimation({ className = '' }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
+    const [animationDone, setAnimationDone] = useState(false)
 
     const pullupVariant = {
         initial: { y: 10, opacity: 0 },
@@ -47,7 +48,7 @@ export default function TextAnimation({ className = '' }) {
                                 animate={isInView ? 'animate' : ''}
                                 custom={globalIndex}
                                 className={cn(
-                                    'text-[20px] sm:text-4xl text-black font-medium lg:text-6xl leading-snug',
+                                    'text-[20px] sm:text-4xl text-white font-medium lg:text-6xl leading-snug',
                                     className
                                 )}
                             >

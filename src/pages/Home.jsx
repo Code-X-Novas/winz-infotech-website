@@ -230,7 +230,7 @@ const Home = () => {
 
             {/* Text animation */}
             <section ref={ref} className="bg-[#F68D13]">
-                <div className="transform p-8 backdrop-blur-sm rounded-lg shadow-lg w-full">
+                <div className="p-8 w-full">
                     <p className="leading-relaxed text-center xl:text-6xl lg:text-5xl sm:text-4xl text-xl flex flex-col gap-[1px]">
                         <TextAnimation />
                     </p>
