@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 function cn(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -8,7 +8,6 @@ function cn(...classes) {
 export default function TextAnimation({ className = '' }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-    const [animationDone, setAnimationDone] = useState(false)
 
     const pullupVariant = {
         initial: { y: 10, opacity: 0 },
@@ -29,7 +28,7 @@ export default function TextAnimation({ className = '' }) {
     let globalIndex = 0;
 
     return (
-        <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap text-center">
+        <div className="flex flex-col font-poppins lg:flex-row justify-center items-center flex-wrap text-center">
             {[firstLine, secondLine].map((line, lineIdx) => (
                 <div
                     key={lineIdx}

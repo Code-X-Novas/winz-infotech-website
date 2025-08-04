@@ -12,6 +12,8 @@ import CaseStudyDetails from "./components/CaseStudyDetails";
 import Blogs from "./pages/Blogs";
 import BlogDetails from "./components/BlogDetails";
 import Portfolio from "./pages/Portfolio";
+import TermCondition from "./pages/TermCondition";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
 
@@ -47,6 +49,8 @@ function App() {
                 <Route path="blogs" element={<Blogs />} />
                 <Route path="blogs/:slug" element={<BlogDetails />} />
                 <Route path="portfolio" element={<Portfolio />} />
+                <Route path="term-&-conditions" element={<TermCondition />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="*" element={<div>404 Not Found</div>} />
             </Route>
         </Routes>

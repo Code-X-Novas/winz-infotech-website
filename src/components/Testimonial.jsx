@@ -94,7 +94,7 @@ const Testimonial = () => {
                 }}
             />
 
-            {/* Testimonial columns */}
+            {/* Desktop/Tablet Testimonial */}
             <div className="sm:flex hidden flex-row relative z-[1] lg:gap-6 gap-3">
                 {columns.map((column, colIndex) => (
                     <div
@@ -127,6 +127,7 @@ const Testimonial = () => {
                 ))}
             </div>
 
+            {/* Mobile Testimonials */}
             <div className="flex sm:hidden space-x-6 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
                 {testimonials.map((t, i) => (
                     <div
