@@ -52,6 +52,74 @@ const caseStudies = [
     },
 ];
 
+const case_study = [
+    {
+        title: "Visa & Immigration Consultant –",
+        city: "Nagpur",
+        objective: "To position the consultancy as a trusted expert in Nagpur and increase revenue by 3× within 2 months.",
+        challenge: "Low visibility online, a generic website, fake enquiries and inconsistent content caused low trust and minimal lead flow.",
+        solution: "Redesigned the website with a streamlined enquiry funnel, SEO-optimized service pages for target countries, and weekly informative reel content with active comment engagement. Launched targeted Meta Ads campaigns with geo-based retargeting.",
+        results: [
+            "4× more qualified leads in 60 days",
+            "+250% organic engagement from visa-related reels content",
+            "Conversion rate increased from 2% to 9%",
+        ],
+    },
+
+    {
+        title: "Beauty Salon –",
+        city: "Mumbai",
+        objective: "To boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
+        challenge: "Fragmented branding, inconsistent social presence, and a poorly converting booking engine led to missed income.",
+        solution: "Created a brand identity with styled color system and high-conversion landing pages. Scheduled regular UGC & awareness videos featuring real clients. Amplified reach with Instagram/Facebook ads and influencer collaborations.",
+        results: [
+            "5× revenue increased in just 3 months",
+            "40% increase in monthly appointments",
+            "+1,200 new Instagram followers in 120 days",
+            "Booking funnel conversion rate improved by 33%",
+        ],
+    },
+
+    {
+        title: "Architect –",
+        city: "Ahmedabad, Gujarat",
+        objective: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
+        challenge: "No digital presence, minimal portfolio online, and little differentiation in a crowded design market.",
+        solution: "Designed a clean, visual-first website showcasing past projects. Developed brand-led graphic design assets and brochures. Ran performance marketing targeting local real estate developers and builders with portfolio ads.",
+        results: [
+            "5 high-value project leads within the first 2 months",
+            "Portfolio site saw a 5 minutes+ average session duration",
+            "Reduced fake leads and increased show-up rate",
+        ],
+    },
+
+    {
+        title: "Dietician –",
+        city: "Delhi",
+        objective: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
+        challenge: "Lacks authority, low content output, and poor visibility in local SEO and social media.",
+        solution: "Launched content-driven Instagram and blog strategy (infographics, diet hacks, testimonials). Developed downloadable lead magnet ('7-Day Delhi Clean Meal Plan') and set up lead generation ads targeting Delhi working professionals.",
+        results: [
+            "Tripled new consultations in 60 days",
+            "Downloadable plan converted at 28% CTR",
+            "Instagram engagement increased by 285%",
+        ],
+    },
+
+    {
+        title: "Real Estate Builder –",
+        city: "Surat",
+        objective: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
+        challenge: "Generic branding, low online presence among Surat homebuyers, and unoptimized landing pages.",
+        solution: "Built a custom website with a landing page including virtual walkthrough videos, interactive floor plans, and inquiry forms. Launched a performance campaign on Google and Facebook/Instagram targeting local demographic and interest segments. Tracked pixel‑based retargeting to visitors.",
+        results: [
+            "Generated 150+ quality leads in the first month",
+            "Cost-per-lead dropped 40% average month over month",
+            "Website engagement time spiked by 62%",
+        ],
+    },
+];
+
 const CaseStudy = () => {
     const navigate = useNavigate();
 
@@ -127,8 +195,13 @@ const CaseStudy = () => {
                                 </p>
                                 <div
                                     onClick={() => {
-                                        const slug = study.title.toLowerCase().replace(/\s+/g, "-");
-                                        navigate(`/case-study/${slug}`);
+                                        const slug = study.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, "-")
+                                            .replace(/\//g, "-");
+                                        navigate(`/case-study/${slug}`, {
+                                            state: { case_study: case_study[study.id - 1] }
+                                        });
                                     }}
                                     className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
                                 >

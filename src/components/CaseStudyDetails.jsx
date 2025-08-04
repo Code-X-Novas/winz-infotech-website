@@ -1,18 +1,21 @@
-import { useParams } from "react-router-dom";
-import caseStudy from "../assets/case-bg.png";
+import { useLocation, useParams } from "react-router-dom";
+import caseStudyBg from "../assets/case-bg.png";
 import OrangeCard from "./OrangeCard";
 
 const CaseStudyDetails = () => {
     const { slug } = useParams();
     const correct = slug.replace(/-/g, " "); // Convert slug back to readable format
-    const [before, after] = correct.split("–");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    const location = useLocation();
+    const caseStudy = location.state?.case_study;
 
     return (
         <div>
             {/* image */}
             <section className="w-full mt-20 bg-white pt-10 pb-5">
                 <div className="lg:px-10 xl:px-12 px-5">
-                    <img src={caseStudy} alt={correct} className="xl:h-[500px] lg:h-[400px] w-full lg:object-fill object-contain" />
+                    <img src={caseStudyBg} alt={correct} className="xl:h-[500px] lg:h-[400px] w-full lg:object-fill object-contain" />
                 </div>
             </section>
 
@@ -21,7 +24,7 @@ const CaseStudyDetails = () => {
                 {/* Left Side - Fixed */}
                 <div className="md:w-1/2 md:h-[30vh] h-[18vh] bg-white sticky top-16 flex items-start justify-start md:pl-12 md:py-12 p-6 z-1">
                     <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-medium text-black mb-4 leading-snug">
-                        {before} – <span className="text-[#F68D13]">{after}</span>
+                        {caseStudy?.title} <span className="text-[#F68D13]">{caseStudy?.city}</span>
                     </h1>
                 </div>
 
@@ -30,52 +33,47 @@ const CaseStudyDetails = () => {
                     <div className="mx-auto flex md:justify-end">
                         <div className="md:w-1/2 md:p-12 p-6 lg:space-y-10 space-y-4">
 
+                            {/* Objective */}
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13] uppercase">Objective</span></h3>
                                 <p className=" lg:text-base text-sm">
-                                    Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.
+                                    {caseStudy?.objective}
                                 </p>
                             </div>
-
+                            
+                            {/* Challenge */}   
                             <div>
                                 <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13] uppercase">Challenge</span></h3>
                                 <p className=" lg:text-base text-sm">
-                                    No digital presence, minimal portfolio online, and little differentiation in a crowded design market.
+                                    {caseStudy?.challenge}
                                 </p>
                             </div>
-
+                            
+                            {/* Solution */}
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13]uppercase">Solution</span></h3>
+                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2"><span className="text-[#F68D13] uppercase">Solution</span></h3>
                                 <p className=" lg:text-base text-sm">
-                                    No digitDesigned a clean, visual-first website showcasing past projects. Developed brand-led graphic design assets and brochures. Ran performance marketing targeting local real estate developers and builders with portfolio ads.al presence, minimal portfolio online, and little differentiation in a crowded design market.
+                                    {caseStudy?.solution}
                                 </p>
                             </div>
-
+                            
+                            {/* Results */}
                             <div>
-                                <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2 uppercase">
-                                    Results
-                                </h3>
-
-                                <div className="flex items-start gap-2 mb-2">
-                                    <span className="text-2xl text-[#F68D13] leading-none">•</span>
-                                    <p className="lg:text-base text-sm">
-                                        5 high-value project leads within the first 2 months
-                                    </p>
-                                </div>
-
-                                <div className="flex items-start gap-2 mb-2">
-                                    <span className="text-2xl text-[#F68D13] leading-none">•</span>
-                                    <p className="lg:text-base text-sm">
-                                        Portfolio site saw a 5 minutes+ average session duration
-                                    </p>
-                                </div>
-
-                                <div className="flex items-start gap-2">
-                                    <span className="text-2xl text-[#F68D13] leading-none">•</span>
-                                    <p className="lg:text-base text-sm">
-                                        Reduced fake leads and increased show-up rate
-                                    </p>
-                                </div>
+                                {
+                                    caseStudy?.results && caseStudy.results.length > 0 &&
+                                    <div>
+                                        <h3 className="text-[#F68D13] lg:text-xl font-medium mb-2 uppercase">
+                                            Results
+                                        </h3>
+                                        <ul className="list-disc list-inside marker:text-[#F68D13]">
+                                            {caseStudy.results.map((result, index) => (
+                                                <li key={index} className="lg:text-base text-sm">
+                                                    {result}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                }
                             </div>
 
                         </div>
