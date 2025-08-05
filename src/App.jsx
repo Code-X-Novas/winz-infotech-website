@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import Service from "./pages/Service";
 import About from "./pages/About";
+import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
@@ -41,6 +42,7 @@ function App() {
             <Route path="/" element={<Layout />} >
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
+                <Route path="career" element={<Career />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="services" element={<Service />} />
                 <Route path="services/:slug" element={<ServiceDetails />} /> 

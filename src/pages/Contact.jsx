@@ -1,8 +1,164 @@
+import React from "react";
+import bgImage from "../img/bg1.png";
+import mapimg from "../img/map.png";
+import ContactUsFooter from "../components/ContactUsFooter";
 
 const Contact = () => {
-    return (
-        <div>Contact</div>
-    )
-}
+  return (
+    <>
+      <div className="min-h-screen bg-white text-black p-6 sm:p-8 md:p-12 font-sans relative mx-4 sm:mx-6 md:mx- w-full mt-20 lg:py-10 py-5">
+        {/* Main Flex Container */}
+        <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-stretch min-h-[80vh]">
+          {/* Left Side */}
+          <div className="space-y-4 h-full pr-0 md:pr-4 basis-[55%]">
+            <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium">
+              Let’s Build
+            </h1>
+            <h2 className="xl:text-7xl lg:text-6xl md:text-5xl text-3xl font-medium text-[#F68D13]">
+              Something Big!
+            </h2>
 
-export default Contact
+            <div
+              className="bg-gray-50 px-4 sm:px-6 pb-6 h-full"
+              style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <h3 className="font-medium mb-4 bg-gray-200 text-gray-700 inline-block px-3 py-1 rounded text-xs sm:text-sm md:text-base">
+                Contact Info
+              </h3>
+
+              <div className="space-y-10 sm:space-y-14 md:space-y-16 flex flex-col h-full">
+                {/* Email */}
+                <div className="flex justify-between gap-4 sm:gap-6">
+                  <div className="flex flex-col gap-1 sm:gap-2 lg:text-lg text-sm">
+                    <p className="text-[#F68D13] font-medium">Email</p>
+                    <span className="text-[#F68D13] font-bold">—</span>
+                  </div>
+                  <p className="text-right break-words md:text-[17px] text-sm font-normal md:leading-9 leading-6">
+                    Info@winzinfotech.com
+                  </p>
+                </div>
+
+                {/* Contact Number */}
+                <div className="flex justify-between gap-4 sm:gap-6">
+                  <div className="flex flex-col gap-1 sm:gap-2 lg:text-lg text-sm">
+                    <p className="text-[#F68D13] font-medium">Contact Number</p>
+                    <span className="text-[#F68D13] font-bold">—</span>
+                  </div>
+                  <div className="text-right space-y-1 text-nowrap md:text-[17px] text-sm font-normal md:leading-9 leading-6">
+                    <p>+91 720 30 30 730</p>
+                    <p>+91 999 80 81 838</p>
+                  </div>
+                </div>
+
+                {/* WhatsApp Number */}
+                <div className="flex justify-between gap-4 sm:gap-6">
+                  <div className="flex flex-col gap-1 sm:gap-2 lg:text-lg text-sm">
+                    <p className="text-[#F68D13] font-medium">WhatsApp Number</p>
+                    <span className="text-[#F68D13] font-bold">—</span>
+                  </div>
+                  <p className="text-right text-nowrap md:text-[17px] text-sm font-normal md:leading-9 leading-6">
+                    +91 720 30 30 730
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side Form */}
+          <div className="p-4 sm:p-6 md:p-8 h-full bg-gray-100 basis-[40%]">
+            <h3 className="text-center text-[#F68D13] font-medium mb-6 text-sm sm:text-base md:text-lg">
+              Let’s Build the Next Big Thing
+            </h3>
+            <form className="bg-white p-4 sm:p-6 h-full">
+              <div className="space-y-4 sm:space-y-6">
+                {[
+                  "Enter your name",
+                  "Contact no",
+                  "Email",
+                  "Business Name/Link",
+                  "Budget",
+                  "Query",
+                ].map((placeholder, idx) => (
+                  <div key={idx}>
+                    <input
+                      type={placeholder === "Email" ? "email" : "text"}
+                      placeholder={placeholder}
+                      className="w-full border-b-2 border-gray-400 px-2 py-1 hover:border-[#F68D13] focus:border-[#F68D13] focus:outline-none text-sm sm:text-base"
+                    />
+                  </div>
+                ))}
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center bg-[#F68D13] hover:bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-md font-medium mt-4 sm:mt-6 text-sm sm:text-base"
+                  >
+                    Send a request
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-md mt-8 sm:mt-10">
+          {/* Label */}
+          <div className="absolute top-0 left-3 sm:left-4 z-10 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">
+            Office Address
+          </div>
+
+          {/* Marker */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full z-20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#F68D13"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-md"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 2.25c-4.556 0-8.25 3.694-8.25 8.25 0 6.07 8.25 11.25 8.25 11.25s8.25-5.18 8.25-11.25c0-4.556-3.694-8.25-8.25-8.25zM12 12.75a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z"
+              />
+            </svg>
+          </div>
+
+          {/* Map Image Clickable */}
+          <a
+            href="https://www.google.com/maps?q=306,+Shivam+Infinity,+Opp.+S.T.+Workshop+Dharampur+Road,+Abrama,+Valsad,+Gujarat+396001"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={mapimg}
+              alt="Location Map"
+              className="absolute top-0 left-0 w-full h-full object-cover cursor-pointer"
+            />
+          </a>
+
+          {/* Address Box */}
+          <div className="absolute bottom-0 left-0 bg-gray-100 shadow-lg p-3 sm:p-4 w-60 sm:w-72 shadow-orange-300 z-10">
+            <h3 className="text-xs sm:text-sm font-medium mb-2 text-gray-800">
+              Address
+            </h3>
+            <hr className="border-t-2 border-gray-500 w-6 sm:w-8 mb-2" />
+            <p className="md:text-[17px] text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
+              306, Shivam Infinity,<br />
+              Opp. S.T. Workshop Dharampur Road,<br />
+              Abrama, Valsad, Gujarat – 396001.
+            </p>
+          </div>
+        </div>
+      </div>
+      <ContactUsFooter />
+    </>
+  );
+};
+
+export default Contact;
