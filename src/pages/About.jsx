@@ -49,7 +49,7 @@ const About = () => {
             <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-3 px-2 sm:px-6 md:px-12">
               Who we <span className="text-[#F68D13] font-medium">are</span>
             </h2>
-            <div className="w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal md:leading-9 leading-6 px-2 sm:px-4 md:px-10">
+            <div className="w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal md:leading-tight px-2 sm:px-4 md:px-10">
             <p>
                 We're{" "}
                 <span className="text-black font-medium">Winz Infotech</span>, your no-nonsense digital growth partner.
@@ -88,10 +88,10 @@ const About = () => {
           <div className="relative z-10 bg-white">
             <div className="flex flex-col py-12 bg-gray-50">
               <div className="mb-8 md:mb-10 text-center md:text-left px-4 sm:px-6 md:px-10">
-                <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-3 px-2 sm:px-6 md:px-12">
+                <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-3 px-2 sm:px-6 md:px-12 text-left">
                   From the <span className="text-[#F68D13] font-medium">Founder</span>
                 </h2>
-                <p className="text-gray-700 max-w-2xl mx-auto md:mx-0 md:text-[17px] text-sm font-normal md:leading-9 leading-6 lg:ml-12 md:ml-12">
+                <p className="text-gray-700 w-full mx-auto md:mx-0 md:text-[17px] text-sm font-normal md:leading-9 leading-6 lg:ml-12 md:ml-12 text-left pr-4">
                   A glimpse into the scale, trust, and diversity we've built over
                   the years — fueled by strategy, design, and measurable results.
                 </p>
@@ -106,7 +106,7 @@ const About = () => {
                   />
                 </div>
 
-                <div className="md:w-1/2 w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal md:leading-9 leading-6 px-2 sm:px-4 md:px-10">
+                <div className="md:w-1/2 w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal leading-tigh px-2 sm:px-4 md:px-10">
                   <p>
                     <span className="text-black font-medium">"</span>Most agencies
                     sell creativity. We sell{" "}
@@ -133,7 +133,7 @@ const About = () => {
                     If you're tired of the usual agency games, let's talk.
                     <span className="text-black font-medium">"</span>
                   </p>
-                  <p className="text-[#F68D13] font-medium mt-1 text-lg sm:text-xl lg:text-3xl">
+                  <p className="text-[#F68D13] font-medium mt-1 text-lg sm:text-xl lg:text-3xl ">
                     – Anuj Gohil
                     <br />
                     <span className="font-thin">Founder, Winz Infotech</span>
@@ -148,7 +148,7 @@ const About = () => {
                 Our <span className="text-[#F68D13] font-medium">Vision</span>
               </h2>
               <div className="w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal md:leading-9 leading-6 px-2 sm:px-4 md:px-12">
-                <p className="text-black font-medium">
+                <p className="text-black font-medium italic">
                   Marketing that's clear. Creatives that convert. Growth you can
                   see.
                 </p>
@@ -211,10 +211,10 @@ const About = () => {
                         className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#F68D13] border-2 border-white shadow-md shrink-0"
                       />
                       <div>
-                        <h3 className="font-medium md:text-[17px] text-sm">
+                        <h3 className="font-medium lg:text-[20px] text-sm">
                           {step.title}
                         </h3>
-                        <p className="text-gray-600 md:text-[17px] text-sm">
+                        <p className="text-gray-600 lg:text-[17px] text-sm">
                           {step.description}
                         </p>
                       </div>

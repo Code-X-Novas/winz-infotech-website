@@ -10,7 +10,7 @@ const ServiceDetails = () => {
     const service = location.state?.services;
 
     return (
-        <div className="bg-gray-100 lg:mt-[450px] sm:my-[380px] my-[420px]">
+        <div className="bg-gray-100 lg:mt-[450px] sm:mt-[380px] mt-[420px]">
             {/* Section 1: Text */}
             <div className="fixed sm:top-16 top-20 -z-1 bg-white xl:pl-16 lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">

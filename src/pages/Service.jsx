@@ -3,7 +3,7 @@ import ServiceCard from "../components/ServiceCard"
 
 const Service = () => {
     return (
-        <div className="bg-gray-100 md:mt-85 sm:my-65 my-75">
+        <div className="bg-gray-100 md:mt-85 sm:mt-65 mt-75">
             {/* Header Section */}
             <header className="fixed top-18 left-0 w-full -z-1 bg-white mt-10 lg:px-10 xl:px-16 px-6">
                 <h1 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">Our <span className="text-[#F68D13]">Services</span></h1>

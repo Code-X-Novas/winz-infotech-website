@@ -2,7 +2,7 @@ import React from "react";
 import bgImage from "../img/bg1.png";
 import mapimg from "../img/map.png";
 import ContactUsFooter from "../components/ContactUsFooter";
-
+import TextHover from "../components/Animations/TextHover";
 const Contact = () => {
   return (
     <>
@@ -49,8 +49,8 @@ const Contact = () => {
                     <span className="text-[#F68D13] font-bold">—</span>
                   </div>
                   <div className="text-right space-y-1 text-nowrap md:text-[17px] text-sm font-normal md:leading-9 leading-6">
-                    <p>+91 720 30 30 730</p>
-                    <p>+91 999 80 81 838</p>
+                    <p>+917203030730</p>
+                    <p>+919998081838</p>
                   </div>
                 </div>
 
@@ -61,7 +61,7 @@ const Contact = () => {
                     <span className="text-[#F68D13] font-bold">—</span>
                   </div>
                   <p className="text-right text-nowrap md:text-[17px] text-sm font-normal md:leading-9 leading-6">
-                    +91 720 30 30 730
+                    +917203030730
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const Contact = () => {
           {/* Right Side Form */}
           <div className="p-4 sm:p-6 md:p-8 h-full bg-gray-100 basis-[40%]">
             <h3 className="text-center text-[#F68D13] font-medium mb-6 text-sm sm:text-base md:text-lg">
-              Let’s Build the Next Big Thing
+              Let’s Build the Next Big Thing.
             </h3>
             <form className="bg-white p-4 sm:p-6 h-full">
               <div className="space-y-4 sm:space-y-6">
@@ -92,12 +92,9 @@ const Contact = () => {
                   </div>
                 ))}
                 <div className="flex justify-center">
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center bg-[#F68D13] hover:bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-md font-medium mt-4 sm:mt-6 text-sm sm:text-base"
-                  >
-                    Send a request
-                  </button>
+                  <button className="bg-[#F68D13] cursor-pointer text-white transition">
+                   <TextHover text="Sent a request" />
+                 </button>
                 </div>
               </div>
             </form>

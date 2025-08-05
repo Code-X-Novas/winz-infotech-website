@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import TextHover from "../components/Animations/TextHover";
 const whyJoinSteps = [
   {
     title: "Impact From Day One",
@@ -80,10 +80,10 @@ const CareerPage = () => {
 
                 {/* Text */}
                 <div>
-                  <h3 className="font-medium md:text-[17px] text-sm">
+                  <h3 className="font-medium lg:text-[20px] text-sm">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 md:text-[17px] text-sm font-normal md:leading-9 leading-6 max-w-lg">
+                  <p className="text-gray-600 lg:text-[17px] text-sm font-normal md:leading-tight leading-tight max-w-lg">
                     {step.description}
                   </p>
                 </div>
@@ -95,23 +95,23 @@ const CareerPage = () => {
 
       {/* Main Content: Left & Right */}
       <div className="flex flex-col md:flex-row items-start px-6 md:px-10 py-12 gap-6 bg-gray-50 min-h-screen">
-        {/* Left Section */}
- {/* Left Section */}
-<div className="flex-1 flex items-start justify-center rounded-lg p-8 sticky top-24 self-start">
-  <div className="text-center max-w-lg">
-    <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-2 lg:text-left scroll-mt-24">
-      Let’s Build
-    </h1>
-    <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium text-[#F68D13] mb-6 lg:text-left">
-      Your Career
-    </h1>
-    <p className="text-gray-600 md:text-[17px] text-sm font-normal md:leading-9 leading-6 lg:text-left">
-      If you’re done with average and ready to build something meaningful,
-      we want to hear from you. Bring your ambition — we'll bring the
-      opportunities.
-    </p>
-  </div>
-</div>
+
+      {/* Left Section */}
+      <div className="flex-1 flex items-start justify-center rounded-lg p-8 sticky top-24 self-start">
+        <div className="text-center max-w-lg">
+          <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-2 lg:text-left scroll-mt-24">
+            Let’s Build
+          </h1>
+          <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium text-[#F68D13] mb-6 lg:text-left">
+            Your Career
+          </h1>
+          <p className="text-gray-600 md:text-[17px] text-sm font-normal md:leading-9 leading-6 lg:text-left">
+            If you’re done with average and ready to build something meaningful,
+            we want to hear from you. Bring your ambition — we'll bring the
+            opportunities.
+          </p>
+        </div>
+      </div>
 
 
         {/* Right Section - Career Form */}
@@ -150,12 +150,9 @@ const CareerPage = () => {
               />
 
               <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-[#F68D13] text-white px-6 py-2 text-sm rounded hover:bg-orange-600 transition"
-                >
-                  APPLY NOW
-                </button>
+                <button className="bg-[#F68D13] cursor-pointer text-white transition">
+               <TextHover text="APPLY NOW" />
+            </button>
               </div>
             </form>
 
