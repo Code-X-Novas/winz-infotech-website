@@ -112,7 +112,7 @@ const Home = () => {
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight sm:mb-6 mb-3 text-black"
+                        className="text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-tight sm:mb-6 mb-3 text-black"
                     >
                         From Scroll to <br className="md:block hidden" />
                         Sale, We {" "}
@@ -143,7 +143,7 @@ const Home = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
-                        className="text-gray-600 text-base lg:text-lg xl:leading-10 lg:leading-8 leading-relaxed mb-6"
+                        className="text-gray-600 text-base lg:text-lg xl:leading-10 lg:leading-8 leading-relaxed md:mb-6 mb-3"
                     >
                         We craft scroll-stopping designs and high-converting campaigns that turn
                         attention into action. Whether you're building a brand or boosting sales, we
@@ -162,7 +162,7 @@ const Home = () => {
                     </motion.button>
 
                     {/* Stats */}
-                    <div className="flex flex-wrap justify-around md:flex-nowrap mt-10 gap-6 lg:gap-12">
+                    <div className="flex flex-wrap justify-around md:flex-nowrap md:mt-10 mt-6 gap-6 lg:gap-12">
                         {[
                             { count: "10M+", label: "Reach" },
                             { count: "375+", label: "Clients" },
@@ -192,7 +192,7 @@ const Home = () => {
                     <img
                         src={teamImage} // Replace with your actual image path
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[350px] shadow-lg"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg"
                     />
                 </motion.div>
             </section>
