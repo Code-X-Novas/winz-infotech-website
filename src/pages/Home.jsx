@@ -104,15 +104,15 @@ const Home = () => {
     return (
         <div>
             {/* Main Section */}
-            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 py-5 bg-white">
+            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 bg-white">
                 {/* Left Content */}
-                <div className="w-full md:w-1/2 mt-10 md:mt-0">
+                <div className="w-full md:w-1/2 mt-5 md:mt-0">
                     {/* Hero Title */}
                     <motion.h1
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight mb-6 text-black"
+                        className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight sm:mb-6 mb-3 text-black"
                     >
                         From Scroll to <br className="md:block hidden" />
                         Sale, We {" "}
@@ -134,7 +134,7 @@ const Home = () => {
                             />
                             ve
                         </span>
-                        <br className="sm:block hidden" />
+                        <br className="sm:block hidden" />{" "}
                         Results.
                     </motion.h1>
 
@@ -192,7 +192,7 @@ const Home = () => {
                     <img
                         src={teamImage} // Replace with your actual image path
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[400px] shadow-lg"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[350px] shadow-lg"
                     />
                 </motion.div>
             </section>

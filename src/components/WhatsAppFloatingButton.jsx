@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppFloatingButton() {
-    const phoneNumber = "9348727159"; // replace with your actual number
+    const phoneNumber = "7203030730"; // replace with your actual number
     const message = "Hey there";
 
     return (
