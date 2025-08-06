@@ -6,8 +6,9 @@ import TextHover from "./Animations/TextHover";
 const Footer = ({ className = "" }) => {
     return (
         <footer className={`bg-white text-gray-800  ${className}`}>
-            <div className="max-w-screen-2xl mx-auto px-6 md:px-16 lg:px-28 py-12">
-                <div className="flex flex-col lg:flex-row gap-20 justify-between">
+            {/* Top content */}
+            <div className="max-w-screen mx-auto px-4 md:px-16 xl:px-28 lg:py-12 pb-8">
+                <div className="flex flex-col lg:flex-row xl:gap-20 md:gap-12 justify-between">
                     {/* Left: Logo & Links */}
                     <div className="flex flex-col gap-10">
                         <div className="flex flex-col gap-6 lg:flex-row lg:justify-between items-center lg:gap-20">
@@ -16,7 +17,7 @@ const Footer = ({ className = "" }) => {
                                 <img
                                     src={imglogo}
                                     alt="Logo"
-                                    className="h-32 w-auto mx-auto lg:mx-0"
+                                    className="h-46 w-auto mx-auto lg:mx-0"
                                 />
                                 <p className="text-sm text-gray-600">
                                     A creative agency that blends design with performance. From
@@ -25,19 +26,19 @@ const Footer = ({ className = "" }) => {
                             </div>
 
                             {/* Quick Links & Landing Pages */}
-                            <div className="flex flex-col md:flex-row gap-6 lg:gap-24 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
+                            <div className="flex lg:w-auto w-full justify-evenly flex-row gap-6 lg:gap-24 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
                                 {/* Quick Links */}
                                 <div className="space-y-3 mb-6 md:mb-0">
                                     <h3 className="font-bold" style={{ color: "#FC8A10" }}>
                                         QUICK LINKS
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li><a href="/" className="hover:text-orange-500">Home</a></li>
-                                        <li><a href="/portfolio" className="hover:text-orange-500">Portfolio</a></li>
-                                        <li><a href="/services" className="hover:text-orange-500">Services</a></li>
-                                        <li><a href="/about" className="hover:text-orange-500">About Us</a></li>
-                                        <li><a href="/career" className="hover:text-orange-500">Career</a></li>
-                                        <li><a href="/blogs" className="hover:text-orange-500">Blog</a></li>
+                                        <li><a href="/" className="hover:text-[#FC8A10]">Home</a></li>
+                                        <li><a href="/portfolio" className="hover:text-[#FC8A10]">Portfolio</a></li>
+                                        <li><a href="/services" className="hover:text-[#FC8A10]">Services</a></li>
+                                        <li><a href="/about" className="hover:text-[#FC8A10]">About Us</a></li>
+                                        <li><a href="/career" className="hover:text-[#FC8A10]">Career</a></li>
+                                        <li><a href="/blogs" className="hover:text-[#FC8A10]">Blog</a></li>
                                     </ul>
                                 </div>
 
@@ -103,7 +104,7 @@ const Footer = ({ className = "" }) => {
                             </div>
 
                             {/* Email + Phones */}
-                            <div className="flex flex-col md:flex-row gap-6 lg:gap-10 text-sm text-gray-700 text-center lg:text-left">
+                            <div className="flex flex-col md:mb-0 mb-6 sm:flex-row gap-6 lg:gap-10 text-sm text-gray-700 text-center lg:text-left">
                                 {/* Email */}
                                 <a
                                     href="mailto:Info@winzinfotech.com"
