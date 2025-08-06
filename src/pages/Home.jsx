@@ -17,6 +17,9 @@ import OrangeCard from "../components/OrangeCard";
 import { useNavigate } from "react-router-dom";
 import TextAnimation from "../components/TextAnimation";
 import TextHover from "../components/Animations/TextHover";
+import s1 from "../assets/service1.png"
+import s2 from "../assets/service2.png"
+import s3 from "../assets/service3.png"
 
 const services = [
     {
@@ -94,12 +97,13 @@ const Home = () => {
     const navigate = useNavigate();
 
     const colors = [
-        'bg-orange-400',
-        'bg-orange-300',
-        'bg-orange-200',
-        'bg-[#F68D13BF]',
-        'bg-[#F68D1380]',
+        s1,s2,s3,s1,s2,s3,s1,s2,s3,s1,s2,s3
     ];
+
+    const handleClick = () => {
+        const videoUrl = "https://www.youtube.com";
+        window.open(videoUrl, "_blank");
+    }
 
     return (
         <div>
@@ -328,7 +332,7 @@ const Home = () => {
                 </div>
 
                 {/* Card swiper color bg */}
-                <div className="w-full max-w-6xl xl:h-[70vh] lg:h-[90vh] md:h-[65vh] sm:h-[70vh] h-[55vh] mx-auto py-10 px-4">
+                <div className="w-full xl:max-w-7xl xl:h-[70vh] lg:h-[90vh] md:h-[65vh] sm:h-[70vh] h-[55vh] mx-auto py-10 px-6 lg:px-10">
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
@@ -340,24 +344,43 @@ const Home = () => {
                         speed={1000}
                         grabCursor={true}
                         centeredSlides={true}
-                        slidesPerView={3}
+                        
                         breakpoints={{
                             0: {
                                 spaceBetween: 20,     // mobile
+                                slidesPerView: 1,    // mobile and up
                             },
-                            768: {
-                                spaceBetween: 30,     // tablet
+                            640: {
+                                spaceBetween: 20,     // small devices
+                                slidesPerView: 2,    // small devices and up
                             },
                             1024: {
-                                spaceBetween: 40,     // laptop and up
+                                spaceBetween: 20,
+                                slidesPerView: 3   // laptop and up
+                            },
+                            1280: {
+                                spaceBetween: 40,
+                                slidesPerView: 3   // desktop and up
                             },
                         }}
                     >
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index}>
-                                <div className={`lg:h-[400px] h-[300px] translate-y-12 bg-center slide-card w-full shadow-md ${bg} transition-all duration-500`} />
+                                <div className={`lg:h-[400px] h-[300px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
                                 <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
-                                    <div className="w-px h-10 bg-black mt-2" />
+                                    <img src={bg} alt="image" className="bg-cover h-full w-full" />
+                                    <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
+                                        <button onClick={handleClick} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="white"
+                                            viewBox="0 0 24 24"
+                                            className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
+                                        >
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                        </button>
+                                    </div>
                                 </div>
 
                             </SwiperSlide>
