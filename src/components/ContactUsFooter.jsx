@@ -144,8 +144,12 @@ const ContactUsFooter = () => {
             </div>
 
             {/* Copyright */}
-            <div className="w-full py-4 bg-black text-center text-xs md:text-sm text-gray-400">
-                © Winz Infotech {new Date().getFullYear()} - All Rights Reserved
+            <div className="w-full justify-end flex sm:p-4 lg:px-8 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
+                <p className="sm:absolute lg:left-[40%] left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
+                <p className="flex gap-x-5 sm:justify-end justify-center">
+                    <a href="/privacy-policy" className="hover:text-[#F68D13] hover:underline">Privacy Policy</a> |{" "}
+                    <a href="/term-&-conditions" className="hover:text-[#F68D13] hover:underline">Terms & Service</a>
+                </p>
             </div>
         </footer>
     );

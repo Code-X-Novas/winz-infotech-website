@@ -9,9 +9,9 @@ export default function WhatsAppFloatingButton() {
             href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-5 right-5 z-50 bg-white text-white p-1 rounded-full shadow-lg transition-all duration-300"
+            className="fixed bottom-5 right-5 z-50 bg-white hover:bg-orange-400 group p-3 rounded-full shadow-lg transition-all duration-300"
         >
-            <FaWhatsapp className="text-orange-400 md:size-8 size-6 " />
+            <FaWhatsapp className="text-orange-400 md:size-10 size-8 group-hover:text-white duration-200 " />
         </a>
     );
 }
