@@ -2,10 +2,16 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import image from '../assets/orange.png';
 import TextHover from './Animations/TextHover';
+import { useNavigate } from 'react-router-dom';
 
-const OrangeCard = ({ title, description, buttonText, onButtonClick }) => {
+const OrangeCard = ({ title, description, buttonText }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const navigate = useNavigate();
+
+    const onButtonClick = () => {
+        navigate('/contact');
+    };
 
     return (
         <section

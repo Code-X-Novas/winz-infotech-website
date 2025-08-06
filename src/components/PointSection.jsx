@@ -118,7 +118,6 @@ const PointSection = ({ points, textVariants }) => {
                     title="Looking to modernize your real estate marketing?"
                     description="Real estate marketing in 2025 is fast, visual, and data-driven. Builders who adapt to this landscape not only sell homes faster but also build brands that last. "
                     buttonText="Book a Free Strategy Call Today "
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
@@ -78,6 +78,10 @@ const categories = [
 
 const Portfolio = () => {
     const [selected, setSelected] = useState('All');
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const textVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -206,7 +210,6 @@ const Portfolio = () => {
                     title="Big ideas? Stuck brand? Half-done website? "
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
         </div>

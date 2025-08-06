@@ -2,7 +2,13 @@ import bgImage from "../img/bg1.png";
 import mapimg from "../img/map.png";
 import ContactUsFooter from "../components/ContactUsFooter";
 import TextHover from "../components/Animations/TextHover";
+import { useEffect } from "react";
 const Contact = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <div className="min-h-screen bg-white text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:py-10 py-5">

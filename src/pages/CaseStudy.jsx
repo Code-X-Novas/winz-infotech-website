@@ -3,6 +3,7 @@ import caseStudy from "../assets/case-study.png";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
+import { useEffect } from "react";
 
 const caseStudies = [
     {
@@ -137,7 +138,12 @@ const CaseStudy = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
+        
         <div>
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
@@ -219,7 +225,6 @@ const CaseStudy = () => {
                     title="Big ideas? Stuck brand? Half-done website?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
         </div>

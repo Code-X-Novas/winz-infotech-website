@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
@@ -199,6 +199,10 @@ const Blogs = () => {
                     : study.tag === selected
             );
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             {/* heading */}
@@ -349,7 +353,6 @@ const Blogs = () => {
                     title="Big ideas? Stuck brand? Half-done website?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
 

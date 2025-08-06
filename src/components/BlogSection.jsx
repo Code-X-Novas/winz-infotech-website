@@ -110,7 +110,6 @@ const BlogSection = ({ blogs, textVariants }) => {
                     title="Need help with your 2025 marketing plan? "
                     description="Let’s build a growth strategy that works this year and next."
                     buttonText="Book a Free Strategy Call Today"
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
         </div>

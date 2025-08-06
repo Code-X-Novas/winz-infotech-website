@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import workImage from "../img/work.png";
 import work1Image from "../img/work1.png";
@@ -29,6 +29,11 @@ const missionSteps = [
 ];
 
 const About = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="bg-white text-black overflow-x-hidden flex flex-col min-h-screen w-full mt-20 lg:pt-10 pt-5">
             {/* Main content */}
@@ -231,7 +236,6 @@ const About = () => {
                                 title="Big ideas? Stuck brand? Half-done website?"
                                 description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                                 buttonText="Speak to Experts"
-                                onButtonClick={() => console.log("Button Clicked")}
                             />
                         </section>
                     </div>

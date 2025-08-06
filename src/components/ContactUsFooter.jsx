@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaBehance, FaYoutube, FaPhoneAlt, } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import imglogo from "../img/logo.png";
 const ContactUsFooter = () => {
+
+    const navigate = useNavigate();
+
     return (
         <footer>
             <div className="flex flex-col gap-10 px-4 lg:px-10 xl:px-28 lg:py-12 pb-8 text-gray-800 bg-white">
@@ -29,34 +32,34 @@ const ContactUsFooter = () => {
                             </h3>
                             <ul className="grid sm:grid-cols-1 lg:grid-cols-2 gap-y-2 text-sm md:text-base text-gray-700">
                                 <li>
-                                    <Link to="/" className="hover:text-[#FC8A10]">
+                                    <button onClick={() => navigate("/")} className="hover:text-[#FC8A10] cursor-pointer">
                                         Home
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:text-[#FC8A10]">
-                                        About Us
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/portfolio" className="hover:text-[#FC8A10]">
+                                    <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
                                         Portfolio
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
-                                    <Link to="/career" className="hover:text-[#FC8A10]">
-                                        Career
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-[#FC8A10]">
+                                    <button onClick={() => navigate("/services")} className="hover:text-[#FC8A10] cursor-pointer">
                                         Services
-                                    </Link>
+                                    </button>
                                 </li>
                                 <li>
-                                    <Link to="/blogs" className="hover:text-[#FC8A10]">
+                                    <button onClick={() => navigate("/about")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        About Us
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onClick={() => navigate("/career")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        Career
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
                                         Blog
-                                    </Link>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
@@ -67,7 +70,7 @@ const ContactUsFooter = () => {
                                 LANDING PAGES
                             </h3>
                             <ul className="space-y-1 text-sm md:text-base text-gray-700">
-                                <li className="hover:text-[#FC8A10] cursor-pointer">Hook</li>
+                                <li><a href="https://hook-neon.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FC8A10] cursor-pointer">Hook</a></li>
                             </ul>
                         </div>
                     </div>
@@ -147,8 +150,8 @@ const ContactUsFooter = () => {
             <div className="w-full justify-end flex sm:p-4 lg:px-8 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
                 <p className="sm:absolute lg:left-[40%] left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
                 <p className="flex gap-x-5 sm:justify-end justify-center">
-                    <a href="/privacy-policy" className="hover:text-[#F68D13] hover:underline">Privacy Policy</a> |{" "}
-                    <a href="/term-&-conditions" className="hover:text-[#F68D13] hover:underline">Terms & Service</a>
+                    <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] hover:underline">Privacy Policy</p> |{" "}
+                    <p onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] hover:underline">Terms & Service</p>
                 </p>
             </div>
         </footer>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
+import { useEffect } from "react";
 
 const whyJoinSteps = [
     {
@@ -25,6 +26,11 @@ const whyJoinSteps = [
 ];
 
 const CareerPage = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white text-black overflow-x-hidden md:overflow-x-visible lg:overflow-x-visible w-full mt-20 lg:py-10 py-5">
             {/* Top Intro Section */}

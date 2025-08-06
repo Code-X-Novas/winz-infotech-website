@@ -240,7 +240,6 @@ const ServiceDetails = () => {
                         title={service?.orangeCardHeading}
                         description={service?.orangeCardDesc}
                         buttonText={service?.orangeCardButton}
-                        onButtonClick={() => console.log("Button Clicked")}
                     />
                 </section>
             </div>

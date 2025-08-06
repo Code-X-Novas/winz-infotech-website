@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import OrangeCard from "../components/OrangeCard"
 import ServiceCard from "../components/ServiceCard"
 
 const Service = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="bg-gray-100 md:mt-85 sm:mt-65 mt-75">
             {/* Header Section */}
@@ -25,7 +31,6 @@ const Service = () => {
                         title="Big ideas? Stuck brand? Half-done website?"
                         description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                         buttonText="Speak to Experts"
-                        onButtonClick={() => console.log("Button Clicked")}
                     />
                 </section>
             </div>

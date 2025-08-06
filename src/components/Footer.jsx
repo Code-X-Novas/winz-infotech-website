@@ -2,8 +2,12 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn, FaBehance, FaYoutube, FaPhoneAl
 import { MdEmail } from "react-icons/md";
 import imglogo from "../img/logo.png";
 import TextHover from "./Animations/TextHover";
+import { useNavigate } from "react-router-dom";
 
 const Footer = ({ className = "" }) => {
+
+    const navigate = useNavigate();
+
     return (
         <footer className={`bg-white text-gray-800  ${className}`}>
             {/* Top content */}
@@ -33,12 +37,36 @@ const Footer = ({ className = "" }) => {
                                         QUICK LINKS
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li><a href="/" className="hover:text-[#FC8A10]">Home</a></li>
-                                        <li><a href="/portfolio" className="hover:text-[#FC8A10]">Portfolio</a></li>
-                                        <li><a href="/services" className="hover:text-[#FC8A10]">Services</a></li>
-                                        <li><a href="/about" className="hover:text-[#FC8A10]">About Us</a></li>
-                                        <li><a href="/career" className="hover:text-[#FC8A10]">Career</a></li>
-                                        <li><a href="/blogs" className="hover:text-[#FC8A10]">Blog</a></li>
+                                        <li>
+                                            <button onClick={() => navigate("/")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Home
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Portfolio
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/services")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Services
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/about")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                About Us
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/career")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Career
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Blog
+                                            </button>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -48,7 +76,7 @@ const Footer = ({ className = "" }) => {
                                         LANDING PAGES
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li>Hook</li>
+                                        <li><a href="https://hook-neon.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FC8A10]">Hook</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -174,8 +202,8 @@ const Footer = ({ className = "" }) => {
             <div className="w-full justify-end flex sm:p-4 lg:px-8 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
                 <p className="sm:absolute lg:left-[40%] md:left-10 sm:left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
                 <p className="flex gap-x-5 sm:justify-end justify-center">
-                    <a href="/privacy-policy" className="hover:text-[#F68D13] hover:underline">Privacy Policy</a> |{" "}
-                    <a href="/term-&-conditions" className="hover:text-[#F68D13] hover:underline">Terms & Service</a>
+                    <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] hover:underline">Privacy Policy</p> |{" "}
+                    <p onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] hover:underline">Terms & Service</p>
                 </p>
             </div>
         </footer>

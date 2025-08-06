@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import teamImage from "../assets/homeImage.png";
 import { FaBullhorn, FaPaintBrush, FaCamera } from "react-icons/fa";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -104,6 +104,10 @@ const Home = () => {
         const videoUrl = "https://www.youtube.com";
         window.open(videoUrl, "_blank");
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div>
@@ -396,7 +400,6 @@ const Home = () => {
                     title="Big ideas? Stuck brand? Half-done website?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
-                    onButtonClick={() => console.log("Button Clicked")}
                 />
             </section>
 
