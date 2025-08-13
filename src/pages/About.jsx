@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import workImage from "../img/work.png";
+import workImage from "../assets/about_us.png";
 import work1Image from "../img/work1.png";
 import Footer from "../components/Footer";
 import OrangeCard from "../components/OrangeCard";
@@ -40,7 +40,7 @@ const About = () => {
             <main className="flex-1 bg-white">
                 {/* Background Image */}
                 <div className="relative">
-                    <div className="fixed top-20 left-0 w-full h-[350px] sm:h-[400px] md:h-[550px] z-0">
+                    <div className="fixed md:top-8 top-16 left-0 w-full h-[350px] sm:h-[450px] md:h-[630px] lg:h-[680px] z-0">
                         <img
                             src={workImage}
                             alt="Work"

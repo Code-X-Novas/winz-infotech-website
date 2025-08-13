@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import teamImage from "../assets/homeImage.png";
 import { FaBullhorn, FaPaintBrush, FaCamera } from "react-icons/fa";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -17,9 +17,15 @@ import OrangeCard from "../components/OrangeCard";
 import { useNavigate } from "react-router-dom";
 import TextAnimation from "../components/TextAnimation";
 import TextHover from "../components/Animations/TextHover";
+
+// images
 import s1 from "../assets/service1.png"
 import s2 from "../assets/service2.png"
 import s3 from "../assets/service3.png"
+
+import image1 from "../assets/case1.png";
+import image2 from "../assets/case2.png";
+import image3 from "../assets/case3.png";
 
 const services = [
     {
@@ -59,51 +65,105 @@ const caseStudies = [
         id: 1,
         title: "Visa Consultancy: Conversions Soar",
         subtitle: "CASE STUDY 1",
-        description:
-            "We transformed their online presence, securing 4x more qualified leads and tripling revenue in just 60 days.",
+        description: "We transformed their online presence, securing 4x more qualified leads and tripling revenue in just 60 days.",
+        image: image1
     },
     {
         id: 2,
         title: "EdTech Platform: 2x User Engagement",
         subtitle: "CASE STUDY 2",
-        description:
-            "Revamped their UX & SEO, doubling user session time and reducing bounce rate by 35%.",
+        description: "Revamped their UX & SEO, doubling user session time and reducing bounce rate by 35%.",
+        image: image3
     },
     {
         id: 3,
         title: "Fintech Startup: 5x Traffic Boost",
         subtitle: "CASE STUDY 3",
-        description:
-            "Crafted a custom digital strategy that skyrocketed traffic and lead quality within 90 days.",
+        description: "Crafted a custom digital strategy that skyrocketed traffic and lead quality within 90 days.",
+        image: image2
+    },
+];
+
+const videos = [
+    {
+        id: 1,
+        title: "Video 1",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101601/IVF_Clinic_nv2fuv.mp4"
+    },
+    {
+        id: 2,
+        title: "Video 2",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101581/Image_Consultant_rp1hig.mp4"
+    },
+    {
+        id: 3,
+        title: "Video 3",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101573/Architect_ofjrcn.mp4"
     },
     {
         id: 4,
-        title: "Fintech Startup: 5x Traffic Boost",
-        subtitle: "CASE STUDY 3",
-        description:
-            "Crafted a custom digital strategy that skyrocketed traffic and lead quality within 90 days.",
+        title: "Video 4",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101571/Wellness_Coach_fqrz6v.mp4"
     },
     {
         id: 5,
-        title: "Fintech Startup: 5x Traffic Boost",
-        subtitle: "CASE STUDY 3",
-        description:
-            "Crafted a custom digital strategy that skyrocketed traffic and lead quality within 90 days.",
+        title: "Video 5",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101569/Weight_Loss_Expert_gtr2t2.mp4"
     },
+    {
+        id: 6,
+        title: "Video 6",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101569/Dietician_l45jbi.mp4"
+    },
+    {
+        id: 7,
+        title: "Video 7",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101567/Career_Coaching_m3uig4.mp4"
+    },
+    {
+        id: 8,
+        title: "Video 8",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101601/IVF_Clinic_nv2fuv.mp4"
+    },
+    {
+        id: 9,
+        title: "Video 9",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101581/Image_Consultant_rp1hig.mp4"
+    },
+    {
+        id: 10,
+        title: "Video 10",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101573/Architect_ofjrcn.mp4"
+    },
+    {
+        id: 11,
+        title: "Video 11",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101569/Weight_Loss_Expert_gtr2t2.mp4"
+    },
+    {
+        id: 12,
+        title: "Video 12",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101567/Career_Coaching_m3uig4.mp4"
+    }
 ];
 
 const Home = () => {
     const ref = useRef(null);
+    const swiperRef = useRef(null);
     const navigate = useNavigate();
+    const [playingIndex, setPlayingIndex] = useState(null);
 
     const colors = [
         s1,s2,s3,s1,s2,s3,s1,s2,s3,s1,s2,s3
     ];
 
-    const handleClick = () => {
-        const videoUrl = "https://www.youtube.com";
-        window.open(videoUrl, "_blank");
-    }
+    const handleClick = (index) => {
+        setPlayingIndex(index);
+
+        if (swiperRef.current) {
+            swiperRef.current.autoplay.stop();
+        }
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -226,7 +286,7 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white md:p-6 p-3 shadow-[#ecad65] rounded-md shadow text-center transition-shadow duration-300"
+                            className="bg-white md:p-6 p-3 shadow-[#ecad65] shadow text-center transition-shadow duration-300"
                         >
                             <div className="md:mb-4 mb-2.5 flex justify-center">{service.icon}</div>
                             <h3 className="md:text-xl font-medium md:mb-2 mb-1">{service.title}</h3>
@@ -270,13 +330,18 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 className="mx-auto space-y-5"
                             >
-                                <div className="bg-white h-[300px] justify-between flex flex-col rounded-xl shadow md:p-8 p-4 text-left">
-                                    <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
-                                    <h2 className="text-2xl md:text-4xl max-w-xl font-medium mb-6">{current.title}</h2>
-                                    <p className="text-gray-700 mb-6 md:text-base text-sm line-clamp-3">{current.description}</p>
-                                    <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
-                                        <TextHover text="Read more" />
-                                    </button>
+                                <div className="bg-white h-[300px] flex flex-row shadow md:p-8 p-4 text-left">
+                                    <div className="xl:w-[70%] w-full justify-between flex flex-col">
+                                        <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
+                                        <h2 className="text-2xl md:text-4xl max-w-xl font-medium mb-6">{current.title}</h2>
+                                        <p className="text-gray-700 mb-6 md:text-base text-sm line-clamp-3">{current.description}</p>
+                                        <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
+                                            <TextHover text="Read more" />
+                                        </button>
+                                    </div>
+                                    <div className="xl:w-[30%] w-full xl:flex hidden">
+                                        <img src={current?.image ||  s1} alt="swiper" />
+                                    </div>
                                 </div>
                             </motion.div>
                         </SwiperSlide>
@@ -341,14 +406,14 @@ const Home = () => {
                         modules={[Autoplay]}
                         autoplay={{
                             delay: 2000,
-                            disableOnInteraction: false,
+                            disableOnInteraction: true,
                             reverseDirection: true,
                         }}
                         loop={true}
                         speed={1000}
                         grabCursor={true}
                         centeredSlides={true}
-                        
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
                         breakpoints={{
                             0: {
                                 spaceBetween: 20,     // mobile
@@ -371,22 +436,35 @@ const Home = () => {
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index}>
                                 <div className={`lg:h-[400px] h-[300px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
-                                <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
-                                    <img src={bg} alt="image" className="bg-cover h-full w-full" />
-                                    <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
-                                        <button onClick={handleClick} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="white"
-                                            viewBox="0 0 24 24"
-                                            className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
-                                        >
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
-                                        </button>
+                                    <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
+                                        {
+                                            playingIndex == index ? (
+                                                <video
+                                                    src={videos[index]?.url}
+                                                    controls
+                                                    autoPlay
+                                                    className="h-full w-full object-contain"
+                                                />
+                                            ) : (
+                                                <>
+                                                    <img src={bg} alt="image" className="bg-cover h-full w-full" />
+                                                    <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
+                                                        {/* button */}
+                                                        <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="white"
+                                                                viewBox="0 0 24 24"
+                                                                className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
+                                                            >
+                                                                <path d="M8 5v14l11-7z" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            )
+                                        }
                                     </div>
-                                </div>
-
                             </SwiperSlide>
                         ))}
                     </Swiper>

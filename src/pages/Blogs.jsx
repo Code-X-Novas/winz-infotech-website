@@ -283,7 +283,7 @@ const Blogs = () => {
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
-                            className="bg-white rounded-sm shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                            className="bg-white shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
                         >
                             {/* Left Image */}
                             <div className="w-1/2 overflow-hidden">

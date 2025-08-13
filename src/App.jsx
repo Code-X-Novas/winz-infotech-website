@@ -18,6 +18,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
 
+    // Smooth scrolling with Lenis
     useEffect(() => {
         const lenis = new Lenis({
             duration: 1.2,

@@ -83,10 +83,10 @@ const Testimonial = () => {
     });
 
     return (
-        <div className="max-w-7xl mx-auto sm:px-4 px-6 sm:pt-12 pt-5 relative">
+        <div className="max-w-[1500px] mx-auto sm:px-4 px-6 sm:pt-12 pt-5 relative">
             {/* Background circle gradient */}
             <div className="sm:absolute hidden top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
-                bg-[conic-gradient(from_62deg_at_50%_50%,_rgba(252,138,16,0.25)_0deg,_rgba(254,226,195,0.19)_187.768deg,_rgba(253,197,135,0.19)_272.03deg,_rgba(255,255,255,0.19)_360deg)] 
+                bg-[conic-gradient(from_62deg_at_50%_50%,_rgba(252,138,16,0.25)_0deg,_rgba(254,226,195,0.25)_187.768deg,_rgba(253,197,135,0.25)_272.03deg,_rgba(255,255,255,0.25)_360deg)] 
                 rounded-full blur-lg bg-cover z-0 pointer-events-none"
                 style={{
                     maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)',

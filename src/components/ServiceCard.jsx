@@ -72,6 +72,7 @@ const services = [
         description:
             "At Winz Infotech, we create logos that do more than look good they work hard. They tell stories, build trust, and make your brand memorable across every touchpoint.",
         featureText1: "Why Invest in a",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755105242/Logo_Design_01_fbr2hi.jpg",
 
         featureText2: "Professional",
         featureText3: "Logo?",
@@ -162,8 +163,9 @@ const services = [
         heading: "Graphic Design That Drives",
         highlight: "Action",
         tagline: "Your brand’s visuals are more than decoration; they’re a direct line to your audience’s attention.",
-        description:
-            "At Winz Infotech, we design graphics that don’t just look pretty—they communicate, convert, and create impact where it matters most.",
+        description: "At Winz Infotech, we design graphics that don’t just look pretty—they communicate, convert, and create impact where it matters most.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755105241/Logo_Design_05_nzgtlb.jpg",
+
         featureText1: "Why Great Graphic Design is a",
         featureText2: "Game-Changer",
         featureText3: "",
@@ -234,8 +236,8 @@ const services = [
         heading: "Branding That Builds More Than Just a",
         highlight: "Look",
         tagline: "Branding isn’t just how your business looks—it’s how it feels, connects, and lasts in the minds of your audience.",
-        description:
-            "At Winz Infotech, we build voice, vibe, and visual identity that people remember and return to.",
+        description: "At Winz Infotech, we build voice, vibe, and visual identity that people remember and return to.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106551/Banner_02_copy_n7yv7z.jpg",
 
         featureText1: "Why Strategic",
         featureText2: "Branding",
@@ -302,13 +304,13 @@ const services = [
     },
 
     {
-        path: "social-media",
-        tag: "Social Media",
+        path: "social-media-management",
+        tag: "Social Media Management",
         heading: "Social Media That Builds More Than Just a",
         highlight: "Presence",
         tagline: "Social media is no longer optional. It’s where your brand lives, grows, and connects. We make sure it performs.",
-        description:
-            "From strategy to content to scheduling — we handle it all, so your brand shows up every day and stands out every time.",
+        description: "From strategy to content to scheduling — we handle it all, so your brand shows up every day and stands out every time.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106492/Hording_02_u9pu0h.jpg",
 
         featureText1: "Why",
         featureText2: "Social Media",
@@ -402,8 +404,8 @@ const services = [
         heading: "UGC & CGI Videos That Sell Without Feeling ",
         highlight: "Like Ads",
         tagline: "In a world flooded with content, people crave authenticity and imagination. ",
-        description:
-            "That’s where UGC (User-Generated Content) and CGI (Computer-Generated Imagery) come in one drives trust, the other grabs attention. At Winz Infotech, we blend both to create videos that look real, feel relatable, and drive real results. ",
+        description: "That’s where UGC (User-Generated Content) and CGI (Computer-Generated Imagery) come in one drives trust, the other grabs attention. At Winz Infotech, we blend both to create videos that look real, feel relatable, and drive real results. ",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106443/Office_Wall_03_gi0fou.jpg",
 
         featureText1: "Why",
         featureText2: "UGC & CGI Videos",
@@ -503,8 +505,8 @@ const services = [
         heading: "Influencer Marketing That Feels Real",
         highlight: "And Performs",
         tagline: "People don’t trust ads. They trust people.",
-        description:
-            "That’s why we create influencer campaigns that don’t just 'collab' — they connect. At Winz Infotech, we build influencer strategies rooted in authenticity, creativity, and clear ROI so your brand becomes part of conversations, not interruptions.",
+        description: "That’s why we create influencer campaigns that don’t just 'collab' — they connect. At Winz Infotech, we build influencer strategies rooted in authenticity, creativity, and clear ROI so your brand becomes part of conversations, not interruptions.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106512/Flyer_pv562w.jpg",
 
         featureText1: "Why",
         featureText2: "Influencer Marketing",
@@ -605,8 +607,8 @@ const services = [
         heading: "Performance Marketing That’s Built for ROI,",
         highlight: "Not Just Reach",
         tagline: "We don’t just run ads. We build engines that convert.",
-        description:
-            "We turn ad spend into customers through data-backed strategies, funnel optimization, and relentless performance tweaks. If you're looking for growth you can measure — you're in the right place.",
+        description: "We turn ad spend into customers through data-backed strategies, funnel optimization, and relentless performance tweaks. If you're looking for growth you can measure — you're in the right place.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106558/Brochure_02_Inner_pjp0a5.jpg",
 
         featureText1: "Why",
         featureText2: "Performance Marketing",
@@ -707,8 +709,8 @@ const services = [
         heading: "Lead Systems That Work While",
         highlight: "You Sleep",
         tagline: "You don’t need more followers, you need more buyers.",
-        description:
-            "At Winz Infotech, we don’t just chase vanity metrics; we build high-converting lead funnels that bring real inquiries, real bookings, and real business. We combine sharp strategy, compelling content, and targeted outreach to turn strangers into warm leads daily.",
+        description: "At Winz Infotech, we don’t just chase vanity metrics; we build high-converting lead funnels that bring real inquiries, real bookings, and real business. We combine sharp strategy, compelling content, and targeted outreach to turn strangers into warm leads daily.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_03_basbjv.jpg",
 
         featureText1: "Why",
         featureText2: "Our Lead Gen",
@@ -802,8 +804,8 @@ const services = [
         heading: "More Than Just a Website,",
         highlight: "It’s Your 24/7 Sales Engine.",
         tagline: "Your website isn’t just a brochure, it’s your hardest-working salesperson.",
-        description:
-            "At Winz Infotech, we design high-converting websites and funnels that don't just look stunning, they guide visitors, capture leads, and drive real sales. Whether you're selling services, products, or ideas, we build websites that move people to click, trust, and buy.",
+        description: "At Winz Infotech, we design high-converting websites and funnels that don't just look stunning, they guide visitors, capture leads, and drive real sales. Whether you're selling services, products, or ideas, we build websites that move people to click, trust, and buy.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755105949/Logo_Design_06_1_dt3l7i.jpg",
 
         featureText1: "Why",
         featureText2: "Funnel-Focused Website",
@@ -902,8 +904,8 @@ const services = [
         heading: "Print Design That Leaves a",
         highlight: "Lasting Impression",
         tagline: "In a digital-first world, print isn’t dead boring design is.",
-        description:
-            "At Winz Infotech, we blend strategy with aesthetics to create print assets that stop people mid-scroll in real life. Whether it’s your brochure, packaging, or a billboard on the highway. we make every square inch count.",
+        description: "At Winz Infotech, we blend strategy with aesthetics to create print assets that stop people mid-scroll in real life. Whether it’s your brochure, packaging, or a billboard on the highway. we make every square inch count.",
+        image: "https://res.cloudinary.com/dooejuv06/image/upload/v1755105247/09_edwypx.jpg",
 
         featureText1: "Why",
         featureText2: "Invest in Great",

@@ -10,24 +10,24 @@ const ServiceDetails = () => {
     const service = location.state?.services;
 
     return (
-        <div className="bg-gray-100 lg:mt-[450px] sm:mt-[380px] mt-[420px]">
+        <div className="bg-gray-100 lg:mt-[400px] sm:mt-[350px] mt-[430px]">
             {/* Section 1: Text */}
             <div className="fixed sm:top-16 top-20 -z-1 bg-white xl:pl-16 lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">
-                    <h4 className="text-[#F68D13] font-medium tracking-wide uppercase mb-4 text-base md:text-lg">
+                    <h4 className="text-[#F68D13] font-medium tracking-wide uppercase mb-4 text-4xl lg:text-6xl ">
                         {service?.tag}
                     </h4>
 
-                    <h1 className=" max-w-5xl text-4xl lg:text-6xl font-medium text-black leading-tight mb-4">
+                    <h1 className="max-w-5xl text-xl lg:text-3xl font-medium text-black leading-tight mb-4">
                         {service?.heading} 
                         <span className="text-[#F68D13]"> {service?.highlight}</span>
                     </h1>
 
-                    <p className="text-[#F68D13] font-medium text-sm md:text-base mb-4">
+                    <p className="text-[#F68D13] font-medium text-sm lg:text-base mb-4">
                         {service?.tagline}
                     </p>
 
-                    <p className="text-gray-700 max-w-[870px] text-sm md:text-base leading-relaxed">
+                    <p className="text-gray-700 max-w-[870px] text-sm lg:text-base leading-relaxed">
                         {service?.description}
                     </p>
                 </div>
@@ -37,7 +37,7 @@ const ServiceDetails = () => {
             <div className="sticky top-0 h-screen z-0">
                 <div className="w-full overflow-hidden">
                     <img
-                        src={serviceBg}
+                        src={service?.image || serviceBg}
                         alt="Service Illustration"
                         className="w-full h-[100vh] object-cover"
                     />
@@ -105,7 +105,7 @@ const ServiceDetails = () => {
                                         key={index}
                                         initial={{ y: -20, opacity: 0 }}
                                         whileInView={{ y: 0, opacity: 1 }}
-                                        transition={{ delay: index * 1.0, duration: 0.5, type: "spring", stiffness: 100 }}
+                                        transition={{ delay: index , duration: 0.1, type: "spring", stiffness: 100 }}
                                         viewport={{ once: true }}
                                         className="flex flex-col items-center"
                                     >
@@ -115,8 +115,8 @@ const ServiceDetails = () => {
                                                 backgroundColor: index === service?.steps.length - 1 ? "#F97316" : "#ffffff"  // Only last one is filled
                                             }}
                                             transition={{
-                                                delay: index * 1.0,
-                                                duration: 0.5,
+                                                delay: index,
+                                                duration: 0.1,
                                             }}
                                             className={`size-8 rounded-full border-1 border-[#F68D13] z-10 `}
                                         />
@@ -190,7 +190,7 @@ const ServiceDetails = () => {
                                 initial={{ y: 30, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{
-                                    delay: index + 1.2,
+                                    delay: 1.5 + index * 0.2,
                                     duration: 0.2,
                                     type: "spring",
                                     stiffness: 100,
@@ -202,7 +202,7 @@ const ServiceDetails = () => {
                                     initial={{ x: -50, opacity: 0, rotate: -45 }}
                                     whileInView={{ x: 0, opacity: 1, rotate: 0 }}
                                     transition={{
-                                        delay: index + 1.2,
+                                        delay: 1.5 + index * 0.2,
                                         type: "tween",
                                         stiffness: 200,
                                         damping: 15,
