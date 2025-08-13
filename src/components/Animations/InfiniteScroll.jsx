@@ -127,7 +127,7 @@ export const InfiniteScroll = ({
         );
     }
 
-    const aa = "Gym • Cafe • Fitness & Wellness • Hospital • Cosmetic Clinic • Real Estate • Fashion • Food & Beverage  • E-commerce • D2C Brands • ";
+    const aa = "Banner • Brochure • Business Card • Flyer • Hoardings • Letter Head • Logo Design • Office Wall • Standee Design • All • ";
 
     let segments = aa.split("•").map((s) => s.trim());
 
