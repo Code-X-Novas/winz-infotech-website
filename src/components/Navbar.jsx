@@ -26,8 +26,8 @@ const Navbar = () => {
         <nav className="w-full fixed z-50 px-6 md:px-16 bg-white/50 backdrop-blur-sm ">
             <div className="flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center mt-2">
-                    <img src="/logo.svg" alt="Logo" className="lg:w-24 w-20 h-auto" />
+                <Link to="/" className="flex items-center py-5">
+                    <img src="/logo.svg" alt="Logo" className="lg:w-30 w-24 h-auto" />
                 </Link>
 
                 {/* Desktop Menu */}

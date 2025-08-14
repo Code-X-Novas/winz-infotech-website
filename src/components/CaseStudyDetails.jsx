@@ -13,7 +13,7 @@ const CaseStudyDetails = () => {
     return (
         <div>
             {/* image */}
-            <section className="w-full mt-20 bg-white pt-10 pb-5">
+            <section className="w-full mt-10 bg-white pt-10 pb-5">
                 <div className="lg:px-10 xl:px-12 px-5">
                     <img src={caseStudyBg} alt={correct} className="xl:h-[500px] lg:h-[400px] w-full lg:object-fill object-contain" />
                 </div>
@@ -82,7 +82,7 @@ const CaseStudyDetails = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6 mb-96">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
                 <OrangeCard
                     title="Big ideas? Stuck brand? Half-done website?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
