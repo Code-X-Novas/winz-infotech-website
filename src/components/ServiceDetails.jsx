@@ -39,7 +39,7 @@ const ServiceDetails = () => {
                     <img
                         src={service?.image || serviceBg}
                         alt="Service Illustration"
-                        className="w-full h-[100vh] object-cover"
+                        className="w-full h-[100vh] object-cover grayscale-100"
                     />
                 </div>
             </div>
