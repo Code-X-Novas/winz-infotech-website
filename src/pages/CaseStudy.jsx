@@ -10,46 +10,36 @@ const caseStudies = [
         id: 1,
         title: "Visa & Immigration Consultant – Nagpur",
         tag: "Case Study",
-        description:
-            "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
+        description: "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
         image: caseStudy,
-        link: "#",
     },
     {
         id: 2,
         title: "Beauty Salon – Mumbai",
         tag: "Case Study",
-        description:
-            "Boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
+        description: "Boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
         image: caseStudy,
-        link: "#",
     },
     {
         id: 3,
-        title: "Startup Growth in Tier 2 Cities",
+        title: "Architect – Ahmedabad, Gujarat",
         tag: "Case Study",
-        description:
-            "Helped a fintech startup penetrate smaller markets and grow its user base by 500% in 4 months.",
+        description: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
         image: caseStudy,
-        link: "#",
     },
     {
         id: 4,
-        title: "Visa & Immigration Consultant – Nagpur",
+        title: "Dietician – Delhi",
         tag: "Case Study",
-        description:
-            "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
+        description: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
         image: caseStudy,
-        link: "#",
     },
     {
         id: 5,
-        title: "Visa & Immigration Consultant – Nagpur",
+        title: "Real Estate Builder – Surat",
         tag: "Case Study",
-        description:
-            "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
+        description: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
         image: caseStudy,
-        link: "#",
     },
 ];
 
