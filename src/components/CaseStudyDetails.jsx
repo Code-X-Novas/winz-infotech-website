@@ -1,12 +1,15 @@
 import { useLocation, useParams } from "react-router-dom";
 import caseStudyBg from "../assets/case-bg.png";
 import OrangeCard from "./OrangeCard";
+import { useEffect } from "react";
 
 const CaseStudyDetails = () => {
     const { slug } = useParams();
     const correct = slug.replace(/-/g, " "); // Convert slug back to readable format
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     const location = useLocation();
     const caseStudy = location.state?.case_study;
 
@@ -20,18 +23,18 @@ const CaseStudyDetails = () => {
             </section>
 
             {/* content */}
-            <section className="xl:h-[85vh] h-screen flex md:flex-row flex-col">
+            <section className="xl:h-[80vh] sm:h-screen h-[75vh] flex md:flex-row flex-col mb-10">
                 {/* Left Side - Fixed */}
-                <div className="md:w-1/2 md:h-[30vh] h-[18vh] bg-white sticky top-16 flex items-start justify-start md:pl-12 md:py-12 p-6 z-1">
+                <div className="md:w-1/2 md:h-[30vh] h-[15vh] md:tracking-normal tracking-tighter bg-white sticky top-16 flex items-start justify-start md:pl-12 md:py-12 p-6 z-1">
                     <h1 className="xl:text-5xl lg:text-[38px] capitalize text-3xl font-medium text-black mb-4 leading-snug">
                         {caseStudy?.title} <span className="text-[#F68D13]">{caseStudy?.city}</span>
                     </h1>
                 </div>
 
                 {/* Right Side - Scrollable Content */}
-                <div className="w-full xl:h-[85vh] h-screen pt-30 md:pt-0 absolute overflow-y-auto bg-white">
+                <div className="w-full xl:h-[80vh] h-screen pt-30 md:pt-0 absolute overflow-y-auto bg-white">
                     <div className="mx-auto flex md:justify-end">
-                        <div className="md:w-1/2 md:p-12 p-6 lg:space-y-10 space-y-4">
+                        <div className="md:w-1/2 md:p-12 p-6 xl:space-y-10 md:space-y-6 space-y-4">
 
                             {/* Objective */}
                             <div>
@@ -58,7 +61,7 @@ const CaseStudyDetails = () => {
                             </div>
                             
                             {/* Results */}
-                            <div>
+                            <div className="mb-10">
                                 {
                                     caseStudy?.results && caseStudy.results.length > 0 &&
                                     <div>
