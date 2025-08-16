@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import service2 from "../assets/service2.png";
-import service1 from "../assets/service1.png";
-import service3 from "../assets/service3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -10,55 +7,108 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 
-const images = [service1, service2, service1, service3];
-
 const serviceData = [
     {
         title: "Logo Design",
-        description:
-            "We design logos that do more than look good — they make your brand memorable. Crafted with strategy, built for recall.",
+        description: "We design logos that do more than look good — they make your brand memorable. Crafted with strategy, built for recall.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337735/logoDesign4_gi4zyy.png", 
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign3_nriu2m.png", 
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign2_x5xysn.png", 
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337733/logoDesign1_whgzna.png"
+        ],
     },
     {
         title: "Graphic Design",
-        description:
-            "From scroll-stopping creatives to pitch-ready decks, our designs don’t just look great they communicate, convert, and connect.",
+        description: "From scroll-stopping creatives to pitch-ready decks, our designs don’t just look great they communicate, convert, and connect.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337733/logoDesign1_whgzna.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign3_gemmgl.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign2_zacla9.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign1_sfgon3.png",
+        ]
     },
     {
         title: "Branding",
-        description:
-            "We build bold, consistent brand identities that speak your story, spark trust, and stand out across every touchpoint.",
+        description: "We build bold, consistent brand identities that speak your story, spark trust, and stand out across every touchpoint.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337718/branding2_rypmw6.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337717/branding4_h9f3aa.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337716/branding1_fbelqz.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337716/branding3_lwtkkw.png",
+        ]
     },
     {
         title: "Social Media Management",
-        description:
-            "We plan, create, and manage content that grows your audience and drives engagement with strategy, not just aesthetics.",
+        description: "We plan, create, and manage content that grows your audience and drives engagement with strategy, not just aesthetics.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337760/Gemini_Generated_Image_6ic9u86ic9u86ic9_zkkit2.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337758/Gemini_Generated_Image_a9xltua9xltua9xl_qg6k9r.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337757/Gemini_Generated_Image_pz2jibpz2jibpz2j_sjb65n.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337756/Gemini_Generated_Image_emnl0eemnl0eemnl_ayolld.png",
+        ]
     },
     {
         title: "UGC/CGI Videos",
-        description:
-            "Authentic. Relatable. Viral-ready. We create UGC and CGI-style videos that build trust and convert viewers into loyal buyers.",
+        description: "Authentic. Relatable. Viral-ready. We create UGC and CGI-style videos that build trust and convert viewers into loyal buyers.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337769/Gemini_Generated_Image_7jd3x67jd3x67jd3_rxg784.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337767/Gemini_Generated_Image_7cn21a7cn21a7cn2_ymi8qy.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337766/Gemini_Generated_Image_me2madme2madme2m_uslka2.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337763/Gemini_Generated_Image_bsgpk1bsgpk1bsgp_tcjkpg.png",
+            
+        ]
     },
     {
         title: "Influencer Marketing",
-        description:
-            "We connect your brand with creators your audience already trusts for real impact, not inflated numbers.",
+        description: "We connect your brand with creators your audience already trusts for real impact, not inflated numbers.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337723/Gemini_Generated_Image_ocmytjocmytjocmy_mqkeii.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337723/Gemini_Generated_Image_s7ye35s7ye35s7ye_ka67gp.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337722/Gemini_Generated_Image_mmohlommohlommoh_zfbrfb.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337721/Gemini_Generated_Image_5zcswi5zcswi5zcs_w5rspl.png",
+        ]
     },
     {
         title: "Performance Marketing",
-        description:
-            "Ads that actually perform. We use data, creativity, and targeting to drive sales, not just clicks across Meta, Google & more.",
+        description: "Ads that actually perform. We use data, creativity, and targeting to drive sales, not just clicks across Meta, Google & more.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337745/Gemini_Generated_Image_m7f17vm7f17vm7f1_gxedob.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337743/Gemini_Generated_Image_6o5yav6o5yav6o5y_a05vni.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337743/Gemini_Generated_Image_l24ibll24ibll24i_hqkfn4.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337742/Gemini_Generated_Image_254l8q254l8q254l_tm4ra4.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337740/Gemini_Generated_Image_uc3zr3uc3zr3uc3z_suw84q.png",
+        ]
     },
     {
         title: "Lead Generation",
-        description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes."
+        description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337729/Gemini_Generated_Image_x8v9d4x8v9d4x8v9_jjabgl.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
+        ]
     },
     {
         title:"Website Development",
         description: "We craft fast, responsive, and goal-focused websites built to turn visitors into buyers and scale with your brand.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337775/Gemini_Generated_Image_y6n451y6n451y6n4_tlco2o.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337774/Gemini_Generated_Image_sq6aglsq6aglsq6a_j0gbyq.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337774/Gemini_Generated_Image_juwmgnjuwmgnjuwm_hiqvxv.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337773/Gemini_Generated_Image_xsllj8xsllj8xsll_cll3vy.png",
+        ]
     },
     {
         title: "Print Media",
         description: "From packaging to brochures, we design print materials that feel premium, communicate clearly, and elevate your offline presence.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337751/Gemini_Generated_Image_xs0muyxs0muyxs0m_ie8k5r.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337750/Gemini_Generated_Image_dy0r4idy0r4idy0r_smpujs.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337749/Gemini_Generated_Image_narag0narag0nara_b2rmtr.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337748/Gemini_Generated_Image_n4gdcn4gdcn4gdcn_yvq4fh.png",
+        ]
     },
 ];
 
@@ -1091,15 +1141,17 @@ const ServiceCard = () => {
                                 touchRatio={1}
                                 resistance={true}
                             >
-                                {images.map((imgSrc, imgIndex) => (
-                                    <SwiperSlide key={imgIndex}>
-                                        <img
-                                            src={imgSrc}
-                                            alt={`Slide ${imgIndex + 1}`}
-                                            className="md:h-full sm:h-96 h-72 w-full object-cover"
-                                        />
-                                    </SwiperSlide>
-                                ))}
+                                {service?.images && service?.images.map((imgSrc, imgIndex) => {
+                                    return (
+                                        <SwiperSlide key={imgIndex}>
+                                            <img
+                                                src={imgSrc}
+                                                alt={`Slide ${imgIndex + 1}`}
+                                                className="md:h-full sm:h-96 h-72 w-full grayscale-100 object-cover"
+                                            />
+                                        </SwiperSlide>
+                                    )
+                                })}
                             </Swiper>
                         </motion.div>
                     </motion.div>
