@@ -154,7 +154,7 @@ const Home = () => {
     const [playingIndex, setPlayingIndex] = useState(null);
 
     const colors = [
-        s1,s2,s3,s1,s2,s3,s1,s2,s3,s1,s2,s3
+        s1, s2, s3, s1, s2, s3, s1, s2, s3, s1, s2, s3
     ];
 
     const handleClick = (index) => {
@@ -255,12 +255,12 @@ const Home = () => {
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full md:w-1/2 flex justify-center"
+                    className="w-full md:w-1/2 flex xl:justify-end justify-center"
                 >
                     <img
-                        src={teamImage} // Replace with your actual image path
+                        src={teamImage}
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-28 xl:scale-x-140"
                     />
                 </motion.div>
             </section>
@@ -340,7 +340,7 @@ const Home = () => {
                                         </button>
                                     </div>
                                     <div className="xl:w-[30%] w-full xl:flex hidden">
-                                        <img src={current?.image ||  s1} alt="swiper" />
+                                        <img src={current?.image || s1} alt="swiper" />
                                     </div>
                                 </div>
                             </motion.div>
@@ -436,35 +436,35 @@ const Home = () => {
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index}>
                                 <div className={`lg:h-[400px] h-[300px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
-                                    <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
-                                        {
-                                            playingIndex == index ? (
-                                                <video
-                                                    src={videos[index]?.url}
-                                                    controls
-                                                    autoPlay
-                                                    className="h-full w-full object-contain"
-                                                />
-                                            ) : (
-                                                <>
-                                                    <img src={bg} alt="image" className="bg-cover h-full w-full" />
-                                                    <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
-                                                        {/* button */}
-                                                        <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                fill="white"
-                                                                viewBox="0 0 24 24"
-                                                                className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
-                                                            >
-                                                                <path d="M8 5v14l11-7z" />
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </>
-                                            )
-                                        }
-                                    </div>
+                                <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
+                                    {
+                                        playingIndex == index ? (
+                                            <video
+                                                src={videos[index]?.url}
+                                                controls
+                                                autoPlay
+                                                className="h-full w-full object-contain"
+                                            />
+                                        ) : (
+                                            <>
+                                                <img src={bg} alt="image" className="bg-cover h-full w-full" />
+                                                <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
+                                                    {/* button */}
+                                                    <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            fill="white"
+                                                            viewBox="0 0 24 24"
+                                                            className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
+                                                        >
+                                                            <path d="M8 5v14l11-7z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </>
+                                        )
+                                    }
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
