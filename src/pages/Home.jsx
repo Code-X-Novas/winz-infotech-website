@@ -260,7 +260,7 @@ const Home = () => {
                     <img
                         src={teamImage}
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-24 xl:scale-x-130"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-16 xl:scale-x-125"
                     />
                 </motion.div>
             </section>
