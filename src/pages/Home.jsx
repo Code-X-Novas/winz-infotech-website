@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import teamImage from "../assets/homeImage.png";
-import { FaBullhorn, FaPaintBrush, FaCamera } from "react-icons/fa";
+import { FaBullhorn, FaCamera, } from "react-icons/fa";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { HiMiniPaintBrush } from "react-icons/hi2";
 import { FiTarget } from "react-icons/fi";
@@ -26,6 +26,7 @@ import s3 from "../assets/service3.png"
 import image1 from "../assets/case1.png";
 import image2 from "../assets/case2.png";
 import image3 from "../assets/case3.png";
+import { BadgePercent } from "lucide-react";
 
 const services = [
     {
@@ -51,7 +52,7 @@ const services = [
     {
         title: "Performance Marketing",
         desc: "Build trust. Shape perception.",
-        icon: <FaPaintBrush className="text-[#F68D13] md:text-4xl text-2xl" />,
+        icon: <BadgePercent className="text-[#F68D13] md:size-10 size-7" />,
     },
     {
         title: "Website Developement",
@@ -224,7 +225,7 @@ const Home = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.4 }}
-                            className="bg-[#F68D13] cursor-pointer text-white text-sm font-medium flex items-center"
+                            className="bg-[#F68D13] lg:px-5 lg:h-12 cursor-pointer text-white text-sm font-medium flex items-center"
                             onClick={() => navigate('/contact')}
                         >
                             <TextHover customClass="!text-base" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
@@ -236,14 +237,14 @@ const Home = () => {
                         {[
                             { count: "10M+", label: "Reach" },
                             { count: "375+", label: "Clients" },
-                            { count: "8+", label: "Years Experience" },
+                            { count: "8+", label: "Years of Experience" },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.7 + i * 0.2 }}
-                                className="text-center relative"
+                                className="text-center relative md:max-w-[200px] max-w-[80px]"
                             >
                                 <p className="lg:text-5xl text-3xl font-medium text-black">{item.count}</p>
                                 <p className="text-gray-500 text-sm lg:mt-3 mt-1">{item.label}</p>
@@ -280,7 +281,7 @@ const Home = () => {
                 </div>
 
                 {/* Card */}
-                <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-x-16 gap-x-6 gap-y-6">
+                <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-x-16 sm:gap-x-10 gap-x-6 gap-y-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -288,7 +289,7 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white md:p-6 p-3 shadow-[#ecad65] shadow text-center transition-shadow duration-300"
+                            className="bg-white xl:py-16 lg:py-12 sm:py-10 py-6 sm:p-6 p-3 shadow-[#ecad65] shadow text-center transition-shadow duration-300"
                         >
                             <div className="md:mb-4 mb-2.5 flex justify-center">{service.icon}</div>
                             <h3 className="md:text-xl font-medium md:mb-2 mb-1">{service.title}</h3>
@@ -360,16 +361,13 @@ const Home = () => {
             </section>
 
             {/* Infinite Scroll */}
-            <section className="w-full bg-white mx-auto  md:py-12 py-8 relative">
-                <h3 className="lg:text-4xl md:text-3xl text-2xl sm:tracking-normal lg:px-16 px-6 tracking-tighter font-medium mb-8">
-                    Industries we have worked with
-                </h3>
-                <div style={{ position: 'relative' }}>
+            <section className="w-full bg-white lg:py-10 sm:py-5 mx-auto relative">
+                <div className="relative">
                     <InfiniteScroll
                         texts={['Gym • Cafe Fitness & Wellness • Hospital • Real Estate • Fashion • Food & Beverage • Education • E-commerce •']}
                         velocity={80}
                         numCopies={2}
-                        className="custom-scroll-text font-medium lg:text-5xl md:text-4xl text-3xl"
+                        className="custom-scroll-text font-medium lg:text-6xl md:text-5xl text-4xl"
                     />
                 </div>
             </section>
@@ -405,13 +403,13 @@ const Home = () => {
             <section className="bg-[#f5f5f5] pt-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
-                    <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-medium">
+                    <h2 className="xl:text-5xl leading-relaxed md:text-4xl text-3xl font-medium">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>
 
                 {/* Card swiper color bg */}
-                <div className="w-full xl:max-w-7xl xl:h-[70vh] lg:h-[90vh] md:h-[65vh] sm:h-[70vh] h-[55vh] mx-auto py-10 px-6 lg:px-10">
+                <div className="w-full lg:h-[85vh] md:h-[85vh] sm:h-[70vh] h-[60vh] mx-auto py-10 px-6 lg:px-10 xl:px-16 ">
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
@@ -442,10 +440,11 @@ const Home = () => {
                                 slidesPerView: 3   // desktop and up
                             },
                         }}
-                    >
+                    >   
+                        {/* side card */}
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index}>
-                                <div className={`lg:h-[400px] h-[300px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
+                                <div className={`xl:h-[500px] md:h-[400px] h-[370px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
                                 <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
                                     {
                                         playingIndex == index ? (
@@ -479,7 +478,6 @@ const Home = () => {
                         ))}
                     </Swiper>
                 </div>
-
             </section>
 
             {/* Orange Box */}

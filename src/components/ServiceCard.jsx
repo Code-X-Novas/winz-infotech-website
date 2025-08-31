@@ -16,6 +16,7 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign2_x5xysn.png", 
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337733/logoDesign1_whgzna.png"
         ],
+        price: 14999,
     },
     {
         title: "Graphic Design",
@@ -25,7 +26,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign3_gemmgl.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign2_zacla9.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337685/graphicDesign1_sfgon3.png",
-        ]
+        ],
+        price: 1499,
     },
     {
         title: "Branding",
@@ -35,7 +37,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337717/branding4_h9f3aa.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337716/branding1_fbelqz.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337716/branding3_lwtkkw.png",
-        ]
+        ],
+        price: 49999,
     },
     {
         title: "Social Media Management",
@@ -45,7 +48,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337758/Gemini_Generated_Image_a9xltua9xltua9xl_qg6k9r.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337757/Gemini_Generated_Image_pz2jibpz2jibpz2j_sjb65n.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337756/Gemini_Generated_Image_emnl0eemnl0eemnl_ayolld.png",
-        ]
+        ],
+        price: 29999,
     },
     {
         title: "UGC/CGI Videos",
@@ -55,8 +59,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337767/Gemini_Generated_Image_7cn21a7cn21a7cn2_ymi8qy.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337766/Gemini_Generated_Image_me2madme2madme2m_uslka2.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337763/Gemini_Generated_Image_bsgpk1bsgpk1bsgp_tcjkpg.png",
-            
-        ]
+        ],
+        price: 5999,
     },
     {
         title: "Influencer Marketing",
@@ -66,7 +70,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337723/Gemini_Generated_Image_s7ye35s7ye35s7ye_ka67gp.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337722/Gemini_Generated_Image_mmohlommohlommoh_zfbrfb.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337721/Gemini_Generated_Image_5zcswi5zcswi5zcs_w5rspl.png",
-        ]
+        ],
+        price: 14999,
     },
     {
         title: "Performance Marketing",
@@ -77,7 +82,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337743/Gemini_Generated_Image_l24ibll24ibll24i_hqkfn4.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337742/Gemini_Generated_Image_254l8q254l8q254l_tm4ra4.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337740/Gemini_Generated_Image_uc3zr3uc3zr3uc3z_suw84q.png",
-        ]
+        ],
+        price: 24999,
     },
     {
         title: "Lead Generation",
@@ -87,7 +93,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
-        ]
+        ],
+        price: 24999,
     },
     {
         title:"Website Development",
@@ -97,7 +104,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337774/Gemini_Generated_Image_sq6aglsq6aglsq6a_j0gbyq.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337774/Gemini_Generated_Image_juwmgnjuwmgnjuwm_hiqvxv.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337773/Gemini_Generated_Image_xsllj8xsllj8xsll_cll3vy.png",
-        ]
+        ],
+        price: 49999,
     },
     {
         title: "Print Media",
@@ -107,7 +115,8 @@ const serviceData = [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337750/Gemini_Generated_Image_dy0r4idy0r4idy0r_smpujs.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337749/Gemini_Generated_Image_narag0narag0nara_b2rmtr.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337748/Gemini_Generated_Image_n4gdcn4gdcn4gdcn_yvq4fh.png",
-        ]
+        ],
+        price: 999,
     },
 ];
 
@@ -1065,13 +1074,11 @@ const ServiceCard = () => {
 
     const refs = serviceData.map(() => useInView({ triggerOnce: true, threshold: 0.1 }));
 
-
     return (
-        <div className="flex flex-col lg:gap-12 gap-9 bg-gray-100">
+        <div className="flex flex-col gap-5 bg-gray-100">
             {serviceData.map((service, index) => {
                 const [ref, inView] = refs[index];
-
-                    return (
+                return (
                     <motion.div
                         ref={ref}
                         key={index}
@@ -1079,14 +1086,14 @@ const ServiceCard = () => {
                         animate={inView ? { opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: index * 0.2 }}
                         className={`flex border-2 border-[#FC8A102E] ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-                            } flex-col items-center md:gap-8 gap-4 overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-white`}
+                            } flex-col items-center md:gap-12 gap-4 overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-white`}
                     >
                         {/* Text Section - Animates from Left */}
                         <motion.div
                             initial={{ x: index % 2 === 1 ? 50 : -50, opacity: 0 }}
                             animate={inView ? { x: 0, opacity: 1 } : {}}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="md:w-2/3 w-full sm:p-8 p-5"
+                            className="md:w-3/4 w-full sm:p-6 p-4"
                         >
                             <h2
                                 onClick={() => {
@@ -1099,13 +1106,18 @@ const ServiceCard = () => {
                                     });
                                 }}
 
-                                className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-medium md:mb-4 mb-2"
+                                className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-medium md:mb-3 mb-2"
                             >
                                 {service.title}
                             </h2>
                             <p className="text-gray-800 md:text-lg leading-relaxed">
                                 {service.description}
                             </p>
+                            <div className="mt-4 pt-3 border-t border-gray-200">
+                                <p className="md:text-lg text-base">
+                                    Starting from <span className="font-bold">₹{service.price.toLocaleString('en-IN')}</span>
+                                </p>
+                            </div>
                         </motion.div>
 
                         {/* Image Section - Animates from Right */}
@@ -1113,7 +1125,7 @@ const ServiceCard = () => {
                             initial={{ x: index % 2 === 1 ? -50 : 50, opacity: 0 }}
                             animate={inView ? { x: 0, opacity: 1 } : {}}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="md:w-1/3 w-full"
+                            className="md:w-1/4 w-full"
                         >
                             <Swiper
                                 modules={[Autoplay]}
@@ -1131,7 +1143,7 @@ const ServiceCard = () => {
                                             <img
                                                 src={imgSrc}
                                                 alt={`Slide ${imgIndex + 1}`}
-                                                className="md:h-full sm:h-96 h-72 w-full grayscale-100 object-cover"
+                                                className="sm:h-64 h-72 w-full grayscale-100 object-cover"
                                             />
                                         </SwiperSlide>
                                     )

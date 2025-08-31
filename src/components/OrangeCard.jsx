@@ -18,8 +18,8 @@ const OrangeCard = ({ title, description, buttonText }) => {
             ref={ref}
             className="bg-[#F68D13] w-full text-white px-6 lg:px-12 py-6 xl:py-0 relative overflow-hidden"
         >
-            <div className="mx-auto flex md:flex-row flex-col items-center md:gap-8">
-                {/* Text Section */}
+            <div className="mx-auto xl:-my-6 flex md:flex-row flex-col items-center md:gap-8">
+                {/* Left Side Text Section */}
                 <motion.div
                     className="md:w-3/5"
                     initial={{ opacity: 0, y: 40 }}
@@ -46,7 +46,7 @@ const OrangeCard = ({ title, description, buttonText }) => {
                     </div>
                 </motion.div>
 
-                {/* Image Section */}
+                {/* Right Side Image Section */}
                 <motion.div
                     className="md:w-2/5"
                     initial={{ opacity: 0, x: 50 }}

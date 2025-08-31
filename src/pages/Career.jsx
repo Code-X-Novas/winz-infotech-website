@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
 import { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
 
 const whyJoinSteps = [
     {
@@ -35,6 +36,8 @@ const CareerPage = () => {
         message: ''
     });
 
+    const [loading, setLoading] = useState(false); // loader for upload
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -55,10 +58,64 @@ const CareerPage = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const uploadToCloudinary = async (file) => {
+        const data = new FormData();
+        data.append("file", file);
+        data.append("upload_preset", "career_form");
+
+        const res = await axios.post(
+            "https://api.cloudinary.com/v1_1/dooejuv06/upload",
+            data
+        );
+
+        return res.data.secure_url; // return file URL
+
+        // secret: 7hBYCBiiSC2832ueNRo1_C2kUdA
+        // key: 465426361151389
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add your form submission logic here
+        try {
+            setLoading(true);
+
+            let fileUrl = "";
+            if (formData.attachment) {
+                fileUrl = await uploadToCloudinary(formData.attachment);
+            }
+
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                contact: formData.contact,
+                position: formData.position,
+                message: formData.message,
+                attachment_url: fileUrl || "No attachment uploaded",
+                to_email: "nabinagrawal64@gmail.com", // replace with your admin email
+            };
+
+            await emailjs.send(
+                "YOUR_SERVICE_ID",
+                "YOUR_TEMPLATE_ID",
+                templateParams,
+                "YOUR_PUBLIC_KEY"
+            );
+
+            alert("Application submitted successfully!");
+            setFormData({
+                name: "",
+                contact: "",
+                email: "",
+                position: "",
+                message: "",
+                attachment: null,
+            });
+        } catch (err) {
+            console.error(err);
+            alert("Failed to submit application.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -125,7 +182,7 @@ const CareerPage = () => {
                         <p className="text-gray-600 lg:text-[17px] lg:ml-2 ml-1 text-sm font-normal lg:leading-9 md:leading-7 leading-6 text-left">
                             If you’re done with average and ready to build something meaningful,
                             we want to hear from you. <span className="font-medium text-black">Bring your ambition. We'll bring the
-                            opportunities.</span>
+                                opportunities.</span>
                         </p>
                     </div>
                 </div>
@@ -146,7 +203,7 @@ const CareerPage = () => {
 
                             {/* contact */}
                             <input
-                                type="text"
+                                type="number"
                                 name="contact"
                                 placeholder="Contact No"
                                 value={formData.contact}
@@ -169,7 +226,7 @@ const CareerPage = () => {
                                 name="position"
                                 value={formData.position}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100 appearance-none cursor-pointer"
+                                className="w-full border px-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100 appearance-none cursor-pointer"
                             >
                                 <option value="" disabled className="text-gray-500">Select Position</option>
                                 <option value="Graphic Designers">Graphic Designers</option>
@@ -195,10 +252,10 @@ const CareerPage = () => {
                                     <span className={formData.attachment ? "text-black" : "text-gray-500"}>
                                         {formData.attachment ? formData.attachment.name : "Attachment"}
                                     </span>
-                                    <svg 
-                                        className="w-5 h-5 text-gray-400" 
-                                        fill="none" 
-                                        stroke="currentColor" 
+                                    <svg
+                                        className="w-5 h-5 text-gray-400"
+                                        fill="none"
+                                        stroke="currentColor"
                                         viewBox="0 0 24 24"
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
@@ -213,7 +270,7 @@ const CareerPage = () => {
                                 value={formData.message}
                                 onChange={handleInputChange}
                                 rows="3"
-                                className="w-full border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm bg-gray-100 resize-none"
+                                className="w-full bg-white placeholder:text-gray-500 border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm bg-gray-100 resize-none"
                             />
 
                             {/* submit button */}
@@ -237,6 +294,12 @@ const CareerPage = () => {
                         </p>
                     </div>
                 </div>
+
+                {loading && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-40 z-50">
+                        <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                )}
             </div>
         </div>
     );

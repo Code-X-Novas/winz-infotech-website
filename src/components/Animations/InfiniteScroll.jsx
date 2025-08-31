@@ -127,7 +127,7 @@ export const InfiniteScroll = ({
         );
     }
 
-    const aa = "Banner • Brochure • Business Card • Flyer • Hoardings • Letter Head • Logo Design • Office Wall • Standee Design • All • ";
+    const aa = "Gym • Cafe Fitness & Wellness • Hospital • Real Estate • Fashion • Food & Beverage • Education • E-commerce •";
 
     let segments = aa.split("•").map((s) => s.trim());
 

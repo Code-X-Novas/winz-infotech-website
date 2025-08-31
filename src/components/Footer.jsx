@@ -43,13 +43,23 @@ const Footer = ({ className = "" }) => {
                                             </button>
                                         </li>
                                         <li>
-                                            <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
-                                                Portfolio
+                                            <button onClick={() => navigate("/services")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Services
                                             </button>
                                         </li>
                                         <li>
-                                            <button onClick={() => navigate("/services")} className="hover:text-[#FC8A10] cursor-pointer">
-                                                Services
+                                            <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Portfolio 
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/case-study")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Case Study
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
+                                                Blogs
                                             </button>
                                         </li>
                                         <li>
@@ -60,11 +70,6 @@ const Footer = ({ className = "" }) => {
                                         <li>
                                             <button onClick={() => navigate("/career")} className="hover:text-[#FC8A10] cursor-pointer">
                                                 Career
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
-                                                Blog
                                             </button>
                                         </li>
                                     </ul>

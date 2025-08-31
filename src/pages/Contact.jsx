@@ -97,9 +97,10 @@ const Contact = () => {
 
                     {/* Right Side Form */}
                     <div className="lg:p-8 md:p-4 p-6 h-full bg-gray-100 basis-[40%]">
-                        <h3 className="text-center text-[#F68D13] font-medium mb-6 text-sm sm:text-lg">
+                        <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
                             Let’s Build the Next Big Thing.
                         </h3>
+                        {/* form */}
                         <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-white">
                             <input
                                 type="text"
@@ -110,7 +111,7 @@ const Contact = () => {
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
-                                type="text"
+                                type="number"
                                 name="contactNo"
                                 placeholder="Contact No"
                                 value={formData.contactNo}
@@ -137,14 +138,14 @@ const Contact = () => {
                                 name="budget"
                                 value={formData.budget}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white"
+                                className="w-full px-1 cursor-pointer border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white"
                             >
                                 <option value="" disabled>Select Budget Range</option>
-                                <option value="Under ₹50,000">Under ₹50,000</option>
-                                <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
-                                <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 - ₹2,50,000</option>
-                                <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 - ₹5,00,000</option>
-                                <option value="Above ₹5,00,000">Above ₹5,00,000</option>
+                                <option value="Under ₹5,000">Under ₹5,000</option>
+                                <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000</option>
+                                <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                                <option value="₹50,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                                <option value="Above ₹50,000">Above ₹50,000</option>
                             </select>
                             <textarea
                                 name="message"
@@ -152,7 +153,7 @@ const Contact = () => {
                                 value={formData.message}
                                 onChange={handleInputChange}
                                 rows={3}
-                                className="w-full border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm resize-none"
+                                className="w-full bg-white placeholder:text-gray-500 border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm resize-none"
                             />
 
                             <div className="flex justify-center">

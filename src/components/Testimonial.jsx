@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const testimonials = [
     {
@@ -60,6 +60,9 @@ const testimonials = [
 const Testimonial = () => {
 
     const [columnCount, setColumnCount] = useState(1);
+    const mobileScrollRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const updateColumnCount = () => {
@@ -82,10 +85,36 @@ const Testimonial = () => {
         columns[i % columnCount].push(t);
     });
 
+    // Auto-scroll for mobile testimonials
+    useEffect(() => {
+        if (!isHovered && mobileScrollRef.current) {
+            const interval = setInterval(() => {
+                const container = mobileScrollRef.current;
+                const cardWidth = container.children[0]?.offsetWidth || 0;
+                const gap = 24; // space-x-6 = 24px
+                const scrollDistance = cardWidth + gap;
+
+                setCurrentIndex((prevIndex) => {
+                    const nextIndex = (prevIndex + 1) % testimonials.length;
+
+                    // Smooth scroll to next testimonial
+                    container.scrollTo({
+                        left: nextIndex * scrollDistance,
+                        behavior: 'smooth'
+                    });
+
+                    return nextIndex;
+                });
+            }, 3000); // Auto-scroll every 3 seconds
+
+            return () => clearInterval(interval);
+        }
+    }, [isHovered, testimonials.length]);
+    
     return (
         <div className="max-w-[1500px] mx-auto sm:px-4 px-6 sm:pt-12 pt-5 relative">
             {/* Background circle gradient */}
-            <div className="sm:absolute hidden top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
+            <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
                 bg-[conic-gradient(from_62deg_at_50%_50%,_rgba(252,138,16,0.25)_0deg,_rgba(254,226,195,0.25)_187.768deg,_rgba(253,197,135,0.25)_272.03deg,_rgba(255,255,255,0.25)_360deg)] 
                 rounded-full blur-lg bg-cover z-0 pointer-events-none"
                 style={{
@@ -128,11 +157,18 @@ const Testimonial = () => {
             </div>
 
             {/* Mobile Testimonials */}
-            <div className="flex sm:hidden space-x-6 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+            <div 
+                ref={mobileScrollRef}
+                className="flex sm:hidden space-x-6 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onTouchStart={() => setIsHovered(true)}
+                onTouchEnd={() => setIsHovered(false)}
+            >
                 {testimonials.map((t, i) => (
                     <div
                         key={i}
-                        className="snap-center flex-shrink-0 w-[85vw] h-fit bg-white rounded-xl shadow-md p-6"
+                        className="snap-center flex-shrink-0 w-[85vw] h-fit bg-white shadow-md p-6"
                     >
                         <p className="text-gray-700 text-sm leading-relaxed line-clamp-6 mb-4">“{t.text}”</p>
                         <div className="flex items-center gap-4 mt-4 border-t pt-4">
