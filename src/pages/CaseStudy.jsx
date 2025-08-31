@@ -9,35 +9,35 @@ const caseStudies = [
     {
         id: 1,
         title: "Visa & Immigration Consultant – Nagpur",
-        tag: "Case Study",
+        tag: "Visa & Immigration",
         description: "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
         image: caseStudy,
     },
     {
         id: 2,
         title: "Beauty Salon – Mumbai",
-        tag: "Case Study",
+        tag: "Beauty Salon",
         description: "Boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
         image: caseStudy,
     },
     {
         id: 3,
         title: "Architect – Ahmedabad, Gujarat",
-        tag: "Case Study",
+        tag: "Architect",
         description: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
         image: caseStudy,
     },
     {
         id: 4,
         title: "Dietician – Delhi",
-        tag: "Case Study",
+        tag: "Dietician",
         description: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
         image: caseStudy,
     },
     {
         id: 5,
         title: "Real Estate Builder – Surat",
-        tag: "Case Study",
+        tag: "Real Estate",
         description: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
         image: caseStudy,
     },
@@ -146,7 +146,7 @@ const CaseStudy = () => {
                     <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">
                         Our Clients’ <span className="text-[#F68D13]">Journey</span>
                     </h2>
-                    <p className="max-w-3xl md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
+                    <p className="md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                         From boosting bookings to scaling revenue and building unforgettable brands explore
                         real stories of real results with Winz Infotech.
                     </p>

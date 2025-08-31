@@ -2,12 +2,34 @@ import bgImage from "../img/bg1.png";
 import mapimg from "../img/map.png";
 import ContactUsFooter from "../components/ContactUsFooter";
 import TextHover from "../components/Animations/TextHover";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        contactNo: '',
+        email: '',
+        businessName: '',
+        budget: '',
+        message: ''
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        // Add your form submission logic here
+    };
 
     return (
         <>
@@ -78,41 +100,64 @@ const Contact = () => {
                         <h3 className="text-center text-[#F68D13] font-medium mb-6 text-sm sm:text-lg">
                             Let’s Build the Next Big Thing.
                         </h3>
-                        <form className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-white">
+                        <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-white">
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name"
+                                value={formData.name}
+                                onChange={handleInputChange}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="text"
+                                name="contactNo"
                                 placeholder="Contact No"
+                                value={formData.contactNo}
+                                onChange={handleInputChange}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email"
+                                value={formData.email}
+                                onChange={handleInputChange}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="text"
+                                name="businessName"
                                 placeholder="Business Name/Link"
+                                value={formData.businessName}
+                                onChange={handleInputChange}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
-                            <input
-                                type="text"
-                                placeholder="Budget"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
-                            />
-                            <input
-                                type="text"
-                                placeholder="Query"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm"
+                            <select
+                                name="budget"
+                                value={formData.budget}
+                                onChange={handleInputChange}
+                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white"
+                            >
+                                <option value="" disabled>Select Budget Range</option>
+                                <option value="Under ₹50,000">Under ₹50,000</option>
+                                <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                                <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 - ₹2,50,000</option>
+                                <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 - ₹5,00,000</option>
+                                <option value="Above ₹5,00,000">Above ₹5,00,000</option>
+                            </select>
+                            <textarea
+                                name="message"
+                                placeholder="Message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                rows={3}
+                                className="w-full border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm resize-none"
                             />
 
                             <div className="flex justify-center">
-                                <button className="bg-[#F68D13] cursor-pointer text-white transition">
-                                    <TextHover text="APPLY NOW" />
+                                <button type="submit" className="bg-[#F68D13] cursor-pointer text-white transition">
+                                    <TextHover text="Build With Winz" />
                                 </button>
                             </div>
                         </form>
@@ -120,7 +165,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map Section */}
-                <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-md mt-8 sm:mt-10">
+                <div className="relative w-full h-[350px] md:h-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-md mt-8 sm:mt-10">
                     {/* Label */}
                     <div className="absolute top-0 left-3 sm:left-4 z-10 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">
                         Office Address
@@ -146,7 +191,7 @@ const Contact = () => {
 
                     {/* Map Image Clickable */}
                     <a
-                        href="https://www.google.com/maps?q=306,+Shivam+Infinity,+Opp.+S.T.+Workshop+Dharampur+Road,+Abrama,+Valsad,+Gujarat+396001"
+                        href="https://maps.app.goo.gl/s7CXUCPHhoPNXR3v7?g_st=aw"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -163,7 +208,10 @@ const Contact = () => {
                             Address
                         </h3>
                         <hr className="border-t-2 border-gray-500 w-6 sm:w-8 mb-2" />
-                        <p className="md:text-[17px] text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
+                        <p 
+                            onClick={() => window.open("https://maps.app.goo.gl/s7CXUCPHhoPNXR3v7?g_st=aw", "_blank")} 
+                            className="md:text-[17px] text-xs sm:text-sm hover:underline text-gray-700 leading-relaxed font-normal cursor-pointer"
+                        >
                             306, Shivam Infinity,<br />
                             Opp. S.T. Workshop Dharampur Road,<br />
                             Abrama, Valsad, Gujarat – 396001.

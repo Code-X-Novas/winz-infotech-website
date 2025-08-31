@@ -34,13 +34,16 @@ const OrangeCard = ({ title, description, buttonText }) => {
                     <p className="text-white md:text-base text-sm lg:text-lg md:mb-6 mb-4">
                         {description}
                     </p>
-                    
-                    <motion.button
-                        onClick={onButtonClick}
-                        className="bg-white w-fit text-[#F68D13] font-medium rounded transition"
-                    >
-                        <TextHover text={buttonText} />
-                    </motion.button>
+
+                    {/* button */}
+                    <div className="flex md:py-0 md:justify-start justify-center">
+                        <motion.button
+                            onClick={onButtonClick}
+                            className="bg-white w-fit text-[#F68D13] font-medium rounded transition"
+                        >
+                            <TextHover customClass='lg:text-xl px-1.5' text={buttonText} />
+                        </motion.button>
+                    </div>
                 </motion.div>
 
                 {/* Image Section */}

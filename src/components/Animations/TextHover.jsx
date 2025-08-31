@@ -33,7 +33,7 @@ const TextHover = ({ text, customClass="" }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <ul ref={listRef} className="list-none lg:text-base sm:text-sm text-xs">
+                <ul ref={listRef} className={`list-none ${customClass} lg:text-base text-sm`}>
                     <li className="v-slide leading-[20px]">{text}</li>
                     <li className="v-slide leading-[20px]">{text}</li>
                 </ul>

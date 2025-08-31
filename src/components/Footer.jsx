@@ -1,6 +1,5 @@
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaBehance, FaYoutube, FaPhoneAlt, } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import imglogo from "../img/logo.png";
 import TextHover from "./Animations/TextHover";
 import { useNavigate } from "react-router-dom";
 
@@ -11,29 +10,30 @@ const Footer = ({ className = "" }) => {
     return (
         <footer className={`bg-white text-gray-800  ${className}`}>
             {/* Top content */}
-            <div className="max-w-screen mx-auto px-4 md:px-10 xl:px-28 lg:py-12 pb-8">
-                <div className="flex flex-col lg:flex-row xl:gap-20 md:gap-12 justify-between">
+            <div className="max-w-screen mx-auto px-4 md:px-10 xl:px-16 lg:py-12 pb-8">
+                <div className="flex flex-col lg:flex-row xl:gap-10 lg:gap-6 md:gap-12 justify-between">
                     {/* Left: Logo & Links */}
                     <div className="flex flex-col gap-10">
-                        <div className="flex flex-col gap-6 lg:flex-row lg:justify-between items-center lg:gap-20">
+                        {/* top content */}
+                        <div className="flex flex-col gap-6 lg:flex-row lg:gap-20 items-center">
                             {/* Logo + Description */}
-                            <div className="lg:w-1/2 text-center lg:text-left">
+                            <div className="lg:w-1/2 text-center mt-8 lg:mt-0 lg:text-left">
                                 <img
-                                    src={imglogo}
+                                    src="./logoNew.png"
                                     alt="Logo"
-                                    className="h-46 w-auto mx-auto lg:mx-0"
+                                    className="md:h-16 h-14 w-auto mx-auto lg:mx-0"
                                 />
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm lg:mt-10 mt-5 text-gray-600">
                                     A creative agency that blends design with performance. From
                                     branding to influencer campaigns — we execute ideas that move.
                                 </p>
                             </div>
 
                             {/* Quick Links & Landing Pages */}
-                            <div className="flex lg:w-auto w-full justify-evenly flex-row gap-6 lg:gap-24 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
+                            <div className="flex lg:w-auto w-full justify-evenly flex-row gap-6 lg:gap-12 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
                                 {/* Quick Links */}
                                 <div className="space-y-3 mb-6 md:mb-0">
-                                    <h3 className="font-bold" style={{ color: "#FC8A10" }}>
+                                    <h3 className="font-bold min-w-[100px] text-[#FC8A10]">
                                         QUICK LINKS
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
@@ -72,11 +72,11 @@ const Footer = ({ className = "" }) => {
 
                                 {/* Landing Pages */}
                                 <div className="space-y-3">
-                                    <h3 className="font-bold" style={{ color: "#FC8A10" }}>
+                                    <h3 className="font-bold text-[#FC8A10]">
                                         LANDING PAGES
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li><a href="https://hook-neon.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FC8A10]">Hook</a></li>
+                                        <li><a href="https://hook-neon.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FC8A10]">Doctors & Medical Professionals</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,14 +132,14 @@ const Footer = ({ className = "" }) => {
                             </div>
 
                             {/* Email + Phones */}
-                            <div className="flex flex-col md:mb-0 mb-6 sm:flex-row gap-6 lg:gap-10 text-sm text-gray-700 text-center lg:text-left">
+                            <div className="flex flex-col md:mb-0 mb-6 sm:flex-row gap-6 lg:gap-10 text-base md:text-sm text-gray-700 text-center lg:text-left">
                                 {/* Email */}
                                 <a
                                     href="mailto:Info@winzinfotech.com"
-                                    className="flex items-center justify-center md:justify-start gap-2 underline hover:no-underline transform transition duration-200 hover:scale-90 cursor-pointer"
+                                    className="flex items-center justify-center md:justify-start gap-2 underline hover:no-underline transform transition duration-200 cursor-pointer"
                                 >
-                                    <MdEmail />
-                                    <span className="transition duration-200 hover:scale-90">
+                                    <MdEmail className="size-5 text-[#FC8A10]" />
+                                    <span className="text-nowrap hover:text-[#FC8A10] ">
                                         Info@winzinfotech.com
                                     </span>
                                 </a>
@@ -148,19 +148,19 @@ const Footer = ({ className = "" }) => {
                                 <div className="flex flex-col items-center md:items-start space-y-2 lg:mb-6">
                                     <a
                                         href="tel:+917203030730"
-                                        className="flex items-center gap-2 underline hover:no-underline transform transition duration-200 hover:scale-90 cursor-pointer"
+                                        className="flex items-center gap-2 underline hover:no-underline transform transition duration-200 cursor-pointer"
                                     >
-                                        <FaPhoneAlt />
-                                        <span className="text-nowrap transition duration-200 hover:scale-90">
+                                        <FaPhoneAlt className="size-5 text-[#FC8A10]" />
+                                        <span className="text-nowrap hover:text-[#FC8A10] ">
                                             +917203030730
                                         </span>
                                     </a>
                                     <a
                                         href="tel:+919998081838"
-                                        className="flex items-center gap-2 underline hover:no-underline transform transition duration-200 hover:scale-90 cursor-pointer"
+                                        className="flex items-center gap-2 underline hover:no-underline transform transition duration-200 cursor-pointer"
                                     >
-                                        <FaPhoneAlt />
-                                        <span className="text-nowrap transition duration-200 hover:scale-90">
+                                        <FaPhoneAlt className="size-5 text-[#FC8A10]" />
+                                        <span className="text-nowrap hover:text-[#FC8A10] ">
                                             +919998081838
                                         </span>
                                     </a>
@@ -171,7 +171,7 @@ const Footer = ({ className = "" }) => {
                     </div>
 
                     {/* Right: Contact Form */}
-                    <div className="w-full lg:max-w-sm bg-gray-200 p-6 rounded">
+                    <div className="w-full lg:max-w-md bg-gray-200 p-6 rounded">
                         <h3 className="font-bold mb-1" style={{ color: "#FC8A10" }}>
                             CONTACT US
                         </h3>

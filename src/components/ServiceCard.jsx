@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -1062,32 +1061,17 @@ const services = [
 ]
 
 const ServiceCard = () => {
-    const [isMobile, setIsMobile] = useState(false);
-    const [showAll, setShowAll] = useState(false);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, []);
 
     const refs = serviceData.map(() => useInView({ triggerOnce: true, threshold: 0.1 }));
 
-    const visibleCount = isMobile && !showAll ? 3 : serviceData.length;
 
     return (
         <div className="flex flex-col lg:gap-12 gap-9 bg-gray-100">
             {serviceData.map((service, index) => {
                 const [ref, inView] = refs[index];
 
-                if (index >= visibleCount) return null;
-
-                return (
+                    return (
                     <motion.div
                         ref={ref}
                         key={index}
@@ -1157,16 +1141,6 @@ const ServiceCard = () => {
                     </motion.div>
                 );
             })}
-
-            {/* See More Button */}
-            {isMobile && !showAll && (
-                <button
-                    onClick={() => setShowAll(true)}
-                    className="mx-auto px-6 py-2 text-white bg-[#F68D13] hover:bg-[#e77b0c] rounded-full font-medium transition"
-                >
-                    See all
-                </button>
-            )}
         </div>
     );
 };

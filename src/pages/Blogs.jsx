@@ -221,7 +221,7 @@ const Blogs = () => {
                     </motion.h2>
 
                     <motion.p
-                        className="max-w-4xl md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
+                        className="md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -230,20 +230,7 @@ const Blogs = () => {
                     >
                         Welcome to the brain of Winz Infotech. From proven digital marketing tactics and
                         brand-building frameworks to the latest in design, advertising trends, and social media shifts our
-                        blog is your go-to resource for staying ahead in the digital game.
-                    </motion.p>
-
-                    <br className='md:hidden block' />
-
-                    <motion.p
-                        className="max-w-4xl md:text-[17px] text-sm font-normal md:leading-9 leading-6"
-                        variants={textVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        custom={2}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        Whether you're a founder, marketer, or creative entrepreneur, we break down complex topics
+                        blog is your go-to resource for staying ahead in the digital game. Whether you're a founder, marketer, or creative entrepreneur, we break down complex topics
                         into actionable ideas that move your brand forward.
                     </motion.p>
                 </div>

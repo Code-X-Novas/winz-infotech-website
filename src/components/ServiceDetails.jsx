@@ -4,7 +4,7 @@ import OrangeCard from "./OrangeCard";
 import { motion } from "framer-motion";
 
 const ServiceDetails = () => {
-    
+
     window.scrollTo({ top: 0, behavior: "smooth" });
     const location = useLocation();
     const service = location.state?.services;
@@ -19,7 +19,7 @@ const ServiceDetails = () => {
                     </h4>
 
                     <h1 className="max-w-5xl text-xl lg:text-3xl font-medium text-black leading-tight mb-4">
-                        {service?.heading} 
+                        {service?.heading}
                         <span className="text-[#F68D13]"> {service?.highlight}</span>
                     </h1>
 
@@ -84,7 +84,7 @@ const ServiceDetails = () => {
             {/* Section 4,5,6,7*/}
             <div className="w-full overflow-hidden sticky">
                 {/* Section 4: Our Logo Design Process */}
-                <section className="xl:p-16 md:p-12 p-8 flex md:flex-row flex-col bg-white">
+                <section className="xl:px-16 xl:pb-16 md:px-12 md:pb-12 px-8 pb-8 flex md:flex-row flex-col bg-white">
                     {/* left part */}
                     <div className="md:w-1/2 flex flex-col ">
                         <h2 className="lg:text-5xl text-3xl md:max-lg lg:leading-16 font-medium text-black mb-2">
@@ -103,22 +103,27 @@ const ServiceDetails = () => {
                                 return (
                                     <motion.div
                                         key={index}
-                                        initial={{ y: -20, opacity: 0 }}
+                                        initial={{ y: -10, opacity: 0 }}
                                         whileInView={{ y: 0, opacity: 1 }}
-                                        transition={{ delay: index , duration: 0.1, type: "spring", stiffness: 100 }}
+                                        transition={{
+                                            delay: index * 0.15,  // same stagger as text
+                                            duration: 0.25,       // slightly longer than 0.1 so it feels smooth
+                                            type: "spring",
+                                            stiffness: 200
+                                        }}
                                         viewport={{ once: true }}
                                         className="flex flex-col items-center"
                                     >
                                         <motion.div
                                             initial={{ backgroundColor: "#ffffff" }}
                                             whileInView={{
-                                                backgroundColor: index === service?.steps.length - 1 ? "#F97316" : "#ffffff"  // Only last one is filled
+                                                backgroundColor: index === service?.steps.length - 1 ? "#F97316" : "#ffffff"
                                             }}
                                             transition={{
-                                                delay: index,
-                                                duration: 0.1,
+                                                delay: index * 0.15,
+                                                duration: 0.25
                                             }}
-                                            className={`size-8 rounded-full border-1 border-[#F68D13] z-10 `}
+                                            className="size-8 rounded-full border-1 border-[#F68D13] z-10"
                                         />
 
                                         {index !== service?.steps.length - 1 && (
@@ -134,15 +139,21 @@ const ServiceDetails = () => {
                             {service?.steps.map((step, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ x: 40, opacity: 0 }}
+                                    initial={{ x: 20, opacity: 0 }}
                                     whileInView={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: index * 1.0, duration: 0.5, type: "spring", stiffness: 100 }}
+                                    transition={{
+                                        delay: index * 0.15,   // much quicker stagger
+                                        duration: 0.3,         // faster animation
+                                        type: "spring",
+                                        stiffness: 200         // snappier spring
+                                    }}
                                     viewport={{ once: true }}
                                 >
                                     <h3 className="lg:text-lg text-base font-bold line-clamp-1">{step.title}</h3>
                                     <p className="text-gray-600 lg:text-sm text-xs max-w-lg line-clamp-2">{step.description}</p>
                                 </motion.div>
                             ))}
+
                         </div>
                     </div>
                 </section>

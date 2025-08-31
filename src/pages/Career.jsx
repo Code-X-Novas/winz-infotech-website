@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const whyJoinSteps = [
     {
@@ -12,12 +12,12 @@ const whyJoinSteps = [
         description: "Work on diverse brands, bold campaigns, and real-world challenges.",
     },
     {
-        title: "Impact From Day One",
-        description: "Your ideas matter. Your work drives growth.",
+        title: "Learn Fast. Grow Faster.",
+        description: "Access mentorship, upskilling, and projects that level you up.",
     },
     {
         title: "Culture That Cares",
-        description: "We value ownership, honesty, and good vibes — not office politics.",
+        description: "We value ownership, honesty, and good vibes not office politics.",
     },
     {
         title: "Remote-First, People-First",
@@ -26,10 +26,40 @@ const whyJoinSteps = [
 ];
 
 const CareerPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        contact: '',
+        email: '',
+        position: '',
+        attachment: null,
+        message: ''
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        setFormData(prev => ({
+            ...prev,
+            attachment: file
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        // Add your form submission logic here
+    };
 
     return (
         <div className="min-h-screen bg-white text-black overflow-x-hidden md:overflow-x-visible lg:overflow-x-visible w-full mt-20 lg:py-10 py-5">
@@ -62,29 +92,10 @@ const CareerPage = () => {
                     <div className="flex flex-col gap-8 md:w-1/2">
                         {whyJoinSteps.map((step, index) => (
                             <motion.div
-                                key={index}
-                                initial={{ x: 40, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                transition={{
-                                    delay: index * 0.3,
-                                    duration: 0.5,
-                                    type: "spring",
-                                    stiffness: 100,
-                                }}
-                                viewport={{ once: true }}
                                 className="flex items-start gap-4"
                             >
                                 {/* Circle */}
                                 <motion.div
-                                    initial={{ scale: 0, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    transition={{
-                                        delay: index * 0.3,
-                                        duration: 0.5,
-                                        type: "spring",
-                                        stiffness: 120,
-                                    }}
-                                    viewport={{ once: true }}
                                     className="w-4 h-4 rounded-full bg-[#F68D13] shrink-0 mt-1"
                                 />
 
@@ -113,8 +124,8 @@ const CareerPage = () => {
                         </h2>
                         <p className="text-gray-600 lg:text-[17px] lg:ml-2 ml-1 text-sm font-normal lg:leading-9 md:leading-7 leading-6 text-left">
                             If you’re done with average and ready to build something meaningful,
-                            we want to hear from you. Bring your ambition. We'll bring the
-                            opportunities.
+                            we want to hear from you. <span className="font-medium text-black">Bring your ambition. We'll bring the
+                            opportunities.</span>
                         </p>
                     </div>
                 </div>
@@ -122,45 +133,98 @@ const CareerPage = () => {
                 {/* Right Section - Career Form */}
                 <div className="flex-1 flex items-center justify-center">
                     <div className="shadow-md lg:p-8 md:p-4 p-6 w-full md:max-w-xl bg-white flex flex-col justify-between">
-                        <form className="lg:space-y-7 md:space-y-4 sm:space-y-6 space-y-4 p-6 bg-gray-100 ">
+                        <form onSubmit={handleSubmit} className="lg:space-y-7 md:space-y-4 sm:space-y-6 space-y-4 p-6 bg-gray-100 ">
+                            {/* name */}
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Name"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Contact No"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Position"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Attachment"
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Anything else"
+                                value={formData.name}
+                                onChange={handleInputChange}
                                 className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
                             />
 
+                            {/* contact */}
+                            <input
+                                type="text"
+                                name="contact"
+                                placeholder="Contact No"
+                                value={formData.contact}
+                                onChange={handleInputChange}
+                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
+                            />
+
+                            {/* email */}
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100"
+                            />
+
+                            {/* position */}
+                            <select
+                                name="position"
+                                value={formData.position}
+                                onChange={handleInputChange}
+                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-gray-100 appearance-none cursor-pointer"
+                            >
+                                <option value="" disabled className="text-gray-500">Select Position</option>
+                                <option value="Graphic Designers">Graphic Designers</option>
+                                <option value="Social Media Managers">Social Media Managers</option>
+                                <option value="Performance Marketers">Performance Marketers</option>
+                                <option value="Copywriters & Content Strategists">Copywriters & Content Strategists</option>
+                                <option value="Content Creator">Content Creator</option>
+                                <option value="Web Developers">Web Developers</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Others">Others</option>
+                            </select>
+
+                            {/* attachment */}
+                            <div className="relative">
+                                <input
+                                    type="file"
+                                    id="attachment"
+                                    name="attachment"
+                                    onChange={handleFileChange}
+                                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                />
+                                <div className="w-full border-b border-gray-300 focus-within:border-[#F68D13] py-2 text-sm bg-gray-100 flex justify-between items-center">
+                                    <span className={formData.attachment ? "text-black" : "text-gray-500"}>
+                                        {formData.attachment ? formData.attachment.name : "Attachment"}
+                                    </span>
+                                    <svg 
+                                        className="w-5 h-5 text-gray-400" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* message */}
+                            <textarea
+                                name="message"
+                                placeholder="Message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                rows="3"
+                                className="w-full border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm bg-gray-100 resize-none"
+                            />
+
+                            {/* submit button */}
                             <div className="flex justify-center">
-                                <button className="bg-[#F68D13] cursor-pointer text-white transition">
+                                <button type="submit" className="bg-[#F68D13] cursor-pointer text-white transition">
                                     <TextHover text="APPLY NOW" />
                                 </button>
                             </div>
                         </form>
 
+                        {/* footer */}
                         <p className="lg:text-[17px] text-sm text-black mt-6 font-medium text-left lg:leading-9 leading-6">
                             Shoot your profile to{" "}
                             <a

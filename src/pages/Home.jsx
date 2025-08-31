@@ -174,7 +174,7 @@ const Home = () => {
             {/* Main Section */}
             <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 bg-white">
                 {/* Left Content */}
-                <div className="w-full md:w-1/2 mt-5 md:mt-0">
+                <div className="w-full md:w-1/2 mt-5 md:mt-0 pb-5">
                     {/* Hero Title */}
                     <motion.h1
                         initial={{ y: -50, opacity: 0 }}
@@ -219,15 +219,17 @@ const Home = () => {
                     </motion.p>
 
                     {/* lets talk */}
-                    <motion.button
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.6, duration: 0.4 }}
-                        className="bg-[#F68D13] cursor-pointer text-white text-sm font-medium flex items-center"
-                        onClick={() => navigate('/contact')}
-                    >
-                        <TextHover text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
-                    </motion.button>
+                    <div className="flex md:py-0 py-3 md:justify-start justify-center">
+                        <motion.button
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6, duration: 0.4 }}
+                            className="bg-[#F68D13] cursor-pointer text-white text-sm font-medium flex items-center"
+                            onClick={() => navigate('/contact')}
+                        >
+                            <TextHover customClass="!text-base" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
+                        </motion.button>
+                    </div>
 
                     {/* Stats */}
                     <div className="flex flex-wrap justify-around md:flex-nowrap md:mt-10 mt-6 gap-6 lg:gap-12">
@@ -272,7 +274,7 @@ const Home = () => {
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         Our <span className="text-[#F68D13]">Services</span>
                     </h2>
-                    <p className="text-gray-600 tracking-wide max-w-3xl mt-4">
+                    <p className="text-gray-600 tracking-wide mt-4">
                         We deliver design, branding, and marketing solutions tailored to elevate your digital presence. Thoughtfully built. Creatively executed.
                     </p>
                 </div>
@@ -308,7 +310,7 @@ const Home = () => {
             {/* Swiper */}
             <section className="w-full bg-[#f5f5f5] mx-auto lg:px-12 px-6 md:py-12 py-8 relative">
                 <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium text-center mb-8">
-                    <span className="text-[#F68D13]">Growth Stories</span>, Not Just Campaigns
+                    <span className="text-[#F68D13]">Growth Stories</span> - Not Just Campaigns
                 </h2>
                 <Swiper
                     modules={[Autoplay]}
@@ -333,11 +335,19 @@ const Home = () => {
                                 <div className="bg-white h-[300px] flex flex-row shadow md:p-8 p-4 text-left">
                                     <div className="xl:w-[70%] w-full justify-between flex flex-col">
                                         <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
-                                        <h2 className="text-2xl md:text-4xl max-w-xl font-medium mb-6">{current.title}</h2>
+                                        <h2 className="text-2xl md:text-[33px] lg:text-4xl font-medium mb-6">
+                                            {current.title.split(":").map((part, index) => (
+                                                <span key={index} className="block">
+                                                    {part}{index === 0 ? " :" : ""}
+                                                </span>
+                                            ))}
+                                        </h2>
                                         <p className="text-gray-700 mb-6 md:text-base text-sm line-clamp-3">{current.description}</p>
-                                        <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
-                                            <TextHover text="Read more" />
-                                        </button>
+                                        <div className="flex md:py-0 md:justify-start justify-center">
+                                            <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
+                                                <TextHover text="Read more" />
+                                            </button>
+                                        </div>
                                     </div>
                                     <div className="xl:w-[30%] w-full xl:flex hidden">
                                         <img src={current?.image || s1} alt="swiper" />
@@ -352,7 +362,7 @@ const Home = () => {
             {/* Infinite Scroll */}
             <section className="w-full bg-white mx-auto  md:py-12 py-8 relative">
                 <h3 className="lg:text-4xl md:text-3xl text-2xl sm:tracking-normal lg:px-16 px-6 tracking-tighter font-medium mb-8">
-                    Industries We've Worked With
+                    Industries we have worked with
                 </h3>
                 <div style={{ position: 'relative' }}>
                     <InfiniteScroll
@@ -365,7 +375,7 @@ const Home = () => {
             </section>
 
             {/* Clients Who Trust Us */}
-            <section className="w-full bg-white py-10">
+            <section className="w-full bg-[#f5f5f5] py-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
@@ -392,7 +402,7 @@ const Home = () => {
             </section>
 
             {/* Proof over Promises scrolling color card */}
-            <section className="bg-[#f5f5f5] py-10">
+            <section className="bg-[#f5f5f5] pt-10">
                 {/* heading */}
                 <div className="lg:px-10 xl:px-16 px-6">
                     <h2 className="xl:text-5xl xl:leading-16 md:leading-12 md:tracking-wide md:text-4xl text-3xl font-medium">
