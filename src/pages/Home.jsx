@@ -146,6 +146,16 @@ const videos = [
         id: 12,
         title: "Video 12",
         url: "https://res.cloudinary.com/dooejuv06/video/upload/v1755101567/Career_Coaching_m3uig4.mp4"
+    },
+    {
+        id: 13,
+        title: "Video 13",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1756757677/lv_0_20250829074710_a1ptaq.mp4"
+    },
+    {
+        id: 14,
+        title: "Video 14",
+        url: "https://res.cloudinary.com/dooejuv06/video/upload/v1756757691/Yoga_Trainer_zkhvso.mp4"
     }
 ];
 
