@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
 import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
+import SEO from "../components/SEO";
 
 const whyJoinSteps = [
     {
@@ -41,6 +42,27 @@ const CareerPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const careerStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Join Winz Infotech Team",
+        "description": "Join our dynamic team at Winz Infotech. We're looking for talented individuals in graphic design, content creation, digital marketing, and web development.",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Winz Infotech",
+            "sameAs": "https://winzinfotech.com"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+            }
+        },
+        "employmentType": "FULL_TIME",
+        "workFromHome": true
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -120,6 +142,14 @@ const CareerPage = () => {
 
     return (
         <div className="min-h-screen bg-white text-black overflow-x-hidden md:overflow-x-visible lg:overflow-x-visible w-full mt-20 lg:py-10 py-5">
+            <SEO
+                title="Careers - Join Our Dynamic Team | Winz Infotech"
+                description="Join Winz Infotech's growing team! We're hiring talented professionals in graphic design, digital marketing, web development, and content creation. Remote-first, people-first culture."
+                keywords="winz infotech careers, digital marketing jobs, graphic designer jobs, web developer jobs, content creator jobs, remote work opportunities"
+                url="/career"
+                image="/logoNew.png"
+                structuredData={careerStructuredData}
+            />
             {/* Top Intro Section */}
             <div className="flex flex-col gap-6 px-6 md:px-12 md:py-12 py-5">
                 {/* Heading */}

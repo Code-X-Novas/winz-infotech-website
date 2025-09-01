@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
+import SEO from "../components/SEO";
 // import './hide-scrollbar.css'; // for hiding scrollbar if needed
 
 import blog1 from "../assets/case-study.png";
@@ -190,21 +191,58 @@ const Blogs = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     };
 
-    const filteredStudies =
-        selected === 'All'
-            ? caseStudies
-            : caseStudies.filter((study) =>
-                Array.isArray(study.tag)
-                    ? study.tag.includes(selected)
-                    : study.tag === selected
-            );
+    const filteredStudies = selected === 'All' ? caseStudies : caseStudies.filter((study) =>
+        Array.isArray(study.tag)
+            ? study.tag.includes(selected)
+            : study.tag === selected
+    );
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    const blogsStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Winz Infotech Blog",
+        "description": "Expert insights on digital marketing, branding, web development, and business growth strategies from Winz Infotech.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Winz Infotech",
+            "url": "https://winzinfotech.com"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Digital Marketing in 2025: What's Working, What's Not & Where Smart Brands Are Investing",
+                "description": "The digital marketing world is evolving faster than ever. Learn what's working in 2025 and where smart brands are investing.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Winz Infotech"
+                }
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Real Estate Marketing in 2025: New Strategies That Sell Homes Faster",
+                "description": "Discover new real estate marketing strategies that help sell homes faster in 2025.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Winz Infotech"
+                }
+            }
+        ]
+    };
+
     return (
         <div>
+            <SEO
+                title="Blog - Latest Digital Marketing Insights & Strategies | Winz Infotech"
+                description="Stay ahead with expert insights on digital marketing, branding, web development, and business growth. Read the latest strategies and trends from Winz Infotech."
+                keywords="digital marketing blog, branding insights, web development tips, business growth strategies, marketing trends 2025, real estate marketing"
+                url="/blogs"
+                image="/logoNew.png"
+                structuredData={blogsStructuredData}
+            />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <div className="lg:px-10 xl:px-16 px-5">
@@ -342,7 +380,6 @@ const Blogs = () => {
                     buttonText="Speak to Experts"
                 />
             </section>
-
         </div>
     )
 }

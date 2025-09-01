@@ -49,7 +49,7 @@ const Footer = ({ className = "" }) => {
                                         </li>
                                         <li>
                                             <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
-                                                Portfolio 
+                                                Portfolio
                                             </button>
                                         </li>
                                         <li>
@@ -136,19 +136,19 @@ const Footer = ({ className = "" }) => {
                                 ))}
                             </div>
 
-                            {/* Email + Phones */}
-                            <div className="flex flex-col md:mb-0 mb-6 sm:flex-row gap-6 lg:gap-10 text-base md:text-sm text-gray-700 text-center lg:text-left">
-                                {/* Email */}
-                                <a
-                                    href="mailto:Info@winzinfotech.com"
-                                    className="flex items-center justify-center md:justify-start gap-2 underline hover:no-underline transform transition duration-200 cursor-pointer"
-                                >
-                                    <MdEmail className="size-5 text-[#FC8A10]" />
-                                    <span className="text-nowrap hover:text-[#FC8A10] ">
-                                        Info@winzinfotech.com
-                                    </span>
-                                </a>
+                            {/* Email */}
+                            <a
+                                href="mailto:Info@winzinfotech.com"
+                                className="flex items-center justify-center md:justify-start gap-2 underline hover:no-underline transform transition duration-200 cursor-pointer"
+                            >
+                                <MdEmail className="size-5 text-[#FC8A10]" />
+                                <span className="text-nowrap hover:text-[#FC8A10] ">
+                                    Info@winzinfotech.com
+                                </span>
+                            </a>
 
+                            {/* Email + Phones */}
+                            <div className="flex flex-col md:mb-0 mb-6 sm:flex-row gap-6 lg:gap-10 text-base md:text-base text-gray-700 text-center lg:text-left">
                                 {/* Phone Numbers */}
                                 <div className="flex flex-col items-center md:items-start space-y-2 lg:mb-6">
                                     <a

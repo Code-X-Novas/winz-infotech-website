@@ -37,8 +37,8 @@ const ContactUsFooter = () => {
                                     </button>
                                 </li>
                                 <li>
-                                    <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Portfolio
+                                    <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        Blogs
                                     </button>
                                 </li>
                                 <li>
@@ -52,13 +52,23 @@ const ContactUsFooter = () => {
                                     </button>
                                 </li>
                                 <li>
+                                    <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        Portfolio
+                                    </button>
+                                </li>
+                                <li>
                                     <button onClick={() => navigate("/career")} className="hover:text-[#FC8A10] cursor-pointer">
                                         Career
                                     </button>
                                 </li>
                                 <li>
-                                    <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Blog
+                                    <button onClick={() => navigate("/case-study")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        Case Study
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onClick={() => navigate("/contact")} className="hover:text-[#FC8A10] cursor-pointer">
+                                        Contact us
                                     </button>
                                 </li>
                             </ul>
@@ -120,30 +130,29 @@ const ContactUsFooter = () => {
                     <div className="flex flex-col lg:text-base text-xs sm:flex-row items-center gap-4 md:gap-8 text-center sm:text-left">
                         <a
                             href="mailto:Info@winzinfotech.com"
-                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform hover:scale-90"
+                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform"
                         >
-                            <MdEmail />
-                            <span>Info@winzinfotech.com</span>
+                            <MdEmail className="text-[#FC8A10]" size={20}/>
+                            <span className="hover:text-[#FC8A10]">Info@winzinfotech.com</span>
                         </a>
                         <a
                             href="tel:+917203030730"
-                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform hover:scale-90"
+                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform"
                         >
-                            <FaPhoneAlt />
-                            <span>+917203030730</span>
+                            <FaPhoneAlt className="text-[#FC8A10]" size={20}/>
+                            <span className="hover:text-[#FC8A10]">+917203030730</span>
                         </a>
                         <a
                             href="https://wa.me/917203030730"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform hover:scale-90"
+                            className="flex items-center gap-2 underline hover:no-underline cursor-pointer transition-transform"
                         >
-                            <FaPhoneAlt />
-                            <span>+919998081838</span>
+                            <FaPhoneAlt className="text-[#FC8A10]" size={20}/>
+                            <span className="hover:text-[#FC8A10]">+919998081838</span>
                         </a>
                     </div>
                 </div>
-
             </div>
 
             {/* Copyright */}

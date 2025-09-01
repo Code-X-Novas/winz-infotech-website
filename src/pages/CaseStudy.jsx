@@ -4,6 +4,7 @@ import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
 import { useEffect } from "react";
+import SEO from "../components/SEO";
 
 const caseStudies = [
     {
@@ -133,8 +134,62 @@ const CaseStudy = () => {
     }, []);
 
     return (
-        
         <div>
+            <SEO 
+                title="Case Studies - Real Client Success Stories | Winz Infotech"
+                description="Explore real success stories from our clients. See how Winz Infotech helped businesses increase revenue by 3x, boost bookings by 5x, and generate qualified leads through digital marketing strategies."
+                keywords="case studies, client success stories, digital marketing results, revenue growth, lead generation, business transformation, marketing agency results, ROI improvement"
+                canonicalUrl="https://winzinfotech.com/case-study"
+                ogImage="https://winzinfotech.com/assets/case-study-og.jpg"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": "Case Studies - Winz Infotech",
+                    "description": "Real client success stories showcasing digital marketing results and business transformations",
+                    "url": "https://winzinfotech.com/case-study",
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "numberOfItems": 5,
+                        "itemListElement": [
+                            {
+                                "@type": "CaseStudy",
+                                "name": "Visa & Immigration Consultant - Nagpur",
+                                "description": "Increased revenue by 3x within 2 months through strategic digital marketing",
+                                "result": "4x more qualified leads in 60 days, 250% organic engagement increase"
+                            },
+                            {
+                                "@type": "CaseStudy",
+                                "name": "Beauty Salon - Mumbai",
+                                "description": "Boosted salon bookings and enhanced brand visibility across Mumbai",
+                                "result": "5x revenue increase in 3 months, 40% increase in monthly appointments"
+                            },
+                            {
+                                "@type": "CaseStudy",
+                                "name": "Architect - Ahmedabad, Gujarat",
+                                "description": "Established top-of-mind brand positioning for visionary architect",
+                                "result": "5 high-value project leads within first 2 months"
+                            },
+                            {
+                                "@type": "CaseStudy",
+                                "name": "Dietician - Delhi",
+                                "description": "Grew monthly consultations from 12-15 to 35+ clients",
+                                "result": "Tripled new consultations in 60 days, 285% Instagram engagement increase"
+                            },
+                            {
+                                "@type": "CaseStudy",
+                                "name": "Real Estate Builder - Surat",
+                                "description": "Generated qualified inquiries for luxury residential project",
+                                "result": "150+ quality leads in first month, 40% reduction in cost-per-lead"
+                            }
+                        ]
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Winz Infotech",
+                        "url": "https://winzinfotech.com"
+                    }
+                }}
+            />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <motion.div

@@ -17,6 +17,7 @@ import OrangeCard from "../components/OrangeCard";
 import { useNavigate } from "react-router-dom";
 import TextAnimation from "../components/TextAnimation";
 import TextHover from "../components/Animations/TextHover";
+import SEO from "../components/SEO";
 
 // images
 import s1 from "../assets/service1.png"
@@ -159,19 +160,61 @@ const Home = () => {
     ];
 
     const handleClick = (index) => {
-        setPlayingIndex(index);
-
+        // Swipe to center the clicked slide
         if (swiperRef.current) {
+            swiperRef.current.slideToLoop(index, 500); // 500ms transition
             swiperRef.current.autoplay.stop();
         }
+        
+        // Set playing index after a small delay to allow slide transition
+        setTimeout(() => {
+            setPlayingIndex(index);
+        }, 300);
     };
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    const homeStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Winz Infotech",
+        "url": "https://winzinfotech.com",
+        "logo": "https://winzinfotech.com/logoNew.png",
+        "description": "Leading digital marketing and web development agency specializing in branding, performance marketing, and creative solutions.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://winzinfotech.com/contact"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/winz-infotech",
+            "https://www.instagram.com/winzinfotech"
+        ],
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "10",
+            "lowPrice": "999",
+            "highPrice": "49999",
+            "priceCurrency": "INR"
+        }
+    };
+
     return (
         <div>
+            <SEO
+                title="Winz Infotech - Digital Marketing & Web Development Agency | Drive Results"
+                description="Transform your business with Winz Infotech's expert digital marketing, web development, branding, and design services. 375+ clients trust us for measurable growth and creative excellence."
+                keywords="digital marketing agency, web development, branding services, performance marketing, social media management, logo design, website development, lead generation, graphic design, influencer marketing"
+                url="/"
+                image="/logoNew.png"
+                structuredData={homeStructuredData}
+            />
             {/* Main Section */}
             <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 bg-white">
                 {/* Left Content */}
@@ -444,8 +487,8 @@ const Home = () => {
                         {/* side card */}
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index}>
-                                <div className={`xl:h-[500px] md:h-[400px] h-[370px] translate-y-12 bg-center slide-card w-full transition-all duration-500`} />
-                                <div className="absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col">
+                                <div className={`xl:h-[500px] md:h-[400px] h-[370px] translate-y-12 bg-center slide-card w-full transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
+                                <div className={`absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col ${playingIndex === index ? 'bg-black/20' : ''}`}>
                                     {
                                         playingIndex == index ? (
                                             <video
@@ -453,10 +496,15 @@ const Home = () => {
                                                 controls
                                                 autoPlay
                                                 className="h-full w-full object-contain"
+                                                style={{
+                                                    aspectRatio: '9/16', // Portrait mode aspect ratio
+                                                    maxHeight: '100%',
+                                                    maxWidth: '100%'
+                                                }}
                                             />
                                         ) : (
                                             <>
-                                                <img src={bg} alt="image" className="bg-cover h-full w-full" />
+                                                <img src={bg} alt="image" className={`bg-cover h-full w-full transition-all duration-500 ${playingIndex !== null && playingIndex !== index ? 'blur-md opacity-60' : ''}`} />
                                                 <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
                                                     {/* button */}
                                                     <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">

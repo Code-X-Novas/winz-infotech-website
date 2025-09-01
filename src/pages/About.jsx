@@ -4,6 +4,7 @@ import workImage from "../assets/about_us.png";
 import work1Image from "../img/work1.png";
 import Footer from "../components/Footer";
 import OrangeCard from "../components/OrangeCard";
+import SEO from "../components/SEO";
 
 const missionSteps = [
     {
@@ -34,8 +35,32 @@ const About = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const aboutStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Winz Infotech",
+        "description": "Learn about Winz Infotech - a results-driven digital marketing agency that transforms brands into revenue machines through strategic design and measurable growth.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Winz Infotech",
+            "founder": {
+                "@type": "Person",
+                "name": "Anuj Gohil"
+            },
+            "description": "Digital growth partner specializing in brand visibility, content creation, and sales-driven digital presence."
+        }
+    };
+
     return (
         <div className="bg-white text-black overflow-x-hidden flex flex-col min-h-screen w-full my-10 lg:pt-10 pt-5">
+            <SEO
+                title="About Us - Meet the Team Behind Your Digital Growth | Winz Infotech"
+                description="Discover Winz Infotech's story, mission, and vision. Founded by Anuj Gohil, we're a results-driven digital agency that transforms brands into revenue machines through strategic design and measurable growth."
+                keywords="about winz infotech, digital marketing agency team, anuj gohil founder, digital growth partner, brand transformation, revenue growth agency"
+                url="/about"
+                image="/logoNew.png"
+                structuredData={aboutStructuredData}
+            />
             {/* Main content */}
             <main className="flex-1 bg-white">
                 {/* Heading Section */}

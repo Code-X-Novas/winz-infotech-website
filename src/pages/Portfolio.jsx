@@ -3,6 +3,7 @@ import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
+import SEO from "../components/SEO";
 
 const portfolios = {
     Logo_Design: {
@@ -127,6 +128,85 @@ const Portfolio = () => {
 
     return (
         <div>
+            <SEO 
+                title="Portfolio - Creative Design Work | Winz Infotech"
+                description="Explore our creative portfolio featuring logo designs, banners, brochures, business cards, and more. See the quality design work that drives results for our clients across various industries."
+                keywords="portfolio, logo design, banner design, brochure design, business card design, creative work, graphic design, brand identity, marketing materials, design agency"
+                canonicalUrl="https://winzinfotech.com/portfolio"
+                ogImage="https://winzinfotech.com/assets/portfolio-og.jpg"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": "Portfolio - Winz Infotech",
+                    "description": "Creative design portfolio showcasing logos, banners, brochures, and marketing materials",
+                    "url": "https://winzinfotech.com/portfolio",
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "numberOfItems": 10,
+                        "itemListElement": [
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Logo Design",
+                                "description": "Professional logo designs for various industries including cricket, business, and startups",
+                                "category": "Logo Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Banner Design",
+                                "description": "Eye-catching banner designs for gyms and promotional campaigns",
+                                "category": "Banner Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Brochure Design",
+                                "description": "Corporate and product brochures for business marketing",
+                                "category": "Brochure Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Business Card Design",
+                                "description": "Professional business cards for executives and creative professionals",
+                                "category": "Business Card Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Flyer Design",
+                                "description": "Event and promotional flyer designs",
+                                "category": "Flyer Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Hoarding Design",
+                                "description": "Large format hoarding designs for outdoor advertising",
+                                "category": "Hoarding Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Letter Head Design",
+                                "description": "Corporate letterhead designs for professional communication",
+                                "category": "Letter Head Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Office Wall Design",
+                                "description": "Office interior wall designs and corporate branding",
+                                "category": "Office Wall Design"
+                            },
+                            {
+                                "@type": "CreativeWork",
+                                "name": "Standee Design",
+                                "description": "Event and promotional standee designs for marketing campaigns",
+                                "category": "Standee Design"
+                            }
+                        ]
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "Winz Infotech",
+                        "url": "https://winzinfotech.com"
+                    }
+                }}
+            />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <div className="lg:px-10 xl:px-16 px-5">
