@@ -3,6 +3,7 @@ import TextHover from "../components/Animations/TextHover";
 import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import SEO from "../components/SEO";
+import axios from "axios";
 
 const whyJoinSteps = [
     {
@@ -91,9 +92,6 @@ const CareerPage = () => {
         );
 
         return res.data.secure_url; // return file URL
-
-        // secret: 7hBYCBiiSC2832ueNRo1_C2kUdA
-        // key: 465426361151389
     };
 
     const handleSubmit = async (e) => {
@@ -105,22 +103,22 @@ const CareerPage = () => {
             if (formData.attachment) {
                 fileUrl = await uploadToCloudinary(formData.attachment);
             }
-
+            
             const templateParams = {
-                from_name: formData.name,
-                from_email: formData.email,
+                title: "New Career Application",
+                name: formData.name,
+                email: formData.email,
                 contact: formData.contact,
                 position: formData.position,
                 message: formData.message,
                 attachment_url: fileUrl || "No attachment uploaded",
-                to_email: "nabinagrawal64@gmail.com", // replace with your admin email
             };
 
             await emailjs.send(
-                "YOUR_SERVICE_ID",
-                "YOUR_TEMPLATE_ID",
+                "service_1z57zfs",
+                "template_m000dyr",
                 templateParams,
-                "YOUR_PUBLIC_KEY"
+                "G1JKaL-CvrPbe8b51"
             );
 
             alert("Application submitted successfully!");
@@ -299,8 +297,8 @@ const CareerPage = () => {
                                 placeholder="Message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                rows="3"
-                                className="w-full bg-white placeholder:text-gray-500 border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm bg-gray-100 resize-none"
+                                rows="5"
+                                className="w-full bg-white placeholder:text-gray-500 border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm resize-none"
                             />
 
                             {/* submit button */}

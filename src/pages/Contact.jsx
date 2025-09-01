@@ -1,4 +1,4 @@
-import bgImage from "../img/bg1.png";
+// import bgImage from "../img/bg1.png";
 import mapimg from "../img/map.png";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
