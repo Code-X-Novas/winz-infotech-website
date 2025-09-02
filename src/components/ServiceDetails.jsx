@@ -160,7 +160,7 @@ const ServiceDetails = () => {
 
                 {/* Section 5: Who We Design For */}
                 <section className="bg-cover bg-center text-black">
-                    <div className="bg-white/70 xl:p-16 md:p-12 p-8 backdrop-blur-xs shadow-lg">
+                    <div className="bg-white/70 xl:p-16 md:p-12 p-8 backdrop-blur-xs ">
                         <h2 className="lg:text-5xl md:text-4xl text-3xl font-medium mb-4">
                             <span className="text-[#F68D13]">{service?.transparentHigh} </span>{service?.transparentHeading}
                         </h2>

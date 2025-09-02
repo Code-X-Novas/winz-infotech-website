@@ -92,7 +92,7 @@ const Contact = () => {
             />
 
             {/* Main Flex Container */}
-            <div className="py-16 text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:pt-10 pt-5">
+            <div className="md:py-16 py-10 text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:pt-10 pt-5">
                 <div className="flex flex-col md:flex-row gap-5 items-stretch min-h-[80vh]">
                     {/* Left Side */}
                     <div className="md:w-1/2 w-full bg-white flex flex-col md:min-h-[80vh]">
@@ -107,7 +107,7 @@ const Contact = () => {
                         </div>
 
                         {/* Contact Info */}
-                        <div className="px-4 sm:px-6 pb-6 flex flex-col justify-center">
+                        <div className="px-4 sm:px-6 pb-6 flex flex-col justify-between">
                             <h3 className="font-medium w-fit mb-4 bg-gray-200 text-gray-700 inline-block px-3 py-1 rounded text-xs sm:text-sm md:text-base">
                                 Contact Info
                             </h3>
@@ -166,9 +166,10 @@ const Contact = () => {
 
                     {/* Right Side Form */}
                     <div className="lg:px-8 md:px-4 bg-white w-full md:w-1/2 min-h-[80vh] flex flex-col">
-                        <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-xl sm:text-2xl md:text-base lg:text-xl xl:text-4xl">
-                            Let's Build the Next Big Thing.
+                        <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
+                            Let's Connect for the Next Big Thing.
                         </h3>
+
                         {/* form */}
                         <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-gray-100 flex-1">
                             <input
@@ -177,7 +178,7 @@ const Contact = () => {
                                 placeholder="Name"
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
+                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="number"
@@ -185,7 +186,7 @@ const Contact = () => {
                                 placeholder="Contact No"
                                 value={formData.contactNo}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
+                                className="w-full border-b  border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="email"
@@ -193,7 +194,7 @@ const Contact = () => {
                                 placeholder="Email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
+                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <input
                                 type="text"
@@ -201,7 +202,7 @@ const Contact = () => {
                                 placeholder="Business Name/Link"
                                 value={formData.businessName}
                                 onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
+                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
                             />
                             <select
                                 name="budget"
@@ -239,43 +240,25 @@ const Contact = () => {
             <div className="lg:p-14 md:p-10 xl:p-20 p-6 bg-gray-100">
                 <div className="relative bg-gray-100 w-full h-[350px] md:h-[420px] lg:h-[500px] xl:h-[600px] rounded-lg overflow-hidden shadow-md">
                     {/* Label */}
-                    <div className="absolute top-0 left-3 sm:left-4 z-10 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">
+                    <div className="absolute top-0 left-3 sm:left-4 z-30 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">
                         Office Address
                     </div>
 
-                    {/* Marker */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full z-20">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="#F68D13"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="white"
-                            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-md"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 2.25c-4.556 0-8.25 3.694-8.25 8.25 0 6.07 8.25 11.25 8.25 11.25s8.25-5.18 8.25-11.25c0-4.556-3.694-8.25-8.25-8.25zM12 12.75a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z"
-                            />
-                        </svg>
-                    </div>
-
-                    {/* Map Image Clickable */}
-                    <a
-                        href="https://maps.app.goo.gl/s7CXUCPHhoPNXR3v7?g_st=aw"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src={mapimg}
-                            alt="Location Map"
-                            className="absolute top-0 left-0 w-full h-full object-cover cursor-pointer"
-                        />
-                    </a>
+                    {/* Interactive Google Map */}
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8!2d72.944!3d20.593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU2hpdmFtIEluZmluaXR5LCAzMDYsIEFicmFtYS1EaGFyYW1wdXIgUmQsIG9wcC4gU1QgV29ya3Nob3AsIEFicmFtYSBWaWxsYWdlLCBWYWxzYWQsIEFicmFtYSwgR3VqYXJhdCAzOTYwMDE!5e0!3m2!1sen!2sin!4v1672531200000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="absolute top-0 left-0 w-full h-full"
+                        title="Office Location Map"
+                    ></iframe>
 
                     {/* Address Box */}
-                    <div className="absolute bottom-0 left-0 bg-gray-100 shadow-lg p-3 sm:p-4 w-60 sm:w-72 shadow-orange-300 z-10">
+                    <div className="absolute bottom-0 left-0 bg-white/95 backdrop-blur-sm shadow-lg p-3 sm:p-4 w-60 sm:w-72 shadow-orange-300 z-30 border border-gray-200">
                         <h3 className="text-xs sm:text-sm font-medium mb-2 text-gray-800">
                             Address
                         </h3>
@@ -284,9 +267,9 @@ const Contact = () => {
                             onClick={() => window.open("https://maps.app.goo.gl/s7CXUCPHhoPNXR3v7?g_st=aw", "_blank")} 
                             className="md:text-[17px] text-xs sm:text-sm hover:underline text-gray-700 leading-relaxed font-normal cursor-pointer"
                         >
-                            306, Shivam Infinity,<br />
-                            Opp. S.T. Workshop Dharampur Road,<br />
-                            Abrama, Valsad, Gujarat – 396001.
+                            Shivam Infinity, 306,<br />
+                            Abrama-Dharampur Rd, opp. ST Workshop,<br />
+                            Abrama Village, Valsad, Gujarat – 396001.
                         </p>
                     </div>
                 </div>
