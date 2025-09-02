@@ -3,7 +3,9 @@ import caseStudy from "../assets/case-study.png";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ScrollMenu } from 'react-horizontal-scrolling-menu';
+import 'react-horizontal-scrolling-menu/dist/styles.css';
 import SEO from "../components/SEO";
 
 const caseStudies = [
@@ -42,6 +44,15 @@ const caseStudies = [
         description: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
         image: caseStudy,
     },
+];
+
+const categories = [
+    'All',
+    'Visa & Immigration',
+    'Beauty Salon',
+    'Architect',
+    'Dietician',
+    'Real Estate',
 ];
 
 const case_study = [
@@ -114,6 +125,8 @@ const case_study = [
 
 const CaseStudy = () => {
     const navigate = useNavigate();
+    const [selected, setSelected] = useState('All');
+    const [filteredCaseStudies, setFilteredCaseStudies] = useState(caseStudies);
 
     const containerVariants = {
         hidden: {},
@@ -132,6 +145,14 @@ const CaseStudy = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        if (selected === 'All') {
+            setFilteredCaseStudies(caseStudies);
+        } else {
+            setFilteredCaseStudies(caseStudies.filter(study => study.tag === selected));
+        }
+    }, [selected]);
 
     return (
         <div>
@@ -208,6 +229,26 @@ const CaseStudy = () => {
                 </motion.div>
             </section>
 
+            {/* Categories */}
+            <section className="w-full bg-white ">
+                <div className="lg:px-7 xl:px-12 px-4 bg-white w-full">
+                    <ScrollMenu>
+                        {categories.map((item) => (
+                            <div
+                                key={item}
+                                onClick={() => setSelected(item)}
+                                className={`cursor-pointer lg:px-8 lg:py-3 px-4 py-2 lg:mx-4 mx-2 min-w-max text-sm font-medium 
+                            ${selected === item
+                                        ? 'bg-[#F68D13] text-white'
+                                        : 'bg-[#F0F4F7] text-[#565C63] hover:bg-gray-200 transition-all'}`}
+                            >
+                                {item}
+                            </div>
+                        ))}
+                    </ScrollMenu>
+                </div>
+            </section>
+
             {/* Case Studies */}
             <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 ">
                 <motion.div
@@ -218,7 +259,7 @@ const CaseStudy = () => {
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                 >
-                    {caseStudies.map((study) => (
+                    {filteredCaseStudies.map((study) => (
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
@@ -238,7 +279,7 @@ const CaseStudy = () => {
                                 <span className="xl:text-xs lg:text-[10px] md:text-sm sm:text-xs text-[8px] uppercase xl:p-2 lg:p-1 sm:p-2 p-1 bg-[#F0F4F7] w-fit text-gray-500">
                                     {study.tag}
                                 </span>
-                                <h2 className="xl:text-2xl font-playfair lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
+                                <h2 className="xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light line-clamp-2 sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
                                     {study.title}
                                 </h2>
                                 <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">

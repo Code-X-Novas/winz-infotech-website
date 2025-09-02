@@ -92,7 +92,7 @@ const Contact = () => {
             />
 
             {/* Main Flex Container */}
-            <div className="min-h-screen text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:pt-10 pt-5">
+            <div className="py-16 text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:pt-10 pt-5">
                 <div className="flex flex-col md:flex-row gap-5 items-stretch min-h-[80vh]">
                     {/* Left Side */}
                     <div className="md:w-1/2 w-full bg-white flex flex-col md:min-h-[80vh]">

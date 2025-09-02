@@ -22,6 +22,17 @@ const portfolios = {
         Banner3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106532/Banner_01_qtr3b9.jpg", type: "Gym Banner" },
         Banner2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106534/Banner_01_copy_dpened.jpg", type: "Gym Banner" },
     },
+    Gym_Creatives:{
+        Gym_Creatives1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835002/01_qlaafe.jpg",type:"Gym Banner"},
+        Gym_Creatives2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835008/02_rucd9y.jpg",type:"Gym Banner"},
+        Gym_Creatives3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833399/03_je83wo.jpg",type:"Gym Banner"},
+        Gym_Creatives4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833397/04_wrzu6m.jpg",type:"Gym Banner"},
+        Gym_Creatives5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/05_llthnd.jpgg",type:"Gym Banner"},
+        Gym_Creatives6:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/06_wzdi7w.jpg",type:"Gym Banner"},
+        Gym_Creatives7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/07_cpl4qn.jpg",type:"Gym Banner"},
+        Gym_Creatives8:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/08_dty8ls.jpg",type:"Gym Banner"},
+        Gym_Creatives9:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/09_pgiyet.jpg",type:"Gym Banner"},
+    },
     Brochure: {
         Brochure1: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106562/Brochure_021_cydvg2.jpg", type: "Corporate Brochure" },
         Brochure2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106558/Brochure_02_Inner_pjp0a5.jpg", type: "Product Brochure" },
@@ -38,7 +49,7 @@ const portfolios = {
     },
     Hoardings: {
         Hoarding1: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106492/Hording_02_u9pu0h.jpg", type: "Gym Hoarding" },
-        Hoarding2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106490/Hording_01_hvyyzv.jpg", type: "Visia Hoarding" },
+        Hoarding2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106490/Hording_01_hvyyzv.jpg", type: "Visa Hoarding" },
         Hoarding3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106490/Hording_03_wpjnei.jpg", type: "Commercial Hoarding" },
     },
     Letter_Head: {
@@ -51,11 +62,37 @@ const portfolios = {
         Office_Wall2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106443/Office_Wall_03_gi0fou.jpg", type: "Conference Room" },
         Office_Wall3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106442/Office_Wall_02_gouxqa.jpg", type: "Corporate Wall" },
     },
+    Real_Estate:{
+        Real_Estate1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/1_rmv70j.jpg",type:"Aera"},
+        Real_Estate2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/2_fzhomj.jpg",type:"Aera"},
+        Real_Estate3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/3_oau21b.jpg",type:"Aera"},
+        Real_Estate4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/4_pgg6we.jpg",type:"House"},
+        Real_Estate5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833420/5._tifbpe.jpg",type:"Rakshyabandhan"},
+        Real_Estate6:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/6_gnb23a.jpg",type:"House"},
+        Real_Estate7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/7_syiqmh.jpg",type:"Aera"},
+        Real_Estate8:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/8._ikwj7o.jpg",type:"Ganesh Chaturthi"},
+        Real_Estate9:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/9_zciuze.jpg",type:"House"},
+    },
     Standee_Design: {
         Standee_Design1: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106382/Standee_01_cq3zow.jpg", type: "Event Standee" },
         Standee_Design2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106357/Standee_04_uphpng.jpg", type: "Promotional Standee" },
         Standee_Design3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_02_kysqwb.jpg", type: "Marketing Standee" },
         Standee_Design4: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_03_basbjv.jpg", type: "Display Standee" },
+    },
+    Visa_and_Immigration: {
+        visa_and_immigration1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834358/1_i4cp0e.jpg",type:"Cristmas"},
+        visa_and_immigration2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/02_o3nmin.jpg",type:"paper Work"},
+        visa_and_immigration3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/3_xwxcz4.jpg",type:"Passport"},
+        visa_and_immigration4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834355/4_g91gor.png",type:"Canada"},
+        visa_and_immigration5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834356/5_apymeg.jpg",type:"Bringing Hearts"},
+        visa_and_immigration6:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834363/06_i1uyk0.jpg",type:"First Time"},
+        visa_and_immigration7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/7._x80aqz.jpg",type:"Flight"},
+        visa_and_immigration8:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834357/08_nt8ucj.jpg",type:"Visa"},
+        visa_and_immigration9:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834361/9._im4gqk.jpg",type:"Europe"},
+    },
+    Video:{
+        video1:{url:"https://res.cloudinary.com/dooejuv06/video/upload/v1756836399/NEHA_KHURANA_X_A_FITNESS_FINAL_1_oskqww.mov",type:"FITNESS"},
+        video2:{url:"https://res.cloudinary.com/dooejuv06/video/upload/v1756836326/2_Reel_A_Fitness_New_1_egdhq5.mp4",type:"FITNESS"},
     }
 }
 
@@ -63,6 +100,7 @@ const categories = [
     'All',
     'Banner',
     'Brochure',
+    'Gym Creatives',
     'Business Card',
     'Flyer',
     'Hoardings',
@@ -70,6 +108,9 @@ const categories = [
     'Logo Design',
     "Office Wall",
     "Standee Design",
+    "Real Estate",
+    "Video",
+    "Visa and Immigration",
 ];
 
 const Portfolio = () => {
@@ -77,6 +118,18 @@ const Portfolio = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        
+        // Disable right-click context menu
+        const handleContextMenu = (e) => {
+            e.preventDefault();
+        };
+        
+        document.addEventListener('contextmenu', handleContextMenu);
+        
+        // Cleanup event listener on component unmount
+        return () => {
+            document.removeEventListener('contextmenu', handleContextMenu);
+        };
     }, []);
 
     const textVariants = {
@@ -293,11 +346,21 @@ const Portfolio = () => {
                             className="bg-white shadow-md overflow-hidden transition-all duration-300 mb-4 break-inside-avoid"
                         >
                             <div className="relative w-full h-fit overflow-hidden">
-                                <img
-                                    src={portfolio.url}
-                                    alt={portfolio.tag}
-                                    className="w-full h-auto object-contain"
-                                />
+                                {portfolio.url.includes('.mp4') || portfolio.url.includes('.mov') || portfolio.url.includes('.webm') || portfolio.url.includes('.avi') ? (
+                                    <video
+                                        src={portfolio.url}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        className="w-full h-auto object-contain"
+                                    />
+                                ) : (
+                                    <img
+                                        src={portfolio.url}
+                                        alt={portfolio.tag}
+                                        className="w-full h-auto object-contain"
+                                    />
+                                )}
                                 <div className="absolute bottom-2 left-2 bg-white/80 text-black text-xs px-2 py-1  font-medium">
                                     {portfolio.type}
                                 </div>

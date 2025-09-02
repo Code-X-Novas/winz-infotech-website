@@ -321,7 +321,7 @@ const Blogs = () => {
 
                             {/* Right Content */}
                             <div className="w-1/2 flex flex-col justify-evenly h-full xl:space-y-5 lg:space-y-1 sm:space-y-5 space-y-1">
-                                <h2 className="font-playfair line-clamp-3 xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
+                                <h2 className="line-clamp-3 xl:text-2xl lg:text-base md:text-2xl sm:text-xl leading-tight font-light sm:leading-normal hover:text-[#F68D13] transition-all duration-300 text-black">
                                     {study.title}
                                 </h2>
 

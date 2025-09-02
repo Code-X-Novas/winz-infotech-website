@@ -65,24 +65,104 @@ const services = [
 const caseStudies = [
     {
         id: 1,
-        title: "Visa Consultancy: Conversions Soar",
+        title: "Visa & Immigration Consultant",
         subtitle: "CASE STUDY 1",
-        description: "We transformed their online presence, securing 4x more qualified leads and tripling revenue in just 60 days.",
-        image: image1
+        city: "Nagpur",
+        description: "Position the consultancy as a trusted expert in Nagpur and increase revenue by 3x within 2 months.",
+        image: image1,
+        detailData: {
+            title: "Visa & Immigration Consultant –",
+            city: "Nagpur",
+            objective: "To position the consultancy as a trusted expert in Nagpur and increase revenue by 3× within 2 months.",
+            challenge: "Low visibility online, a generic website, fake enquiries and inconsistent content caused low trust and minimal lead flow.",
+            solution: "Redesigned the website with a streamlined enquiry funnel, SEO-optimized service pages for target countries, and weekly informative reel content with active comment engagement. Launched targeted Meta Ads campaigns with geo-based retargeting.",
+            results: [
+                "4× more qualified leads in 60 days",
+                "+250% organic engagement from visa-related reels content",
+                "Conversion rate increased from 2% to 9%",
+            ],
+        }
     },
     {
         id: 2,
-        title: "EdTech Platform: 2x User Engagement",
+        title: "Beauty Salon",
         subtitle: "CASE STUDY 2",
-        description: "Revamped their UX & SEO, doubling user session time and reducing bounce rate by 35%.",
-        image: image3
+        city: "Mumbai",
+        description: "Boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
+        image: image3,
+        detailData: {
+            title: "Beauty Salon –",
+            city: "Mumbai",
+            objective: "To boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
+            challenge: "Fragmented branding, inconsistent social presence, and a poorly converting booking engine led to missed income.",
+            solution: "Created a brand identity with styled color system and high-conversion landing pages. Scheduled regular UGC & awareness videos featuring real clients. Amplified reach with Instagram/Facebook ads and influencer collaborations.",
+            results: [
+                "5× revenue increased in just 3 months",
+                "40% increase in monthly appointments",
+                "+1,200 new Instagram followers in 120 days",
+                "Booking funnel conversion rate improved by 33%",
+            ],
+        }
     },
     {
         id: 3,
-        title: "Fintech Startup: 5x Traffic Boost",
+        title: "Architect",
         subtitle: "CASE STUDY 3",
-        description: "Crafted a custom digital strategy that skyrocketed traffic and lead quality within 90 days.",
-        image: image2
+        city: "Ahmedabad, Gujarat",
+        description: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
+        image: image2,
+        detailData: {
+            title: "Architect –",
+            city: "Ahmedabad, Gujarat",
+            objective: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
+            challenge: "No digital presence, minimal portfolio online, and little differentiation in a crowded design market.",
+            solution: "Designed a clean, visual-first website showcasing past projects. Developed brand-led graphic design assets and brochures. Ran performance marketing targeting local real estate developers and builders with portfolio ads.",
+            results: [
+                "5 high-value project leads within the first 2 months",
+                "Portfolio site saw a 5 minutes+ average session duration",
+                "Reduced fake leads and increased show-up rate",
+            ],
+        }
+    },
+    {
+        id: 4,
+        title: "Dietician",
+        subtitle: "CASE STUDY 4",
+        city: "Delhi",
+        description: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
+        image: image1,
+        detailData: {
+            title: "Dietician –",
+            city: "Delhi",
+            objective: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
+            challenge: "Lacks authority, low content output, and poor visibility in local SEO and social media.",
+            solution: "Launched content-driven Instagram and blog strategy (infographics, diet hacks, testimonials). Developed downloadable lead magnet ('7-Day Delhi Clean Meal Plan') and set up lead generation ads targeting Delhi working professionals.",
+            results: [
+                "Tripled new consultations in 60 days",
+                "Downloadable plan converted at 28% CTR",
+                "Instagram engagement increased by 285%",
+            ],
+        }
+    },
+    {
+        id: 5,
+        title: "Real Estate Builder",
+        subtitle: "CASE STUDY 5",
+        city: "Surat",
+        description: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
+        image: image3,
+        detailData: {
+            title: "Real Estate Builder –",
+            city: "Surat",
+            objective: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
+            challenge: "Generic branding, low online presence among Surat homebuyers, and unoptimized landing pages.",
+            solution: "Built a custom website with a landing page including virtual walkthrough videos, interactive floor plans, and inquiry forms. Launched a performance campaign on Google and Facebook/Instagram targeting local demographic and interest segments. Tracked pixel‑based retargeting to visitors.",
+            results: [
+                "Generated 150+ quality leads in the first month",
+                "Cost-per-lead dropped 40% average month over month",
+                "Website engagement time spiked by 62%",
+            ],
+        }
     },
 ];
 
@@ -390,15 +470,22 @@ const Home = () => {
                                     <div className="xl:w-[70%] w-full justify-between flex flex-col">
                                         <p className="text-[#F68D13] text-sm font-medium mb-4">{current.subtitle}</p>
                                         <h2 className="text-2xl md:text-[33px] lg:text-4xl font-medium mb-6">
-                                            {current.title.split(":").map((part, index) => (
-                                                <span key={index} className="block">
-                                                    {part}{index === 0 ? " :" : ""}
-                                                </span>
-                                            ))}
+                                            {current.title} - <span className="text-[#F68D13]">{current.city}</span>
                                         </h2>
                                         <p className="text-gray-700 mb-6 md:text-base text-sm line-clamp-3">{current.description}</p>
                                         <div className="flex md:py-0 md:justify-start justify-center">
-                                            <button className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition">
+                                            <button 
+                                                onClick={() => {
+                                                    const slug = current.title
+                                                        .toLowerCase()
+                                                        .replace(/\s+/g, "-")
+                                                        .replace(/&/g, "and");
+                                                    navigate(`/case-study/${slug}`, {
+                                                        state: { case_study: current.detailData }
+                                                    });
+                                                }}
+                                                className="bg-[#F68D13] md:w-[160px] w-[120px] text-white md:text-base text-sm transition cursor-pointer"
+                                            >
                                                 <TextHover text="Read more" />
                                             </button>
                                         </div>
@@ -462,75 +549,82 @@ const Home = () => {
                 </div>
 
                 {/* Card swiper color bg */}
-                <div className="w-full lg:h-[85vh] md:h-[85vh] sm:h-[70vh] h-[60vh] mx-auto py-10 px-6 lg:px-10 xl:px-16 ">
+                <div className="w-full mx-auto py-10 px-8 lg:px-16 xl:px-24">
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: true,
-                            reverseDirection: true,
+                            reverseDirection: false,
                         }}
                         loop={true}
                         speed={1000}
                         grabCursor={true}
-                        centeredSlides={true}
+                        centeredSlides={false}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                         breakpoints={{
                             0: {
-                                spaceBetween: 20,     // mobile
-                                slidesPerView: 1,    // mobile and up
+                                spaceBetween: 15,     // mobile
+                                slidesPerView: 2,    // mobile shows 2 videos
+                                centeredSlides: false,
                             },
-                            640: {
-                                spaceBetween: 20,     // small devices
-                                slidesPerView: 2,    // small devices and up
+                            768: {
+                                spaceBetween: 20,     // tablet
+                                slidesPerView: 3,    // tablet shows 3 videos
+                                centeredSlides: true,
                             },
                             1024: {
                                 spaceBetween: 20,
-                                slidesPerView: 3   // laptop and up
+                                slidesPerView: 3,   // laptop and up
+                                centeredSlides: true,
                             },
                             1280: {
                                 spaceBetween: 40,
-                                slidesPerView: 3   // desktop and up
+                                slidesPerView: 3,   // desktop and up
+                                centeredSlides: true,
                             },
                         }}
+                        className="portrait-swiper"
                     >   
                         {/* side card */}
                         {colors.map((bg, index) => (
-                            <SwiperSlide key={index}>
-                                <div className={`xl:h-[500px] md:h-[400px] h-[370px] translate-y-12 bg-center slide-card w-full transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
-                                <div className={`absolute items-center justify-start w-full h-full slide-top ease-out duration-500 top-10 left-0 flex flex-col ${playingIndex === index ? 'bg-black/20' : ''}`}>
-                                    {
-                                        playingIndex == index ? (
-                                            <video
-                                                src={videos[index]?.url}
-                                                controls
-                                                autoPlay
-                                                className="h-full w-full object-contain"
-                                                style={{
-                                                    aspectRatio: '9/16', // Portrait mode aspect ratio
-                                                    maxHeight: '100%',
-                                                    maxWidth: '100%'
-                                                }}
-                                            />
-                                        ) : (
-                                            <>
-                                                <img src={bg} alt="image" className={`bg-cover h-full w-full transition-all duration-500 ${playingIndex !== null && playingIndex !== index ? 'blur-md opacity-60' : ''}`} />
-                                                <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 p-4">
-                                                    {/* button */}
-                                                    <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2 ">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            fill="white"
-                                                            viewBox="0 0 24 24"
-                                                            className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
-                                                        >
-                                                            <path d="M8 5v14l11-7z" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </>
-                                        )
-                                    }
+                            <SwiperSlide key={index} className="portrait-slide">
+                                <div className="portrait-card-container">
+                                    <div className={`portrait-slide-card bg-center transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
+                                    <div className={`absolute inset-0 flex flex-col items-center justify-center portrait-slide-top ease-out duration-500 ${playingIndex === index ? 'bg-black/20' : ''}`}>
+                                        {
+                                            playingIndex == index ? (
+                                                <video
+                                                    src={videos[index]?.url}
+                                                    controls
+                                                    autoPlay
+                                                    className="w-full object-contain"
+                                                    style={{
+                                                        aspectRatio: '9/16', // Portrait mode aspect ratio
+                                                        height: 'auto',
+                                                        minHeight: '100%'
+                                                    }}
+                                                />
+                                            ) : (
+                                                <>
+                                                    <img src={bg} alt="image" className={`object-cover rounded-xl h-full w-full transition-all duration-500 ${playingIndex !== null && playingIndex !== index ? 'blur-md opacity-60' : ''}`} />
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        {/* button */}
+                                                        <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="white"
+                                                                viewBox="0 0 24 24"
+                                                                className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12"
+                                                            >
+                                                                <path d="M8 5v14l11-7z" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            )
+                                        }
+                                    </div>
                                 </div>
                             </SwiperSlide>
                         ))}
