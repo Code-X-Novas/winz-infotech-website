@@ -396,7 +396,7 @@ const Home = () => {
                     <img
                         src={teamImage}
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-16 xl:scale-x-125"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-24 xl:scale-x-140"
                     />
                 </motion.div>
             </section>
@@ -579,9 +579,9 @@ const Home = () => {
                                 centeredSlides: true,
                             },
                             1280: {
-                                spaceBetween: 40,
-                                slidesPerView: 3,   // desktop and up
-                                centeredSlides: true,
+                                spaceBetween: 30,
+                                slidesPerView: 4,   // desktop and up
+                                centeredSlides: false,
                             },
                         }}
                         className="portrait-swiper"
