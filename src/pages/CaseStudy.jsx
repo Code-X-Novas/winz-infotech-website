@@ -156,7 +156,7 @@ const CaseStudy = () => {
 
     return (
         <div>
-            <SEO 
+            <SEO
                 title="Case Studies - Real Client Success Stories | Winz Infotech"
                 description="Explore real success stories from our clients. See how Winz Infotech helped businesses increase revenue by 3x, boost bookings by 5x, and generate qualified leads through digital marketing strategies."
                 keywords="case studies, client success stories, digital marketing results, revenue growth, lead generation, business transformation, marketing agency results, ROI improvement"
@@ -263,7 +263,16 @@ const CaseStudy = () => {
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
-                            className="bg-white shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                            className="bg-white cursor-pointer shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                            onClick={() => {
+                                const slug = study.title
+                                    .toLowerCase()
+                                    .replace(/\s+/g, "-")
+                                    .replace(/\//g, "-");
+                                navigate(`/case-study/${slug}`, {
+                                    state: { case_study: case_study[study.id - 1] }
+                                });
+                            }}
                         >
                             {/* Left Image */}
                             <div className="w-1/2 overflow-hidden">
@@ -285,18 +294,7 @@ const CaseStudy = () => {
                                 <p className="xl:text-base lg:text-xs md:text-base sm:text-sm text-[10px] line-clamp-4 hover:text-[#F68D13] transition-all duration-300 leading-tight text-gray-600">
                                     {study.description}
                                 </p>
-                                <div
-                                    onClick={() => {
-                                        const slug = study.title
-                                            .toLowerCase()
-                                            .replace(/\s+/g, "-")
-                                            .replace(/\//g, "-");
-                                        navigate(`/case-study/${slug}`, {
-                                            state: { case_study: case_study[study.id - 1] }
-                                        });
-                                    }}
-                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
-                                >
+                                <div className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer">
                                     <TextHover text="Read more" customClass="!text-left !px-0" />
                                 </div>
                             </div>

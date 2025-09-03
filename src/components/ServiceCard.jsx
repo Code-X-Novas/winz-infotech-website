@@ -11,9 +11,9 @@ const serviceData = [
         title: "Logo Design",
         description: "We design logos that do more than look good — they make your brand memorable. Crafted with strategy, built for recall.",
         images: [
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337735/logoDesign4_gi4zyy.png", 
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign3_nriu2m.png", 
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign2_x5xysn.png", 
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337735/logoDesign4_gi4zyy.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign3_nriu2m.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337734/logoDesign2_x5xysn.png",
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337733/logoDesign1_whgzna.png"
         ],
         price: 14999,
@@ -85,19 +85,19 @@ const serviceData = [
         ],
         price: 24999,
     },
+    // {
+    //     title: "Lead Generation",
+    //     description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes.",
+    //     images: [
+    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337729/Gemini_Generated_Image_x8v9d4x8v9d4x8v9_jjabgl.png",
+    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
+    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
+    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
+    //     ],
+    //     price: 24999,
+    // },
     {
-        title: "Lead Generation",
-        description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes.",
-        images: [
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337729/Gemini_Generated_Image_x8v9d4x8v9d4x8v9_jjabgl.png",
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
-            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
-        ],
-        price: 24999,
-    },
-    {
-        title:"Website Development",
+        title: "Website Development",
         description: "We craft fast, responsive, and goal-focused websites built to turn visitors into buyers and scale with your brand.",
         images: [
             "https://res.cloudinary.com/dooejuv06/image/upload/v1755337775/Gemini_Generated_Image_y6n451y6n451y6n4_tlco2o.png",
@@ -456,7 +456,7 @@ const services = [
         orangeCardButton: "Book a Free Content Strategy Call",
     },
 
-    {   
+    {
         path: "ugc-cgi-videos",
         tag: "UGC/CGI Video",
         heading: "UGC & CGI Videos That Sell Without Feeling ",
@@ -538,7 +538,7 @@ const services = [
         transparentDesc1: "Whether you're launching a product, running ads, or building your brand, UGC & CGI content makes your brand stand out and convert",
         transparentDesc2: " ",
         transparentHighlight: "",
-        
+
         whatHighlight: "What",
         whatHeading: "You Walk Away With",
         features: [
@@ -760,7 +760,7 @@ const services = [
             "If you're done wasting budget on campaigns that look good but don’t convert, let’s talk. At Winz Infotech, we make every rupee work for growth that shows up in your bank, not just your dashboard.",
         orangeCardButton: "Let’s Scale Smart",
     },
-    
+
     {
         path: "lead-generation",
         tag: "Lead Generation",
@@ -1085,8 +1085,18 @@ const ServiceCard = () => {
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: index * 0.2 }}
-                        className={`flex border-2 border-[#FC8A102E] ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+                        className={`flex cursor-pointer border-2 border-[#FC8A102E] ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
                             } flex-col items-center md:gap-12 gap-4 overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-white`}
+                        onClick={() => {
+                            const slug = service.title
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")
+                                .replace(/\//g, "-");
+                            navigate(`/services/${slug}`, {
+                                state: { services: services[index] }
+                            });
+                        }}
+
                     >
                         {/* Text Section - Animates from Left */}
                         <motion.div
@@ -1095,19 +1105,7 @@ const ServiceCard = () => {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             className="md:w-3/4 w-full sm:p-6 p-4"
                         >
-                            <h2
-                                onClick={() => {
-                                    const slug = service.title
-                                        .toLowerCase()
-                                        .replace(/\s+/g, "-")    
-                                        .replace(/\//g, "-");    
-                                    navigate(`/services/${slug}`, {
-                                        state: { services: services[index] }
-                                    });
-                                }}
-
-                                className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-medium md:mb-3 mb-2"
-                            >
+                            <h2 className="text-[#F68D13] cursor-pointer hover:underline md:text-3xl text-2xl font-medium md:mb-3 mb-2">
                                 {service.title}
                             </h2>
                             <p className="text-gray-800 md:text-lg leading-relaxed">

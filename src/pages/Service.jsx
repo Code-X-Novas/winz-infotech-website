@@ -63,12 +63,12 @@ const Service = () => {
             {/* Card + Box */}
             <div className="relative z-10 ">
                 {/* Services Card */}
-                <section className="max-w-7xl p-6 mx-auto mt-8">
+                <section className="max-w-[1500px] p-6 mx-auto mt-8">
                     <ServiceCard />
                 </section>
 
                 {/* Orange Box */}
-                <section className="max-w-7xl md:p-6 mx-auto mt-8">
+                <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
                     <OrangeCard
                         title="Big ideas? Stuck brand? Half-done website?"
                         description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."

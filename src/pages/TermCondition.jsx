@@ -10,13 +10,15 @@ export default function TermCondition() {
     return (
         <div className="px-4 lg:pt-25 pt-20 sm:px-6 md:px-10 py-10 max-w-6xl mx-auto text-gray-800">
             <h1 className="md:text-3xl text-2xl sm:text-3xl font-bold mb-6 text-center text-black">
-                <span className="text-[#F68D13]">Winz Infotech</span> Terms & Conditions
+                <span className="text-[#F68D13]">Winz Infotech</span> - Terms of services
             </h1>
 
             <p className="md:text-base text-sm">Welcome to Winz Infotech.</p>
             <p className="md:mb-6 mb-4 md:text-base text-sm">
-                These Terms & Conditions (“Terms”) govern your use of our website, services, and any related content provided by Winz Infotech (“we,” “us,” or “our”). By accessing or using our services, you agree to comply with and be bound by these Terms.
+                These Terms & Conditions (“Terms”) govern your use of our website, services, and any related content Provided by Backbencher Networks (Brand Name -  Winz Infotech) (“we,” “us,” or “our”). By accessing or using our services, you agree to comply with and be bound by these Terms.
             </p>
+
+            
 
             {/* 1. Acceptance of Terms */}
             <section className="md:mb-8 mb-6">
@@ -36,7 +38,7 @@ export default function TermCondition() {
                     <li>Influencer Marketing</li>
                     <li>UGC/CGi Videos</li>
                     <li>Performance Marketing</li>
-                    <li>Lead Generation</li>
+                    {/* <li>Lead Generation</li> */}
                     <li>Website Development</li>
                     <li>Print Media</li>
                 </ul>

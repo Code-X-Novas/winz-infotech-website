@@ -39,7 +39,7 @@ const OrangeCard = ({ title, description, buttonText }) => {
                     <div className="flex md:py-0 md:justify-start justify-center">
                         <motion.button
                             onClick={onButtonClick}
-                            className="bg-white w-fit text-[#F68D13] font-medium rounded transition"
+                            className="bg-white w-fit text-[#F68D13] font-medium transition"
                         >
                             <TextHover customClass='lg:text-xl px-1.5' text={buttonText} />
                         </motion.button>

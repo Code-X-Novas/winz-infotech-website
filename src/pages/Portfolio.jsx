@@ -349,9 +349,7 @@ const Portfolio = () => {
                                 {portfolio.url.includes('.mp4') || portfolio.url.includes('.mov') || portfolio.url.includes('.webm') || portfolio.url.includes('.avi') ? (
                                     <video
                                         src={portfolio.url}
-                                        autoPlay
-                                        muted
-                                        loop
+                                        alt={portfolio.tag}
                                         className="w-full h-auto object-contain"
                                     />
                                 ) : (

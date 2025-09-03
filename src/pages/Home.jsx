@@ -607,7 +607,7 @@ const Home = () => {
                                                 />
                                             ) : (
                                                 <>
-                                                    <img src={bg} alt="image" className={`object-cover rounded-xl h-full w-full transition-all duration-500 ${playingIndex !== null && playingIndex !== index ? 'blur-md opacity-60' : ''}`} />
+                                                    <img src={bg} alt="image" className={`object-cover h-full w-full transition-all duration-500 ${playingIndex !== null && playingIndex !== index ? 'blur-md opacity-60' : ''}`} />
                                                     <div className="absolute inset-0 flex items-center justify-center">
                                                         {/* button */}
                                                         <button onClick={() => handleClick(index)} className="bg-[#FC8A10] hover:scale-95 duration-300 transition-all cursor-pointer rounded-full p-2">

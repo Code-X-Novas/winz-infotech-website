@@ -29,11 +29,7 @@ const caseStudies = [
 const categories = [
     'All',
     'Branding',
-    'Logo Design',
     'Digital Marketing',
-    'Social media Assets',
-    'Landing Page',
-    'Website',
 ];
 
 const blogs = {
@@ -308,7 +304,23 @@ const Blogs = () => {
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
-                            className="bg-white shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                            className="bg-white cursor-pointer shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
+                            onClick={() => {
+                                const slug = study.title
+                                    .toLowerCase()
+                                    .replace(/\s+/g, "-")
+                                    .replace(/\//g, "-");
+                                if (study.id === 1) {
+                                    navigate(`/blogs/${slug}`, {
+                                        state: { blogs }
+                                    });
+                                } else if (study.id === 2) {
+                                    navigate(`/blogs/${slug}`, {
+                                        state: { points }
+                                    });
+                                }
+
+                            }}
                         >
                             {/* Left Image */}
                             <div className="w-1/2 overflow-hidden">
@@ -345,25 +357,7 @@ const Blogs = () => {
                                     )
                                 }
                                 <h3 className="border-b-2 text-[#F68D13]"></h3>
-                                <div
-                                    onClick={() => {
-                                        const slug = study.title
-                                            .toLowerCase()
-                                            .replace(/\s+/g, "-")
-                                            .replace(/\//g, "-");
-                                        if (study.id === 1) {
-                                            navigate(`/blogs/${slug}`, {
-                                                state: { blogs }
-                                            });
-                                        } else if (study.id === 2) {
-                                            navigate(`/blogs/${slug}`, {
-                                                state: { points }
-                                            });
-                                        }
-
-                                    }}
-                                    className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer"
-                                >
+                                <div className="text-[#F68D13] xl:text-base lg:text-sm md:text-base sm:text-sm text-[10px] font-medium hover:underline cursor-pointer">
                                     <TextHover text="Read more" customClass="!text-left !px-0" />
                                 </div>
                             </div>

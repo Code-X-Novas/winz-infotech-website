@@ -189,12 +189,12 @@ const Footer = ({ className = "" }) => {
                         <input
                             type="text"
                             placeholder="Your Name"
-                            className="w-full mb-3 p-2 border border-gray-300 rounded text-sm focus:outline-none"
+                            className="w-full bg-white mb-3 p-2 border border-gray-300 rounded text-sm focus:outline-none"
                         />
                         <input
                             type="text"
                             placeholder="Phone Number"
-                            className="w-full mb-4 p-2 border border-gray-300 rounded text-sm focus:outline-none"
+                            className="w-full bg-white mb-4 p-2 border border-gray-300 rounded text-sm focus:outline-none"
                         />
                         <button className="bg-[#F68D13] cursor-pointer text-white transition">
                             <TextHover text="Sent a request" />
@@ -207,8 +207,8 @@ const Footer = ({ className = "" }) => {
             <div className="w-full justify-end flex sm:p-4 lg:px-8 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
                 <p className="sm:absolute lg:left-[40%] md:left-10 sm:left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
                 <p className="flex gap-x-5 sm:justify-end justify-center">
-                    <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] hover:underline">Privacy Policy</p> |{" "}
-                    <p onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] hover:underline">Terms & Service</p>
+                    <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Privacy Policy</p> |{" "}
+                    <p onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Terms of Service</p>
                 </p>
             </div>
         </footer>
