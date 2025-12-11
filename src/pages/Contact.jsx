@@ -102,7 +102,7 @@ const Contact = () => {
             />
 
             {/* Main Flex Container */}
-            <div className="md:py-16 py-10 text-black lg:px-10 xl:px-16 px-6 relative w-full mt-20 lg:pt-10 pt-5">
+            <div className="md:py-16 py-10 text-black px-8 lg:px-20 xl:px-28 relative w-full mt-20 lg:pt-10 pt-5">
                 <div className="flex flex-col md:flex-row gap-5 items-stretch min-h-[80vh]">
                     {/* Left Side */}
                     <div className="md:w-1/2 w-full bg-white flex flex-col md:min-h-[80vh]">
@@ -175,13 +175,14 @@ const Contact = () => {
                     </div>
 
                     {/* Right Side Form */}
-                    <div className="lg:px-8 md:px-4 bg-white w-full md:w-1/2 min-h-[80vh] flex flex-col">
-                        <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
-                            Let's Connect for the Next Big Thing.
-                        </h3>
+                    <div className="lg:px-8 md:px-4 bg-white w-full md:w-1/2 min-h-[80vh] flex flex-col justify-center items-center">
+                        <div className="shadow-md lg:p-8 md:p-4 p-6 w-full flex flex-col justify-between">
+                            <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
+                                Let's Connect for the Next Big Thing.
+                            </h3>
 
-                        {/* form */}
-                        <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-gray-100 flex-1">
+                            {/* form */}
+                            <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-gray-100">
                             <input
                                 type="text"
                                 name="name"
@@ -220,14 +221,14 @@ const Contact = () => {
                                 name="budget"
                                 value={formData.budget}
                                 onChange={handleInputChange}
-                                className="w-full px-1 cursor-pointer border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white "
+                                className="w-full px-1 cursor-pointer border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white rounded-none appearance-none"
+                                style={{ borderRadius: '0' }}
                             >
                                 <option value="" disabled>Select Budget Range</option>
-                                <option value="Under ₹5,000">Under ₹5,000</option>
-                                <option value="₹5,000 - ₹10,000">₹5,000 - ₹10,000</option>
-                                <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
-                                <option value="₹50,000 - ₹50,000">₹25,000 - ₹50,000</option>
-                                <option value="Above ₹50,000">Above ₹50,000</option>
+                                <option value="Upto INR 50,000">Upto INR 50,000</option>
+                                <option value="INR 50,000 - INR 2,00,000">INR 50,000 - INR 2,00,000</option>
+                                <option value="INR 2,00,000 - INR 5,00,000">INR 2,00,000 - INR 5,00,000</option>
+                                <option value="Above INR 5,00,000">Above INR 5,00,000+</option>
                             </select>
                             <textarea
                                 name="message"
@@ -235,15 +236,16 @@ const Contact = () => {
                                 value={formData.message}
                                 onChange={handleInputChange}
                                 rows={10}
-                                className="w-full bg-white placeholder:text-gray-500 border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm resize-none"
+                                className="w-full bg-white placeholder:text-gray-500 border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm"
                             />
 
                             <div className="flex justify-center">
-                                <button type="submit" className="bg-[#F68D13] cursor-pointer text-white transition">
+                                <button type="submit" className="xl:w-[60%] bg-[#F68D13] cursor-pointer text-white transition font-bold">
                                     <TextHover text="Build With Winz" />
                                 </button>
                             </div>
                         </form>
+                        </div>
                     </div>
 
                     {loading && (
@@ -255,7 +257,7 @@ const Contact = () => {
             </div>
 
             {/* Map Section */}
-            <div className="lg:p-14 md:p-10 xl:p-20 p-6 bg-gray-100">
+            <div className="px-8 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16 xl:py-20 bg-gray-100">
                 <div className="relative bg-gray-100 w-full h-[350px] md:h-[420px] lg:h-[500px] xl:h-[600px] rounded-lg overflow-hidden shadow-md">
                     {/* Label */}
                     <div className="absolute top-0 left-3 sm:left-4 z-30 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">

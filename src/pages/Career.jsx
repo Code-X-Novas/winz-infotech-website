@@ -139,7 +139,7 @@ const CareerPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white text-black overflow-x-hidden md:overflow-x-visible lg:overflow-x-visible w-full mt-20 lg:py-10 py-5">
+        <div className="min-h-screen bg-white text-black overflow-x-hidden md:overflow-x-visible lg:overflow-x-visible w-full mt-20 lg:pb-10 lg:py-0 py-5">
             <SEO
                 title="Careers - Join Our Dynamic Team | Winz Infotech"
                 description="Join Winz Infotech's growing team! We're hiring talented professionals in graphic design, digital marketing, web development, and content creation. Remote-first, people-first culture."
@@ -149,7 +149,7 @@ const CareerPage = () => {
                 structuredData={careerStructuredData}
             />
             {/* Top Intro Section */}
-            <div className="flex flex-col gap-6 px-6 md:px-12 md:py-12 py-5">
+            <div className="flex flex-col gap-6 px-8 lg:px-20 xl:px-28 md:py-12 py-5">
                 {/* Heading */}
                 <div>
                     <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium">
@@ -200,7 +200,7 @@ const CareerPage = () => {
             </div>
 
             {/* Main Content: Left & Right */}
-            <div className="flex flex-col md:flex-row items-start px-6 py-12 gap-6 bg-gray-100 min-h-screen">
+            <div className="flex flex-col md:flex-row items-start px-8 lg:px-20 xl:px-0 py-12 gap-6 bg-gray-100 min-h-screen">
                 {/* Left Section */}
                 <div className="flex-1 flex items-start justify-center md:px-8 py-4 sticky top-20 self-start">
                     <div className="max-w-lg">
@@ -218,6 +218,10 @@ const CareerPage = () => {
                 {/* Right Section - Career Form */}
                 <div className="flex-1 flex items-center justify-center">
                     <div className="shadow-md lg:p-8 md:p-4 p-6 w-full md:max-w-xl bg-white flex flex-col justify-between">
+                        <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
+                            Let's Connect to Build Together.
+                        </h3>
+                        
                         <form onSubmit={handleSubmit} className="lg:space-y-7 md:space-y-4 sm:space-y-6 space-y-4 p-6 bg-gray-100 ">
                             {/* name */}
                             <input
@@ -300,7 +304,7 @@ const CareerPage = () => {
                                 value={formData.message}
                                 onChange={handleInputChange}
                                 rows="5"
-                                className="w-full bg-white placeholder:text-gray-500 border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm resize-none"
+                                className="w-full bg-white placeholder:text-gray-500 border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 px-3 text-sm resize-y"
                             />
 
                             {/* submit button */}

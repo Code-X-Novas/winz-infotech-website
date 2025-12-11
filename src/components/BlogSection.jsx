@@ -12,7 +12,7 @@ const BlogSection = ({ blogs, textVariants }) => {
         <div>
             {/* Section 1: Heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
-                <div className="lg:px-10 xl:px-16 px-5">
+                <div className="px-8 lg:px-20 xl:px-28">
                     <motion.h2
                         className="xl:text-6xl lg:text-5xl lg:leading-20 md:leading-14 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
@@ -61,7 +61,7 @@ const BlogSection = ({ blogs, textVariants }) => {
             </div>
 
             {/* Section-3: Details */}
-            <section className="lg:px-10 xl:px-16 px-5 py-10 mx-auto md:space-y-8 space-y-6">
+            <section className="px-8 lg:px-20 xl:px-28 py-10 mx-auto md:space-y-8 space-y-6">
                 {/* Top  */}
                 <div className="md:space-y-8 space-y-6">
                     <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-[#F68D13]">
@@ -105,7 +105,7 @@ const BlogSection = ({ blogs, textVariants }) => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 px-8 lg:px-20 xl:px-28">
                 <OrangeCard
                     title="Need help with your 2025 marketing plan? "
                     description="Let’s build a growth strategy that works this year and next."

@@ -195,6 +195,7 @@ const CaseStudy = () => {
                     opacity: 1,
                     duration: 0.8,
                     ease: 'power3.out',
+                    clearProps: 'none',
                     scrollTrigger: {
                         trigger: headingRef.current,
                         start: 'top 80%',
@@ -215,6 +216,7 @@ const CaseStudy = () => {
                     opacity: 1,
                     duration: 0.8,
                     ease: 'power3.out',
+                    clearProps: 'none',
                     scrollTrigger: {
                         trigger: categoriesRef.current,
                         start: 'top 80%',
@@ -237,6 +239,7 @@ const CaseStudy = () => {
                         duration: 0.8,
                         delay: index * 0.1,
                         ease: 'power3.out',
+                        clearProps: 'none',
                         scrollTrigger: {
                             trigger: card,
                             start: 'top 85%',
@@ -258,6 +261,7 @@ const CaseStudy = () => {
                     opacity: 1,
                     duration: 0.8,
                     ease: 'power3.out',
+                    clearProps: 'none',
                     scrollTrigger: {
                         trigger: orangeCardRef.current,
                         start: 'top 80%',
@@ -332,11 +336,8 @@ const CaseStudy = () => {
             />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
-                <motion.div
+                <div
                     ref={headingRef}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
                     className="px-8 lg:px-20 xl:px-28"
                 >
                     <h2 className="xl:text-7xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">
@@ -346,7 +347,7 @@ const CaseStudy = () => {
                         From boosting bookings to scaling revenue and building unforgettable brands explore
                         real stories of real results with Winz Infotech.
                     </p>
-                </motion.div>
+                </div>
             </section>
 
             {/* Categories */}

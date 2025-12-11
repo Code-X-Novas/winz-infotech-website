@@ -65,7 +65,7 @@ const About = () => {
             <main className="flex-1 bg-white">
                 {/* Heading Section */}
                 <section className="w-full bg-white lg:py-10 py-5">
-                    <div className="lg:px-10 xl:px-16 px-5">
+                    <div className="px-8 lg:px-20 xl:px-28">
                         <motion.h2
                             className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-medium"
                             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,7 @@ const About = () => {
                         </motion.h2>
 
                         <motion.p
-                            className="md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
+                            className="md:text-lg text-base md:mt-4 mt-3 font-normal md:leading-9 leading-6"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -102,11 +102,11 @@ const About = () => {
 
                 {/* Who We Are */}
                 <section className="w-full bg-white py-10 md:py-16">
-                    <div className="lg:px-10 xl:px-16 px-5">
+                    <div className="px-8 lg:px-20 xl:px-28">
                         <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-6">
                             Who we <span className="text-[#F68D13] font-medium">are</span>
                         </h2>
-                        <div className="w-full flex flex-col space-y-4 text-gray-800 md:text-[17px] text-sm font-normal md:leading-9 leading-6">
+                        <div className="w-full flex flex-col space-y-4 text-gray-800 md:text-lg text-base font-normal md:leading-9 leading-6">
                             <p>
                                 We're{" "}
                                 <span className="text-[#F68D13] font-semibold">Winz Infotech</span>, your no-nonsense digital growth partner.
@@ -145,19 +145,19 @@ const About = () => {
                     {/* Founder Section */}
                     <div className="flex flex-col py-12 bg-gray-100">
                         {/* Heading */}
-                        <div className="mb-8 md:mb-10 text-center md:text-left px-4 md:px-12">
-                            <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-3 px-2 sm:px-6 text-left">
+                        <div className="mb-8 md:mb-10 text-center md:text-left px-8 lg:px-20 xl:px-28">
+                            <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-3 text-left">
                                 From the <span className="text-[#F68D13] font-medium">Founder</span>
                             </h2>
-                            <p className="text-gray-700 w-full mx-auto md:mx-0 md:text-[17px] text-sm font-normal md:leading-9 leading-6 sm:px-6 px-2  text-left pr-4">
+                            <p className="text-gray-700 w-full mx-auto md:mx-0 md:text-lg text-base font-normal md:leading-9 leading-6 text-left pr-4">
                                 A glimpse into the scale, trust, and diversity we've built over
                                 the years — fueled by strategy, design, and measurable results.
                             </p>
                         </div>
 
                         {/* Founder Quote */}
-                        <div className="flex flex-col md:flex-row gap-6 lg:gap-10 items-start px-4 sm:px-6 md:px-10">
-                            <div className="md:w-1/2 w-full flex justify-center xl:-ml-5">
+                        <div className="flex flex-col md:flex-row gap-6 lg:gap-10 items-start px-8 lg:px-20 xl:px-28">
+                            <div className="md:w-1/2 w-full flex justify-center">
                                 <img
                                     src={work1Image}
                                     alt="Founder"
@@ -165,7 +165,7 @@ const About = () => {
                                 />
                             </div>
 
-                            <div className="md:w-1/2 w-full flex flex-col space-y-4 text-gray-800 lg:text-[17px] text-sm font-normal leading-tigh px-2 sm:px-4 md:px-10">
+                            <div className="md:w-1/2 w-full flex flex-col space-y-4 text-gray-800 lg:text-lg text-base font-normal leading-tight">
                                 <p>
                                     <span className="text-black font-semibold md:text-2xl text-lg">“</span>Most agencies
                                     sell creativity. We sell{" "}
@@ -202,15 +202,15 @@ const About = () => {
                     </div>
 
                     {/* Vision */}
-                    <div className="px-4 sm:px-6 md:px-10 md:py-20 py-10">
-                        <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-5 sm:px-4 px-2 md:px-12">
+                    <div className="px-8 lg:px-20 xl:px-28 md:py-20 py-10">
+                        <h2 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-medium mb-5">
                             Our <span className="text-[#F68D13] font-medium">Vision</span>
                         </h2>
-                        <p className="px-2 sm:px-4 md:px-12 md:-mb-2 md:text-base text-sm text-[#F68D13] font-semibold">
+                        <p className="md:-mb-2 md:text-lg text-base text-[#F68D13] font-semibold">
                             Marketing that's clear. Creatives that convert. Growth you can
                             see.
                         </p>
-                        <div className="w-full space-y-2 flex flex-col text-gray-800 md:text-[17px] text-sm font-normal md:leading-9 leading-6 px-2 sm:px-4 md:px-12">
+                        <div className="w-full space-y-2 flex flex-col text-gray-800 md:text-lg text-base font-normal md:leading-9 leading-6">
                             <p>
                                 To fix what most agencies broke{" "}
                                 <span className="text-black font-medium">
@@ -227,7 +227,7 @@ const About = () => {
                     </div>
 
                     {/* Mission */}
-                    <div className="bg-gray-100 px-6 sm:px-10 md:px-20 pt-10 md:py-20 py-10 overflow-hidden">
+                    <div className="bg-gray-100 px-8 lg:px-20 xl:px-28 pt-10 md:py-20 py-10 overflow-hidden">
                         <div className="flex flex-col md:flex-row items-start justify-between gap-8 max-w-7xl mx-auto">
                             {/* Left Heading */}
                             <div className="w-full md:w-1/2 flex items-start justify-start text-left sticky top-0 self-start">
@@ -270,10 +270,10 @@ const About = () => {
                                             className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#F68D13] border-2 border-white shadow-md shrink-0"
                                         />
                                         <div>
-                                            <h3 className="font-medium lg:text-lg text-sm">
+                                            <h3 className="font-medium lg:text-xl text-base">
                                                 {step.title}
                                             </h3>
-                                            <p className="text-gray-600 lg:text-base text-xs font-normal md:leading-tight leading-tight">
+                                            <p className="text-gray-600 lg:text-lg text-sm font-normal md:leading-tight leading-tight">
                                                 {step.description}
                                             </p>
                                         </div>
@@ -284,9 +284,9 @@ const About = () => {
                     </div>
 
                     {/* Orange Box */}
-                    <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+                    <section className="bg-[#f5f5f5] py-5 md:py-10 px-8 lg:px-20 xl:px-28">
                         <OrangeCard
-                            title="Big ideas? Stuck brand? Half-done website?"
+                            title="Big ideas? Stuck brand?"
                             description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                             buttonText="Speak to Experts"
                         />

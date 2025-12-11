@@ -13,7 +13,7 @@ const PointSection = ({ points, textVariants }) => {
         <div>
             {/* Section 1: Heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
-                <div className="lg:px-10 xl:px-16 px-5">
+                <div className="px-8 lg:px-20 xl:px-28">
                     <motion.h2
                         className="xl:text-6xl lg:text-5xl lg:leading-20 md:leading-14 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
@@ -65,7 +65,7 @@ const PointSection = ({ points, textVariants }) => {
             </div>
 
             {/* Section-3: Details */}
-            <section className="lg:px-10 xl:px-16 px-5 py-10 mx-auto md:space-y-8 space-y-6">
+            <section className="px-8 lg:px-20 xl:px-28 py-10 mx-auto md:space-y-8 space-y-6">
                 {/* Section 1 */}
                 <div className="md:space-y-3 space-y-2">
                     <h2 className="text-lg md:text-xl lg:text-2xl font-medium text-[#F68D13]">{points[0].title}</h2>
@@ -113,7 +113,7 @@ const PointSection = ({ points, textVariants }) => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 px-8 lg:px-20 xl:px-28">
                 <OrangeCard
                     title="Looking to modernize your real estate marketing?"
                     description="Real estate marketing in 2025 is fast, visual, and data-driven. Builders who adapt to this landscape not only sell homes faster but also build brands that last. "

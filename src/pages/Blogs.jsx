@@ -241,7 +241,7 @@ const Blogs = () => {
             />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
-                <div className="lg:px-10 xl:px-16 px-5">
+                <div className="px-8 lg:px-20 xl:px-28">
                     <motion.h2
                         className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
@@ -272,7 +272,7 @@ const Blogs = () => {
 
             {/* Categories */}
             <section className="w-full bg-white ">
-                <div className="lg:px-7 xl:px-12 px-4 bg-white w-full">
+                <div className="px-8 lg:px-20 xl:px-28 bg-white w-full">
                     <ScrollMenu>
                         {categories.map((item) => (
                             <div
@@ -291,7 +291,7 @@ const Blogs = () => {
             </section>
 
             {/* Blogs */}
-            <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 ">
+            <section className="w-full lg:my-10 my-5 px-8 lg:px-20 xl:px-28 ">
                 <motion.div
                     className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                     variants={containerVariants}
@@ -367,9 +367,9 @@ const Blogs = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 px-8 lg:px-20 xl:px-28">
                 <OrangeCard
-                    title="Big ideas? Stuck brand? Half-done website?"
+                    title="Big ideas? Stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />
