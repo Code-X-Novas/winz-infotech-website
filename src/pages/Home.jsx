@@ -209,16 +209,16 @@ const Home = () => {
     ];
 
     const handleClick = (index) => {
-        // Swipe to center the clicked slide
         if (swiperRef.current) {
+            // Slide to the clicked index - swiper will automatically center it because centeredSlides: true
             swiperRef.current.slideToLoop(index, 500); // 500ms transition
             swiperRef.current.autoplay.stop();
         }
         
-        // Set playing index after a small delay to allow slide transition
+        // Set playing index after slide transition completes
         setTimeout(() => {
             setPlayingIndex(index);
-        }, 300);
+        }, 550);
     };
 
     useEffect(() => {
@@ -265,7 +265,7 @@ const Home = () => {
                 structuredData={homeStructuredData}
             />
             {/* Main Section */}
-            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-10 xl:px-16 lg:py-10 bg-white">
+            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-8 lg:px-20 xl:px-28 lg:py-10 bg-white">
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 mt-5 md:mt-0 pb-5">
                     {/* Hero Title */}
@@ -317,7 +317,7 @@ const Home = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.4 }}
-                            className="bg-[#F68D13] lg:px-5 lg:h-12 cursor-pointer text-white text-sm font-medium flex items-center"
+                            className="bg-[#F68D13] lg:px-10 lg:h-12 cursor-pointer text-white text-sm font-medium flex items-center"
                             onClick={() => navigate('/contact')}
                         >
                             <TextHover customClass="!text-base" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
@@ -361,19 +361,19 @@ const Home = () => {
             </section>
 
             {/* Our Services */}
-            <section className="bg-[#f5f5f5] px-6 lg:px-10 xl:px-16 py-10">
+            <section className="bg-[#f5f5f5] px-8 lg:px-20 xl:px-28 py-10">
                 {/* heading */}
                 <div className="mb-12">
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         Our <span className="text-[#F68D13]">Services</span>
                     </h2>
-                    <p className="text-gray-600 tracking-wide mt-4">
+                    <p className="text-gray-600 tracking-wide mt-4 max-w-4xl">
                         We deliver design, branding, and marketing solutions tailored to elevate your digital presence. Thoughtfully built. Creatively executed.
                     </p>
                 </div>
 
                 {/* Card */}
-                <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-x-16 sm:gap-x-10 gap-x-6 gap-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -381,11 +381,11 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white xl:py-16 lg:py-12 sm:py-10 py-6 sm:p-6 p-3 shadow-[#ecad65] shadow text-center transition-shadow duration-300"
+                            className="bg-white p-8 lg:p-10 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
                         >
-                            <div className="md:mb-4 mb-2.5 flex justify-center">{service.icon}</div>
-                            <h3 className="md:text-xl font-medium md:mb-2 mb-1">{service.title}</h3>
-                            <p className="text-gray-600 md:text-sm text-xs">{service.desc}</p>
+                            <div className="mb-6 flex justify-start">{service.icon}</div>
+                            <h3 className="text-xl lg:text-2xl font-medium mb-3">{service.title}</h3>
+                            <p className="text-gray-600 text-sm lg:text-base leading-relaxed">{service.desc}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -401,13 +401,13 @@ const Home = () => {
             </section>
 
             {/* Swiper */}
-            <section className="w-full bg-[#f5f5f5] mx-auto lg:px-12 px-6 md:py-12 py-8 relative">
+            <section className="w-full bg-[#f5f5f5] mx-auto lg:px-20 px-8 xl:px-28 md:py-12 py-8 relative">
                 <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium text-center mb-8">
                     <span className="text-[#F68D13]">Growth Stories</span> - Not Just Campaigns
                 </h2>
                 <Swiper
                     modules={[Autoplay]}
-                    autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
                     loop={true}
                     spaceBetween={20}
                     slidesPerView={1}
@@ -440,10 +440,25 @@ const Home = () => {
                                                     {current.detailData.map((stat, index) => {
                                                         // Extract percentage or number from the stat
                                                         const percentageMatch = stat.match(/(\d+)%/);
-                                                        const numberMatch = stat.match(/(\d+)×/);
+                                                        const plusNumberMatch = stat.match(/([+\-][\d,]+\+?)/);
+                                                        const numberPlusMatch = stat.match(/([\d,]+\+)/);
+                                                        const timesMatch = stat.match(/(\d+)×/);
+                                                        
                                                         const displayNumber = percentageMatch ? percentageMatch[1] + '%' : 
-                                                                             numberMatch ? numberMatch[1] + '×' : 
+                                                                             plusNumberMatch ? plusNumberMatch[1] :
+                                                                             numberPlusMatch ? numberPlusMatch[1] :
+                                                                             timesMatch ? timesMatch[1] + '×' : 
                                                                              stat.match(/(\d+)/)?.[1] || '';
+                                                        
+                                                        // Keep the full text in description without removing the number
+                                                        let descriptionText = stat;
+                                                        if (percentageMatch) {
+                                                            descriptionText = stat.replace(/^\d+%\s*/, '');
+                                                        } else if (timesMatch) {
+                                                            descriptionText = stat.replace(/^\d+×\s*/, '');
+                                                        } else if (plusNumberMatch && !stat.includes('new Instagram')) {
+                                                            descriptionText = stat.replace(/^[+\-]?[\d,]+[%×+]?\s*/, '');
+                                                        }
                                                         
                                                         return (
                                                             <div key={index} className="text-left">
@@ -451,7 +466,7 @@ const Home = () => {
                                                                     {displayNumber}
                                                                 </div>
                                                                 <div className="text-gray-600 text-xs md:text-sm lg:text-base leading-tight">
-                                                                    {stat.replace(/^\d+[%×]?\s*/, '')}
+                                                                    {descriptionText}
                                                                 </div>
                                                             </div>
                                                         );
@@ -502,7 +517,7 @@ const Home = () => {
             {/* Clients Who Trust Us */}
             <section className="w-full bg-[#f5f5f5] py-10">
                 {/* heading */}
-                <div className="lg:px-10 xl:px-16 px-6">
+                <div className="lg:px-20 xl:px-28 px-8">
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         <span className="text-[#F68D13]">Clients</span> Who Trust Us
                     </h2>
@@ -529,14 +544,14 @@ const Home = () => {
             {/* Proof over Promises scrolling color card */}
             <section className="bg-[#f5f5f5] pt-10">
                 {/* heading */}
-                <div className="lg:px-10 xl:px-16 px-6">
+                <div className="lg:px-20 xl:px-28 px-8">
                     <h2 className="xl:text-5xl leading-relaxed md:text-4xl text-3xl font-medium">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>
 
                 {/* Card swiper color bg */}
-                <div className="w-full mx-auto py-10 px-8 lg:px-16 xl:px-24">
+                <div className="w-full mx-auto py-10 px-10 lg:px-24 xl:px-32">
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
@@ -566,9 +581,9 @@ const Home = () => {
                                 centeredSlides: true,
                             },
                             1280: {
-                                spaceBetween: 30,
-                                slidesPerView: 4,   // desktop and up
-                                centeredSlides: false,
+                                spaceBetween: 20,
+                                slidesPerView: 5,   // desktop shows 5 videos
+                                centeredSlides: true,
                             },
                         }}
                         className="portrait-swiper"
@@ -576,7 +591,7 @@ const Home = () => {
                         {/* side card */}
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index} className="portrait-slide">
-                                <div className="portrait-card-container">
+                                <div className={`portrait-card-container transition-all duration-500 ease-out ${playingIndex === index ? '!w-[110%] !h-[100%] z-20' : ''}`}>
                                     <div className={`portrait-slide-card bg-center transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
                                     <div className={`absolute inset-0 flex flex-col items-center justify-center portrait-slide-top ease-out duration-500 ${playingIndex === index ? 'bg-black/20' : ''}`}>
                                         {
@@ -585,11 +600,11 @@ const Home = () => {
                                                     src={videos[index]?.url}
                                                     controls
                                                     autoPlay
-                                                    className="w-full object-contain"
+                                                    onPause={() => setPlayingIndex(null)}
+                                                    onEnded={() => setPlayingIndex(null)}
+                                                    className="w-full h-full object-contain"
                                                     style={{
                                                         aspectRatio: '9/16', // Portrait mode aspect ratio
-                                                        height: 'auto',
-                                                        minHeight: '100%'
                                                     }}
                                                 />
                                             ) : (
@@ -620,9 +635,9 @@ const Home = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-20 xl:px-28 px-8">
                 <OrangeCard
-                    title="Big ideas? Stuck brand? Half-done website?"
+                    title="Big ideas? Stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />

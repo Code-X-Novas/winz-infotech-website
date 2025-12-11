@@ -1,10 +1,12 @@
 /* Portrait Swiper Styles - 9:16 aspect ratio */
 .portrait-swiper {
     height: auto;
+    overflow: hidden !important;
 }
 
 .portrait-slide {
     height: auto;
+    overflow: visible !important;
 }
 
 .portrait-card-container {
@@ -14,6 +16,8 @@
     overflow: visible;
     border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transform-origin: center center;
+    z-index: 1;
 }
 
 .portrait-slide-card {

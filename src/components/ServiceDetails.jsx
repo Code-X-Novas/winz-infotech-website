@@ -12,7 +12,7 @@ const ServiceDetails = () => {
     return (
         <div className="bg-gray-100 lg:mt-[400px] sm:mt-[350px] mt-[430px]">
             {/* Section 1: Text */}
-            <div className="fixed sm:top-16 top-20 -z-1 bg-white xl:pl-16 lg:p-12 sm:p-8 p-5">
+            <div className="fixed sm:top-16 top-20 -z-1 bg-white xl:pl-28 lg:p-12 sm:p-8 p-5">
                 <div className="max-w-7xl mx-auto">
                     <h4 className="text-[#F68D13] font-medium tracking-wide uppercase mb-4 text-4xl lg:text-6xl ">
                         {service?.tag}
@@ -47,29 +47,29 @@ const ServiceDetails = () => {
             {/* Section 3: Content Over Image */}
             <div className="h-[100vh] flex md:flex-row flex-col">
                 {/* Left Side - Fixed */}
-                <div className="md:w-1/2 xl:h-[50vh] lg:h-[40vh] h-[30vh] bg-white sticky top-11 flex items-start justify-start xl:p-16 md:p-12 p-8 z-1">
+                <div className="md:w-1/2 xl:h-[50vh] lg:h-[40vh] h-[30vh] bg-white sticky top-11 flex items-start justify-start xl:p-16 xl:pl-28 md:p-12 p-8 z-1">
                     <div>
-                        <h1 className="xl:text-5xl lg:text-4xl text-3xl font-medium text-black mb-4 leading-snug">
+                        <h1 className="xl:text-6xl lg:text-4xl text-3xl font-medium text-black mb-4 leading-snug">
                             {service?.featureText1} <span className="text-[#F68D13]">{service?.featureText2}</span> {service?.featureText3}
                         </h1>
-                        <p className="text-gray-500 lg:text-base text-sm max-w-md">
+                        <p className="text-gray-500 lg:text-xl text-sm max-w-md">
                             {service?.featureDesc}
                         </p>
                     </div>
                 </div>
 
                 {/* Right Side - Scrollable Content */}
-                <div className="w-full h-screen pt-54 sm:pt-48 md:pt-0 absolute overflow-y-auto bg-white">
+                <div className="w-full h-screen pt-54 sm:pt-48 md:pt-0 absolute overflow-y-auto xl:pr-16 bg-white">
                     <div className="mx-auto flex md:justify-end">
                         <div className="md:w-1/2 md:p-12 p-8 lg:space-y-10 space-y-4">
-                            <h3>Here's why:</h3>
+                            <h3 className="text-xl">Here's why:</h3>
                             {
                                 service?.investmentBenefits.map((item) => (
                                     <div key={item.id} className="mb-6">
-                                        <h3 className="text-[#F68D13] lg:text-lg font-medium lg:mb-2 mb-1">
+                                        <h3 className="text-[#F68D13] lg:text-xl font-medium lg:mb-2 mb-1">
                                             {item.id}. <span className="text-[#F68D13]">{item.title}</span>
                                         </h3>
-                                        <p className="text-gray-600 lg:text-base md:text-xs text-sm">
+                                        <p className="text-gray-600 lg:text-lg md:text-xs text-sm">
                                             {item.description}
                                         </p>
                                     </div>
@@ -82,15 +82,15 @@ const ServiceDetails = () => {
             </div>
 
             {/* Section 4,5,6,7*/}
-            <div className="w-full overflow-hidden sticky">
+            <div className="-mt-[70px] w-full overflow-hidden sticky">
                 {/* Section 4: Our Logo Design Process */}
-                <section className="xl:px-16 xl:pb-16 md:px-12 md:pb-12 px-8 pb-8 flex md:flex-row flex-col bg-white">
+                <section className="xl:p-16 xl:pl-28 md:p-12 p-8 flex md:flex-row flex-col bg-white">
                     {/* left part */}
                     <div className="md:w-1/2 flex flex-col ">
-                        <h2 className="lg:text-5xl text-3xl md:max-lg lg:leading-16 font-medium text-black mb-2">
+                        <h2 className="xl:text-6xl lg:text-4xl text-3xl md:max-lg lg:leading-16 font-medium text-black mb-2">
                             {service?.stepsHeading} <span className="text-[#F68D13]">{service?.stepsHighlight}</span>
                         </h2>
-                        <p className="text-gray-700 max-w-lg text-sm mb-10">
+                        <p className="text-gray-700 max-w-lg lg:text-xl text-sm mb-10">
                             {service?.stepsDescription}
                         </p>
                     </div>
@@ -160,18 +160,18 @@ const ServiceDetails = () => {
 
                 {/* Section 5: Who We Design For */}
                 <section className="bg-cover bg-center text-black">
-                    <div className="bg-white/70 xl:p-16 md:p-12 p-8 backdrop-blur-xs ">
-                        <h2 className="lg:text-5xl md:text-4xl text-3xl font-medium mb-4">
+                    <div className="bg-white/70 xl:p-16 xl:pl-28 md:p-12 p-8 backdrop-blur-xs ">
+                        <h2 className="xl:text-6xl lg:text-4xl text-3xl font-medium mb-4">
                             <span className="text-[#F68D13]">{service?.transparentHigh} </span>{service?.transparentHeading}
                         </h2>
-                        <p className="text-gray-700 md:text-base text-sm max-w-4xl leading-relaxed">
+                        <p className="text-gray-700 lg:text-xl text-sm max-w-4xl leading-relaxed">
                             {service?.transparentDesc1}<span className="text-[#F68D13] font-medium"> {service?.transparentHighlight} </span> {service?.transparentDesc2}
                         </p>
                     </div>
                 </section>
 
                 {/* Section 6: What You Get */}
-                <section className="w-full xl:p-16 md:p-12 p-8 py-14 bg-white flex flex-col md:flex-row items-center justify-between md:gap-0 gap-8">
+                <section className="w-full xl:p-16 xl:pl-28 md:p-12 p-8 py-14 bg-white flex flex-col md:flex-row items-center justify-between md:gap-0 gap-8">
                     {/* Left Heading */}
                     <motion.div
                         className="md:w-1/2"
@@ -186,7 +186,7 @@ const ServiceDetails = () => {
                         }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
+                        <h2 className="xl:text-6xl lg:text-4xl text-3xl font-medium">
                             <span className="text-[#F68D13]">{service?.whatHighlight}</span>{" "}
                             <span className="text-black">{service?.whatHeading}</span>
                         </h2>
@@ -246,7 +246,7 @@ const ServiceDetails = () => {
                 </section>
 
                 {/* Section 7: Orange Box */}
-                <section className="bg-white xl:p-16 md:p-12 p-8 mx-auto ">
+                <section className="bg-white xl:p-16 xl:pl-28 md:p-12 p-8 mx-auto ">
                     <OrangeCard
                         title={service?.orangeCardHeading}
                         description={service?.orangeCardDesc}

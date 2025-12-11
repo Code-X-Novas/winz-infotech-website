@@ -112,7 +112,7 @@ const Testimonial = () => {
     }, [isHovered, testimonials.length]);
     
     return (
-        <div className="max-w-[1500px] mx-auto sm:px-4 px-6 sm:pt-12 pt-5 relative">
+        <div className="max-w-[1500px] mx-auto sm:px-4 lg:px-8 xl:px-11 px-6 sm:pt-12 pt-5 relative">
             {/* Background circle gradient */}
             {/* <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[70%] w-[60%] 
                 bg-[conic-gradient(from_62deg_at_50%_50%,_rgba(252,138,16,0.25)_0deg,_rgba(254,226,195,0.25)_187.768deg,_rgba(253,197,135,0.25)_272.03deg,_rgba(255,255,255,0.25)_360deg)] 

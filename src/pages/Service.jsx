@@ -53,7 +53,7 @@ const Service = () => {
                 structuredData={servicesStructuredData}
             />
             {/* Header Section */}
-            <header className="fixed top-18 left-0 w-full -z-1 bg-white mt-10 lg:px-10 xl:px-16 px-6">
+            <header className="fixed top-18 left-0 w-full -z-1 bg-white mt-10 lg:px-10 xl:px-28 px-6">
                 <h1 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">Our <span className="text-[#F68D13]">Services</span></h1>
                 <p className="md:text-[17px] max-w-7xl text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                     We deliver design, branding, and marketing solutions tailored to elevate your digital presence. Thoughtfully built. Creatively executed.We deliver design, branding, and marketing solutions tailored to elevate your digital presence.
@@ -70,7 +70,7 @@ const Service = () => {
                 {/* Orange Box */}
                 <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
                     <OrangeCard
-                        title="Big ideas? Stuck brand? Half-done website?"
+                        title="Big ideas? Stuck brand?"
                         description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                         buttonText="Speak to Experts"
                     />
