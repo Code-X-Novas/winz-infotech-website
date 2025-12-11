@@ -22,7 +22,7 @@ const portfolios = {
         Banner3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106532/Banner_01_qtr3b9.jpg", type: "Gym Banner" },
         Banner2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106534/Banner_01_copy_dpened.jpg", type: "Gym Banner" },
     },
-    Gym_Creatives:{
+    Fitness_And_Gym_Creatives:{
         Gym_Creatives1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835002/01_qlaafe.jpg",type:"Gym Banner"},
         Gym_Creatives2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835008/02_rucd9y.jpg",type:"Gym Banner"},
         Gym_Creatives3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833399/03_je83wo.jpg",type:"Gym Banner"},
@@ -62,7 +62,7 @@ const portfolios = {
         Office_Wall2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106443/Office_Wall_03_gi0fou.jpg", type: "Conference Room" },
         Office_Wall3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106442/Office_Wall_02_gouxqa.jpg", type: "Corporate Wall" },
     },
-    Real_Estate:{
+    Real_Estate_Social_Media:{
         Real_Estate1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/1_rmv70j.jpg",type:"Aera"},
         Real_Estate2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/2_fzhomj.jpg",type:"Aera"},
         Real_Estate3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/3_oau21b.jpg",type:"Aera"},
@@ -79,7 +79,7 @@ const portfolios = {
         Standee_Design3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_02_kysqwb.jpg", type: "Marketing Standee" },
         Standee_Design4: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_03_basbjv.jpg", type: "Display Standee" },
     },
-    Visa_and_Immigration: {
+    Visa_and_Immigration_Social_Media: {
         visa_and_immigration1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834358/1_i4cp0e.jpg",type:"Cristmas"},
         visa_and_immigration2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/02_o3nmin.jpg",type:"paper Work"},
         visa_and_immigration3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/3_xwxcz4.jpg",type:"Passport"},
@@ -100,7 +100,7 @@ const categories = [
     'All',
     'Banner',
     'Brochure',
-    'Gym Creatives',
+    'Fitness And Gym Creatives',
     'Business Card',
     'Flyer',
     'Hoardings',
@@ -108,9 +108,9 @@ const categories = [
     'Logo Design',
     "Office Wall",
     "Standee Design",
-    "Real Estate",
+    "Real Estate Social Media",
     "Video",
-    "Visa and Immigration",
+    "Visa and Immigration Social Media",
 ];
 
 const Portfolio = () => {
@@ -262,9 +262,9 @@ const Portfolio = () => {
             />
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
-                <div className="lg:px-10 xl:px-16 px-5">
+                <div className="px-8 lg:px-20 xl:px-28">
                     <motion.h2
-                        className="xl:text-6xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-medium"
+                        className="xl:text-7xl lg:text-5xl lg:leading-16 leading-12 md:text-4xl text-3xl font-medium"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -275,7 +275,7 @@ const Portfolio = () => {
                     </motion.h2>
 
                     <motion.p
-                        className="md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
+                        className="md:text-[17px] xl:text-[19px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6"
                         variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -292,7 +292,7 @@ const Portfolio = () => {
 
             {/* Categories */}
             <section className="w-full bg-white ">
-                <div className="lg:px-7 xl:px-12 px-4 bg-white w-full">
+                <div className="px-8 lg:px-20 xl:px-28 bg-white w-full">
                     {/* Horizontal scroll for mobile and tablet */}
                     <div className="md:hidden">
                         <ScrollMenu>
@@ -300,7 +300,7 @@ const Portfolio = () => {
                                 <div
                                     key={item}
                                     onClick={() => setSelected(item)}
-                                    className={`cursor-pointer px-4 py-2 mx-2 min-w-max text-sm font-medium 
+                                    className={`cursor-pointer px-4 py-2 mx-2 min-w-max text-md font-medium 
                                             ${selected === item
                                             ? 'bg-[#F68D13] text-white'
                                             : 'bg-[#F0F4F7] text-[#565C63] hover:bg-gray-200 transition-all'}`}
@@ -330,9 +330,9 @@ const Portfolio = () => {
             </section>
 
             {/* Portfolio Items */}
-            <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5">
+            <section className="w-full lg:my-10 my-5 px-8 lg:px-20 xl:px-28">
                 <motion.div
-                    className="columns-1 sm:columns-2 lg:columns-3 gap-4"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                     variants={containerVariants}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -343,20 +343,20 @@ const Portfolio = () => {
                         <motion.div
                             key={index}
                             variants={cardVariants}
-                            className="bg-white shadow-md overflow-hidden transition-all duration-300 mb-4 break-inside-avoid"
+                            className="bg-white shadow-md overflow-hidden transition-all duration-300 hover:bg-white/80 group cursor-pointer"
                         >
-                            <div className="relative w-full h-fit overflow-hidden">
+                            <div className="relative w-full h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden">
                                 {portfolio.url.includes('.mp4') || portfolio.url.includes('.mov') || portfolio.url.includes('.webm') || portfolio.url.includes('.avi') ? (
                                     <video
                                         src={portfolio.url}
                                         alt={portfolio.tag}
-                                        className="w-full h-auto object-contain"
+                                        className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"
                                     />
                                 ) : (
                                     <img
                                         src={portfolio.url}
                                         alt={portfolio.tag}
-                                        className="w-full h-auto object-contain"
+                                        className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"
                                     />
                                 )}
                                 <div className="absolute bottom-2 left-2 bg-white/80 text-black text-xs px-2 py-1  font-medium">
@@ -369,9 +369,9 @@ const Portfolio = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-white xl:p-16 lg:p-10 p-5 mx-auto ">
+            <section className="bg-white px-8 lg:px-20 xl:px-28 lg:py-10 py-5 mx-auto ">
                 <OrangeCard
-                    title="Big ideas? Stuck brand? Half-done website? "
+                    title="Big ideas? Stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />

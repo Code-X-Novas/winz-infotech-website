@@ -82,7 +82,7 @@ const ServiceDetails = () => {
             </div>
 
             {/* Section 4,5,6,7*/}
-            <div className="-mt-[70px] w-full overflow-hidden sticky">
+            <div className="lg:-mt-[70px] w-full overflow-hidden sticky">
                 {/* Section 4: Our Logo Design Process */}
                 <section className="xl:p-16 xl:pl-28 md:p-12 p-8 flex md:flex-row flex-col bg-white">
                     {/* left part */}

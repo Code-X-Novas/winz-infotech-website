@@ -3,10 +3,14 @@ import caseStudy from "../assets/case-study.png";
 import OrangeCard from "../components/OrangeCard";
 import { motion } from "framer-motion";
 import TextHover from "../components/Animations/TextHover";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
 import SEO from "../components/SEO";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
     {
@@ -127,6 +131,11 @@ const CaseStudy = () => {
     const navigate = useNavigate();
     const [selected, setSelected] = useState('All');
     const [filteredCaseStudies, setFilteredCaseStudies] = useState(caseStudies);
+    const pageRef = useRef(null);
+    const headingRef = useRef(null);
+    const categoriesRef = useRef(null);
+    const caseStudiesRef = useRef([]);
+    const orangeCardRef = useRef(null);
 
     const containerVariants = {
         hidden: {},
@@ -144,6 +153,23 @@ const CaseStudy = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        
+        // Set initial position without overflow
+        gsap.set(pageRef.current, { x: '100%' });
+        
+        // Page load animation - slide in from right
+        gsap.to(
+            pageRef.current,
+            { 
+                x: '0%', 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: 'power3.out',
+                onComplete: () => {
+                    gsap.set(pageRef.current, { clearProps: 'all' });
+                }
+            }
+        );
     }, []);
 
     useEffect(() => {
@@ -154,8 +180,101 @@ const CaseStudy = () => {
         }
     }, [selected]);
 
+    // Scroll-triggered animations
+    useEffect(() => {
+        // Kill existing ScrollTriggers to avoid duplicates
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+        // Heading animation
+        if (headingRef.current) {
+            gsap.fromTo(
+                headingRef.current,
+                { x: 200, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: headingRef.current,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }
+
+        // Categories animation
+        if (categoriesRef.current) {
+            gsap.fromTo(
+                categoriesRef.current,
+                { x: 200, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: categoriesRef.current,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }
+
+        // Case studies animation
+        caseStudiesRef.current.forEach((card, index) => {
+            if (card) {
+                gsap.fromTo(
+                    card,
+                    { x: 200, opacity: 0 },
+                    {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        delay: index * 0.1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            end: 'bottom 15%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            }
+        });
+
+        // Orange card animation
+        if (orangeCardRef.current) {
+            gsap.fromTo(
+                orangeCardRef.current,
+                { x: 200, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: orangeCardRef.current,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, [filteredCaseStudies]);
+
     return (
-        <div>
+        <div ref={pageRef} style={{ overflow: 'hidden' }}>
             <SEO
                 title="Case Studies - Real Client Success Stories | Winz Infotech"
                 description="Explore real success stories from our clients. See how Winz Infotech helped businesses increase revenue by 3x, boost bookings by 5x, and generate qualified leads through digital marketing strategies."
@@ -214,15 +333,16 @@ const CaseStudy = () => {
             {/* heading */}
             <section className="w-full mt-20 bg-white lg:py-10 py-5">
                 <motion.div
+                    ref={headingRef}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="lg:px-10 xl:px-16 px-5"
+                    className="px-8 lg:px-20 xl:px-28"
                 >
-                    <h2 className="xl:text-6xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">
+                    <h2 className="xl:text-7xl lg:text-5xl lg:leading-16 md:text-4xl text-3xl font-medium">
                         Our Clients’ <span className="text-[#F68D13]">Journey</span>
                     </h2>
-                    <p className="md:text-[17px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
+                    <p className="md:text-[17px] xl:text-[19px] text-sm md:mt-4 mt-3 font-normal md:leading-9 leading-6">
                         From boosting bookings to scaling revenue and building unforgettable brands explore
                         real stories of real results with Winz Infotech.
                     </p>
@@ -231,7 +351,7 @@ const CaseStudy = () => {
 
             {/* Categories */}
             <section className="w-full bg-white ">
-                <div className="lg:px-7 xl:px-12 px-4 bg-white w-full">
+                <div ref={categoriesRef} className="px-8 lg:px-20 xl:px-28 bg-white w-full">
                     <ScrollMenu>
                         {categories.map((item) => (
                             <div
@@ -250,7 +370,7 @@ const CaseStudy = () => {
             </section>
 
             {/* Case Studies */}
-            <section className="w-full lg:my-10 my-5 lg:px-10 xl:px-16 px-5 ">
+            <section className="w-full lg:my-10 my-5 px-8 lg:px-20 xl:px-28">
                 <motion.div
                     className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                     variants={containerVariants}
@@ -259,9 +379,10 @@ const CaseStudy = () => {
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true, amount: 0.2 }}
                 >
-                    {filteredCaseStudies.map((study) => (
+                    {filteredCaseStudies.map((study, index) => (
                         <motion.div
                             key={study.id}
+                            ref={(el) => (caseStudiesRef.current[index] = el)}
                             variants={cardVariants}
                             className="bg-white cursor-pointer shadow-md xl:p-6 lg:p-4 md:p-6 sm:p-4 p-2 flex flex-row items-center xl:gap-6 lg:gap-3 sm:gap-6 gap-3"
                             onClick={() => {
@@ -304,9 +425,9 @@ const CaseStudy = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
+            <section ref={orangeCardRef} className="bg-[#f5f5f5] py-5 md:py-10 px-8 lg:px-20 xl:px-28">
                 <OrangeCard
-                    title="Big ideas? Stuck brand? Half-done website?"
+                    title="Big ideas? Stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />

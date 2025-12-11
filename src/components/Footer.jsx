@@ -67,7 +67,7 @@ const Footer = ({ className = "" }) => {
     return (
         <footer className={`bg-white text-gray-800  ${className}`}>
             {/* Top content */}
-            <div className="max-w-screen mx-auto px-4 md:px-10 xl:px-16 lg:py-12 pb-8">
+            <div className="max-w-screen mx-auto px-8 lg:px-20 xl:px-28 lg:py-12 pb-8">
                 <div className="flex flex-col lg:flex-row xl:gap-10 lg:gap-6 md:gap-12 justify-between">
                     {/* Left: Logo & Links */}
                     <div className="flex flex-col gap-10">
@@ -267,7 +267,7 @@ const Footer = ({ className = "" }) => {
             </div>
 
             {/* Bottom Strip */}
-            <div className="w-full justify-end flex sm:p-4 lg:px-8 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
+            <div className="w-full justify-end flex sm:p-4 px-8 lg:px-20 xl:px-28 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
                 <p className="sm:absolute lg:left-[40%] md:left-10 sm:left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
                 <p className="flex gap-x-5 sm:justify-end justify-center">
                     <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Privacy Policy</p> |{" "}

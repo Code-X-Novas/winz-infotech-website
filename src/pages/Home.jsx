@@ -320,7 +320,7 @@ const Home = () => {
                             className="bg-[#F68D13] lg:px-10 lg:h-12 cursor-pointer text-white text-sm font-medium flex items-center"
                             onClick={() => navigate('/contact')}
                         >
-                            <TextHover customClass="!text-base" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
+                            <TextHover customClass="!text-lg" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
                         </motion.button>
                     </div>
 
