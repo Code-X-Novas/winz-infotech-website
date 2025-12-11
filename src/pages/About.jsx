@@ -52,7 +52,7 @@ const About = () => {
     };
 
     return (
-        <div className="bg-white text-black overflow-x-hidden flex flex-col min-h-screen w-full my-10 lg:pt-10 pt-5">
+        <div className="bg-white text-black overflow-x-hidden flex flex-col min-h-screen w-full mt-10 lg:pt-10 pt-5">
             <SEO
                 title="About Us - Meet the Team Behind Your Digital Growth | Winz Infotech"
                 description="Discover Winz Infotech's story, mission, and vision. Founded by Anuj Gohil, we're a results-driven digital agency that transforms brands into revenue machines through strategic design and measurable growth."

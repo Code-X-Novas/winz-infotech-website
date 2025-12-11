@@ -18,7 +18,7 @@ const Navbar = () => {
         { path: "/portfolio", label: "Portfolio" },
         { path: "/case-study", label: "Case Study" },
         { path: "/blogs", label: "Blogs" },
-        { path: "/about", label: "About us" },
+        { path: "/aboutus", label: "About us" },
         { path: "/career", label: "Career" },
     ];
 
@@ -41,7 +41,7 @@ const Navbar = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <Link to="/contact">
+                    <Link to="/contactus">
                         <button className="bg-[#F68D13] cursor-pointer text-white transition">
                             <TextHover text="Contact us" />
                         </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                    <Link to="/contactus" onClick={() => setMenuOpen(false)}>
                         <button className="bg-[#F68D13] cursor-pointer text-white transition w-full text-left">
                             <TextHover text="Contact us" />
                         </button>

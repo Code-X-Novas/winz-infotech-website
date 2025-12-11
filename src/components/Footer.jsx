@@ -267,11 +267,11 @@ const Footer = ({ className = "" }) => {
             </div>
 
             {/* Bottom Strip */}
-            <div className="w-full justify-end flex sm:p-4 px-8 lg:px-20 xl:px-28 p-2 gap-2 sm:flex-row flex-col bg-black text-center text-sm text-gray-400">
-                <p className="sm:absolute lg:left-[40%] md:left-10 sm:left-5 ">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
+            <div className="w-full flex sm:p-4 px-8 lg:px-20 xl:px-28 p-2 gap-2 sm:flex-row flex-col bg-black text-sm text-gray-400 items-center justify-between">
+                <p className="text-left">© Winz Infotech {new Date().getFullYear()} - All Rights Reserved</p>
                 <p className="flex gap-x-5 sm:justify-end justify-center">
-                    <p onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Privacy Policy</p> |{" "}
-                    <p onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Terms of Service</p>
+                    <span onClick={() => navigate("/privacy-policy")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Privacy Policy</span> |{" "}
+                    <span onClick={() => navigate("/term-&-conditions")} className="hover:text-[#F68D13] cursor-pointer hover:underline">Terms of Service</span>
                 </p>
             </div>
         </footer>

@@ -45,9 +45,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout />} >
                 <Route index element={<Home />} />
-                <Route path="about" element={<About />} />
+                <Route path="aboutus" element={<About />} />
                 <Route path="career" element={<Career />} />
-                <Route path="contact" element={<Contact />} />
+                <Route path="contactus" element={<Contact />} />
                 <Route path="services" element={<Service />} />
                 <Route path="services/:slug" element={<ServiceDetails />} /> 
                 <Route path="case-study" element={<CaseStudy />} />

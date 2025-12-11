@@ -9,8 +9,8 @@ export default function Layout() {
 
     // Hide footer on Contact and About pages
     const hideFooter = 
-    location.pathname === "/contact" 
-    || location.pathname === "/about" 
+    location.pathname === "/contactus" 
+    || location.pathname === "/aboutus" 
     || location.pathname === "/privacy-policy"
     || location.pathname === "/term-&-conditions"
     || location.pathname === "/medicalprofession"
