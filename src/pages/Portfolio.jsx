@@ -63,13 +63,13 @@ const portfolios = {
         Office_Wall3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106442/Office_Wall_02_gouxqa.jpg", type: "Office Wall Design" },
     },
     Real_Estate_Social_Media:{
-        Real_Estate1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/1_rmv70j.jpg",type:"Aera"},
-        Real_Estate2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/2_fzhomj.jpg",type:"Aera"},
-        Real_Estate3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/3_oau21b.jpg",type:"Aera"},
+        Real_Estate1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/1_rmv70j.jpg",type:"Area"},
+        Real_Estate2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/2_fzhomj.jpg",type:"Area"},
+        Real_Estate3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/3_oau21b.jpg",type:"Area"},
         Real_Estate4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/4_pgg6we.jpg",type:"Real Estate"},
         Real_Estate5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833420/5._tifbpe.jpg",type:"Social Media Creative"},
         Real_Estate6:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/6_gnb23a.jpg",type:"House"},
-        Real_Estate7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/7_syiqmh.jpg",type:"Aera"},
+        Real_Estate7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/7_syiqmh.jpg",type:"Area"},
         Real_Estate8:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833419/8._ikwj7o.jpg",type:"Ganesh Chaturthi"},
         Real_Estate9:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833418/9_zciuze.jpg",type:"House"},
     },
@@ -80,8 +80,8 @@ const portfolios = {
         Standee_Design4: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106355/Standee_03_basbjv.jpg", type: "Display Standee" },
     },
     Visa_and_Immigration_Social_Media: {
-        visa_and_immigration1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834358/1_i4cp0e.jpg",type:"Cristmas"},
-        visa_and_immigration2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/02_o3nmin.jpg",type:"paper Work"},
+        visa_and_immigration1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834358/1_i4cp0e.jpg",type:"Social Media Creative"},
+        visa_and_immigration2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/02_o3nmin.jpg",type:"Paper Work"},
         visa_and_immigration3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834360/3_xwxcz4.jpg",type:"Passport"},
         visa_and_immigration4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834355/4_g91gor.png",type:"Canada"},
         visa_and_immigration5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756834356/5_apymeg.jpg",type:"Bringing Hearts"},
@@ -118,6 +118,7 @@ const Portfolio = () => {
     const [playingVideo, setPlayingVideo] = useState(null);
     const [hoveredVideo, setHoveredVideo] = useState(null);
     const [mutedVideos, setMutedVideos] = useState({});
+    const [shuffledPortfolios, setShuffledPortfolios] = useState([]);
     const videoRefs = useRef({});
 
     useEffect(() => {
@@ -129,6 +130,16 @@ const Portfolio = () => {
         };
         
         document.addEventListener('contextmenu', handleContextMenu);
+        
+        // Shuffle portfolios only once on mount
+        const portfolioArray = Object.entries(portfolios).flatMap(([category, images]) =>
+            Object.values(images).map(item => ({
+                url: item.url,
+                type: item.type,
+                tag: category.split("_").join(" ")
+            }))
+        );
+        setShuffledPortfolios(shuffleArray(portfolioArray));
         
         // Cleanup event listener on component unmount
         return () => {
@@ -168,61 +179,61 @@ const Portfolio = () => {
         return [...array].sort(() => Math.random() - 0.5);
     };
 
-    const portfolioArray = Object.entries(portfolios).flatMap(([category, images]) =>
-        Object.values(images).map(item => ({
-            url: item.url,
-            type: item.type,
-            tag: category.split("_").join(" ")   // Keep the category as tag for filtering
-        }))
-    );
-
-    // Shuffle before filtering
-    const randomizedPortfolios = shuffleArray(portfolioArray);
-
     const filteredPortfolios = selected === 'All'
-        ? randomizedPortfolios
-        : randomizedPortfolios.filter(portfolio => portfolio.tag === selected);
+        ? shuffledPortfolios
+        : shuffledPortfolios.filter(portfolio => portfolio.tag === selected);
 
     const handleVideoClick = (index, e) => {
         if (e) e.stopPropagation();
         const videoElement = videoRefs.current[index];
         if (videoElement) {
             if (playingVideo === index) {
+                // Pause current video
                 videoElement.pause();
                 setPlayingVideo(null);
-                setHoveredVideo(null);
             } else {
                 // Pause any currently playing video
                 if (playingVideo !== null && videoRefs.current[playingVideo]) {
                     videoRefs.current[playingVideo].pause();
                     videoRefs.current[playingVideo].currentTime = 0;
                 }
-                // Stop hover preview
+                // Stop any hover preview
+                if (hoveredVideo !== null && hoveredVideo !== index && videoRefs.current[hoveredVideo]) {
+                    videoRefs.current[hoveredVideo].pause();
+                    videoRefs.current[hoveredVideo].currentTime = 0;
+                }
                 setHoveredVideo(null);
+                
+                // Play the clicked video with sound
                 videoElement.currentTime = 0;
                 videoElement.muted = false;
                 videoElement.play().catch(err => console.log('Play error:', err));
                 setPlayingVideo(index);
-                // Initialize muted state for this video
-                if (mutedVideos[index] === undefined) {
-                    setMutedVideos(prev => ({ ...prev, [index]: false }));
-                }
+                setMutedVideos(prev => ({ ...prev, [index]: false }));
             }
         }
     };
 
     const handleVideoHover = (index, isHovering) => {
         const videoElement = videoRefs.current[index];
-        if (videoElement && playingVideo !== index) {
+        
+        // Don't auto-play on hover if a video is already playing with sound
+        if (playingVideo !== null) {
+            return;
+        }
+        
+        if (videoElement) {
             if (isHovering) {
                 setHoveredVideo(index);
                 videoElement.muted = true;
                 videoElement.currentTime = 0;
                 videoElement.play().catch(err => console.log('Hover play error:', err));
             } else {
-                setHoveredVideo(null);
-                videoElement.pause();
-                videoElement.currentTime = 0;
+                if (hoveredVideo === index) {
+                    setHoveredVideo(null);
+                    videoElement.pause();
+                    videoElement.currentTime = 0;
+                }
             }
         }
     };
@@ -420,8 +431,12 @@ const Portfolio = () => {
                                             alt={portfolio.tag}
                                             className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"
                                             onEnded={() => {
-                                                setPlayingVideo(null);
-                                                setHoveredVideo(null);
+                                                if (playingVideo === index) {
+                                                    setPlayingVideo(null);
+                                                }
+                                                if (hoveredVideo === index) {
+                                                    setHoveredVideo(null);
+                                                }
                                             }}
                                             loop={hoveredVideo === index && playingVideo !== index}
                                             playsInline
@@ -478,7 +493,7 @@ const Portfolio = () => {
                                                 >
                                                     <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
                                                 </svg>
-                                                <span>Click to play with sound</span>
+                                                <span>Click for sound</span>
                                             </div>
                                         )}
                                     </>

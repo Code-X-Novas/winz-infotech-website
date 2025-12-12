@@ -25,51 +25,23 @@ const ContactUsFooter = () => {
                     </div>
 
                     <div className="flex lg:w-auto w-full justify-evenly flex-row gap-6 lg:gap-24 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
-                        {/* Center: Quick Links */}
+                        {/* Center: Main Services */}
                         <div className="flex-1 md:min-w-[200px] text-center lg:text-left lg:mt-12">
                             <h3 className="font-bold text-[#FC8A10] mb-4">
-                                QUICK LINKS
+                                MAIN SERVICES
                             </h3>
-                            <ul className="grid sm:grid-cols-1 lg:grid-cols-2 gap-y-2 text-sm md:text-base text-gray-700">
-                                <li>
-                                    <button onClick={() => navigate("/")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Home
-                                    </button>
+                            <ul className="flex flex-col gap-y-2 text-sm md:text-base text-gray-700">
+                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                    Branding
                                 </li>
-                                <li>
-                                    <button onClick={() => navigate("/blogs")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Blogs
-                                    </button>
+                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                    Perfomance Marketing
                                 </li>
-                                <li>
-                                    <button onClick={() => navigate("/services")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Services
-                                    </button>
+                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                    Lead Generation
                                 </li>
-                                <li>
-                                    <button onClick={() => navigate("/about")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        About Us
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => navigate("/portfolio")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Portfolio
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => navigate("/career")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Career
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => navigate("/case-study")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Case Study
-                                    </button>
-                                </li>
-                                <li>
-                                    <button onClick={() => navigate("/contact")} className="hover:text-[#FC8A10] cursor-pointer">
-                                        Contact us
-                                    </button>
+                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                    Social Media Management
                                 </li>
                             </ul>
                         </div>

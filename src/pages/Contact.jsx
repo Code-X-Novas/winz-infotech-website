@@ -101,172 +101,272 @@ const Contact = () => {
                 structuredData={contactStructuredData}
             />
 
-            {/* Main Flex Container */}
-            <div className="md:py-16 py-10 text-black px-8 lg:px-20 xl:px-28 relative w-full mt-20 lg:pt-10 pt-5">
-                <div className="flex flex-col md:flex-row gap-5 items-stretch min-h-[80vh]">
-                    {/* Left Side */}
-                    <div className="md:w-1/2 w-full bg-white flex flex-col md:min-h-[80vh]">
-                        {/* Heading */}
-                        <div>
-                            <h1 className="xl:text-7xl px-5 lg:text-6xl sm:text-5xl text-4xl font-medium">
-                                Let's Build
-                            </h1>
-                            <h2 className="xl:text-6xl px-5 pb-5 lg:text-5xl sm:text-4xl text-3xl font-medium text-[#F68D13]">
-                                Something Big!
-                            </h2>
-                        </div>
-
-                        {/* Contact Info */}
-                        <div className="px-4 sm:px-6 pb-6 flex flex-col justify-between">
-                            <h3 className="font-medium w-fit mb-4 bg-gray-200 text-gray-700 inline-block px-3 py-1 rounded text-xs sm:text-sm md:text-base">
-                                Contact Info
-                            </h3>
-                            <div className="flex justify-center items-center">
-                                <img src="/contact-us-image.png" alt="" className="lg:w-[300px] w-[200px] lg:h-[300px] h-[200px]" />
-                            </div>
-
-                            <div className="mt-6 space-y-6">
-                                <div className="flex lg:flex-row md:flex-wrap sm:flex-row flex-col justify-between gap-4">
-                                    {/* Email */}
-                                    <a 
-                                        href="mailto:info@winzinfotech.com" 
-                                        className="flex items-center gap-3"
+            {/* Main Contact Section with Orange Background */}
+            <div className="relative w-full mt-20 overflow-hidden bg-white">
+                {/* Orange Background with Clean Triangular Cuts */}
+                <div className="relative px-4 sm:px-8 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16 overflow-hidden">
+                    
+                    {/* Orange Decorative Cut - Top Left Side */}
+                    <div className="absolute left-0 lg:left-40 top-0 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[800px] lg:h-[400px] -ml-20 md:-ml-32 -mt-10 z-0 pointer-events-none">
+                        <svg viewBox="0 0 500 400" className="w-full h-full" preserveAspectRatio="xMinYMin slice">
+                            <path 
+                                d="M 0 0 L 500 0 L 200 400 L 0 400 Z" 
+                                fill="#F68D13" 
+                                opacity="0.15"
+                            />
+                        </svg>
+                    </div>
+                    
+                    {/* Orange Decorative Cut - Right Side */}
+                    <div className="absolute right-0 top-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px] lg:w-[500px] lg:h-[700px] -mr-20 md:-mr-32 z-0 pointer-events-none">
+                        <svg viewBox="0 0 500 600" className="w-full h-full" preserveAspectRatio="xMaxYMin slice">
+                            <path 
+                                d="M 150 0 L 500 0 L 500 600 L 0 450 Z" 
+                                fill="#F68D13" 
+                                opacity="0.15"
+                            />
+                        </svg>
+                    </div>
+                    
+                    {/* Orange Decorative Cut - Bottom Left Side */}
+                    <div className="absolute left-0 lg:left-50 bottom-0 w-[300px] h-[300px] md:w-[400px] md:h-[350px] lg:w-[900px] lg:h-[400px] -ml-20 md:-ml-32 -mb-10 z-0 pointer-events-none">
+                        <svg viewBox="0 0 500 400" className="w-full h-full" preserveAspectRatio="xMinYMax slice">
+                            <path 
+                                d="M 0 0 L 300 400 L 0 400 Z" 
+                                fill="#F68D13" 
+                                opacity="0.15"
+                            />
+                        </svg>
+                    </div>
+                    
+                    <div className="relative z-10 max-w-7xl mx-auto">
+                        {/* Image and Form Section - Attached Together */}
+                        <div className="grid lg:grid-cols-2 gap-0 items-stretch">
+                            {/* Left Side - Location Card & Image */}
+                            <div className="relative order-2 lg:order-1 flex items-center">
+                                <div className="relative flex items-center justify-center lg:justify-start w-full h-full">
+                                    {/* Background Office Image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.8 }}
+                                        className="relative w-full h-full flex items-center"
                                     >
-                                        <FaEnvelope className="text-[#F68D13] md:text-2xl text-xl" />
-                                        <div>
-                                            <p className="font-bold mt-5 md:text-lg text-base text-black">Email</p>
-                                            <p className="text-black hover:underline md:text-base text-sm hover:text-[#F68D13] transition-colors duration-300">info@winzinfotech.com</p>
+                                        <div className="lg:mt-47.5 w-full lg:w-[60%] h-[600px] lg:ml-65 lg:h-[650px] overflow-hidden shadow-2xl">
+                                            <img 
+                                                src="/demo.jpg" 
+                                                alt="Office" 
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
-                                    </a>
+                                    </motion.div>
 
-                                    {/* Contact */}
-                                    <a 
-                                        href="tel:+917203030730" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-3"
+                                    {/* Combined Contact, Email & WhatsApp Card - Single Card on Left */}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -50 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        className="absolute left-4 sm:left-8 lg:left-12 top-12 lg:mt-70 sm:top-16 bg-white shadow-2xl p-6 w-[260px] sm:w-[300px] hover:shadow-[0_15px_50px_rgba(0,0,0,0.2)] transition-all duration-300 space-y-6 rounded-none"
                                     >
-                                        <FaPhoneAlt className="text-[#F68D13] md:text-2xl text-xl" />
+                                        {/* Contact Section */}
                                         <div>
-                                            <p className="font-bold lg:pt-10 sm:pt-5 pt-3 md:text-lg text-base text-black">Contact</p>
-                                            <div className="flex flex-col sm:gap-2 md:text-base text-sm">
-                                                <a href="tel:+917203030730" className="text-black hover:underline hover:text-[#F68D13] transition-colors duration-300">+917203030730</a>
-                                                <a href="tel:+919998081838" className="text-black hover:underline hover:text-[#F68D13] transition-colors duration-300">+919998081838</a>
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaPhoneAlt className="w-4 h-4 text-white" />
+                                                </div>
+                                                <h3 className="text-lg font-bold text-gray-800">Contact</h3>
+                                            </div>
+                                            <div className="space-y-1 text-gray-600 text-md ml-11">
+                                                <a href="tel:+917203030730" className="block hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1">
+                                                    +917203030730
+                                                </a>
+                                                <a href="tel:+919998081838" className="block hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1">
+                                                    +919998081838
+                                                </a>
                                             </div>
                                         </div>
-                                    </a>
 
-                                    {/* WhatsApp */}
-                                    <a 
-                                        href="https://wa.me/917203030730" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-3"
-                                    >
-                                        <FaWhatsapp className="text-[#F68D13] md:text-3xl text-2xl" />
+                                        <hr className="border-gray-200" />
+
+                                        {/* Email Section */}
                                         <div>
-                                            <p className="font-bold sm:mt-5 mt-3 md:text-lg text-base text-black">WhatsApp</p>
-                                            <p className="text-black hover:underline md:text-base text-sm hover:text-[#F68D13] transition-colors duration-300">+917203030730</p>
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaEnvelope className="w-4 h-4 text-white" />
+                                                </div>
+                                                <h3 className="text-lg font-bold text-gray-800">Email</h3>
+                                            </div>
+                                            <div className="text-gray-600 text-md ml-11">
+                                                <a 
+                                                    href="mailto:info@winzinfotech.com" 
+                                                    className="hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1 break-all inline-block"
+                                                >
+                                                    info@winzinfotech.com
+                                                </a>
+                                            </div>
                                         </div>
-                                    </a>
+
+                                        <hr className="border-gray-200" />
+
+                                        {/* WhatsApp Section */}
+                                        <div>
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaWhatsapp className="w-4 h-4 text-white" />
+                                                </div>
+                                                <h3 className="text-lg font-bold text-gray-800">WhatsApp</h3>
+                                            </div>
+                                            <div className="text-gray-600 text-md ml-11">
+                                                <a 
+                                                    href="https://wa.me/917203030730" 
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1 inline-block"
+                                                >
+                                                    +917203030730
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </motion.div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* Right Side Form */}
-                    <div className="lg:px-8 md:px-4 bg-white w-full md:w-1/2 min-h-[80vh] flex flex-col justify-center items-center">
-                        <div className="shadow-md lg:p-8 md:p-4 p-6 w-full flex flex-col justify-between">
-                            <h3 className="text-center text-[#F68D13] font-medium lg:mb-6 mb-4 text-lg sm:text-2xl md:text-base lg:text-xl xl:text-3xl">
-                                Let's Connect for the Next Big Thing.
-                            </h3>
-
-                            {/* form */}
-                            <form onSubmit={handleSubmit} className="xl:space-y-6 md:space-y-5 sm:space-y-6 space-y-4 p-6 bg-gray-100">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                value={formData.name}
-                                onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
-                            />
-                            <input
-                                type="number"
-                                name="contactNo"
-                                placeholder="Contact No"
-                                value={formData.contactNo}
-                                onChange={handleInputChange}
-                                className="w-full border-b  border-gray-300 bg-white px-2 focus:outline-none
-                                 focus:border-[#F68D13] py-2 text-sm [&::-webkit-outer-spin-button]:appearance-none 
-                                 [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
-                            />
-                            <input
-                                type="text"
-                                name="businessName"
-                                placeholder="Business Name/Link"
-                                value={formData.businessName}
-                                onChange={handleInputChange}
-                                className="w-full border-b border-gray-300 bg-white px-2 focus:outline-none focus:border-[#F68D13] py-2 text-sm "
-                            />
-                            <select
-                                name="budget"
-                                value={formData.budget}
-                                onChange={handleInputChange}
-                                className="w-full px-1 cursor-pointer border border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm bg-white rounded-none appearance-none"
-                                style={{ borderRadius: '0' }}
+                            {/* Right Side - Heading & Contact Form */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="order-1 lg:order-2 flex flex-col"
                             >
-                                <option value="" disabled>Select Budget Range</option>
-                                <option value="Upto INR 50,000">Upto INR 50,000</option>
-                                <option value="INR 50,000 - INR 2,00,000">INR 50,000 - INR 2,00,000</option>
-                                <option value="INR 2,00,000 - INR 5,00,000">INR 2,00,000 - INR 5,00,000</option>
-                                <option value="Above INR 5,00,000">Above INR 5,00,000+</option>
-                            </select>
-                            <textarea
-                                name="message"
-                                placeholder="Message"
-                                value={formData.message}
-                                onChange={handleInputChange}
-                                rows={10}
-                                className="w-full bg-white placeholder:text-gray-500 border p-2 border-gray-300 focus:outline-none focus:border-[#F68D13] py-2 text-sm"
-                            />
+                                {/* Heading - Let's Build Something Big! */}
+                                <div className="mb-6 -mt-8 lg:mb-8 px-6 sm:px-8 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
+                                    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-tight text-black">
+                                        Let's Build
+                                    </h1>
+                                    <h2 className="text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-tight text-[#F68D13]">
+                                        Something Big!
+                                    </h2>
+                                </div>
 
-                            <div className="flex justify-center">
-                                <button type="submit" className="xl:w-[60%] bg-[#F68D13] cursor-pointer text-white transition font-bold">
-                                    <TextHover text="Build With Winz" />
-                                </button>
-                            </div>
-                        </form>
+                                <div className="bg-gray-50 shadow-xl p-6 sm:p-8 lg:p-10 flex-1 flex flex-col">
+                                    {/* Contact Form */}
+                                    <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col">
+                                        {/* Name */}
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                placeholder="Name"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                            />
+                                        </div>
+
+                                        {/* Contact No */}
+                                        <div>
+                                            <input
+                                                type="tel"
+                                                name="contactNo"
+                                                placeholder="Contact No"
+                                                value={formData.contactNo}
+                                                onChange={handleInputChange}
+                                                required
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
+                                            />
+                                        </div>
+
+                                        {/* Email */}
+                                        <div>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                            />
+                                        </div>
+
+                                        {/* Business Name/Link */}
+                                        <div>
+                                            <input
+                                                type="text"
+                                                name="businessName"
+                                                placeholder="Business Name/Link"
+                                                value={formData.businessName}
+                                                onChange={handleInputChange}
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                            />
+                                        </div>
+
+                                        {/* Budget Range */}
+                                        <div>
+                                            <select
+                                                name="budget"
+                                                value={formData.budget}
+                                                onChange={handleInputChange}
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all cursor-pointer"
+                                            >
+                                                <option value="" disabled>Select Budget Range</option>
+                                                <option value="Upto INR 50,000">Upto INR 50,000</option>
+                                                <option value="INR 50,000 - INR 2,00,000">INR 50,000 - INR 2,00,000</option>
+                                                <option value="INR 2,00,000 - INR 5,00,000">INR 2,00,000 - INR 5,00,000</option>
+                                                <option value="Above INR 5,00,000">Above INR 5,00,000+</option>
+                                            </select>
+                                        </div>
+
+                                        {/* Message */}
+                                        <div>
+                                            <textarea
+                                                name="message"
+                                                placeholder="Message"
+                                                value={formData.message}
+                                                onChange={handleInputChange}
+                                                rows={6}
+                                                required
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all resize-y"
+                                            />
+                                        </div>
+
+                                        {/* Submit Button */}
+                                        <button
+                                            type="submit"
+                                            disabled={loading}
+                                            className="w-full bg-[#F68D13] hover:bg-[#E07D0F] text-white font-bold py-3.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        >
+                                            {loading ? (
+                                                <span className="flex items-center justify-center gap-2">
+                                                    <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                    Sending...
+                                                </span>
+                                            ) : (
+                                                "Build With Winz"
+                                            )}
+                                        </button>
+                                    </form>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
-
-                    {loading && (
-                        <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-40 z-50">
-                            <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
-                        </div>
-                    )}
                 </div>
+
+                {/* Loading Overlay */}
+                {loading && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+                        <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                )}
             </div>
 
             {/* Map Section */}
             <div className="px-8 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16 xl:py-20 bg-gray-100">
                 <div className="relative bg-gray-100 w-full h-[350px] md:h-[420px] lg:h-[500px] xl:h-[600px] rounded-lg overflow-hidden shadow-md">
-                    {/* Label */}
-                    <div className="absolute top-0 left-3 sm:left-4 z-30 bg-gray-300 text-black text-xs sm:text-sm font-medium px-3 sm:px-4 py-1 sm:py-2 rounded shadow-sm">
-                        Office Address
-                    </div>
-
                     {/* Interactive Google Map */}
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8!2d72.944!3d20.593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU2hpdmFtIEluZmluaXR5LCAzMDYsIEFicmFtYS1EaGFyYW1wdXIgUmQsIG9wcC4gU1QgV29ya3Nob3AsIEFicmFtYSBWaWxsYWdlLCBWYWxzYWQsIEFicmFtYSwgR3VqYXJhdCAzOTYwMDE!5e0!3m2!1sen!2sin!4v1672531200000!5m2!1sen!2sin"
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.8629012471874!2d72.9396459!3d20.5936557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0c3b71faff0a7%3A0x4f24bbd2a3a60412!2sWinz%20Infotech%20%7C%20Creative%20Digital%20Agency!5e0!3m2!1sen!2sin!4v1765532685906!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -276,22 +376,6 @@ const Contact = () => {
                         className="absolute top-0 left-0 w-full h-full"
                         title="Office Location Map"
                     ></iframe>
-
-                    {/* Address Box */}
-                    <div className="absolute bottom-0 left-0 bg-white/95 backdrop-blur-sm shadow-lg p-3 sm:p-4 w-60 sm:w-72 shadow-orange-300 z-30 border border-gray-200">
-                        <h3 className="text-xs sm:text-sm font-medium mb-2 text-gray-800">
-                            Address
-                        </h3>
-                        <hr className="border-t-2 border-gray-500 w-6 sm:w-8 mb-2" />
-                        <p 
-                            onClick={() => window.open("https://maps.app.goo.gl/s7CXUCPHhoPNXR3v7?g_st=aw", "_blank")} 
-                            className="md:text-[17px] text-xs sm:text-sm hover:underline text-gray-700 leading-relaxed font-normal cursor-pointer"
-                        >
-                            Shivam Infinity, 306,<br />
-                            Abrama-Dharampur Rd, opp. ST Workshop,<br />
-                            Abrama Village, Valsad, Gujarat – 396001.
-                        </p>
-                    </div>
                 </div>
             </div>
             <ContactUsFooter />
