@@ -1062,7 +1062,7 @@ const services = [
             "Want to build print materials that feel as premium as your product or service? Let’s make your brand impossible to ignore on shelves, in hands, and in minds.",
         orangeCardButton: "Craft My Brand’s Print Identity",
 
-        footerCardHeading: "Big ideas? Stuck brand? Half-done website?",
+        footerCardHeading: "Big ideas but stuck brand? Half-done website?",
         footerCardDesc:
             "Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver. Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together.",
         footerCardButton: "Speak to Experts"

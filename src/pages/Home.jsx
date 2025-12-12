@@ -317,10 +317,10 @@ const Home = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.4 }}
-                            className="bg-[#F68D13] lg:px-10 lg:h-12 cursor-pointer text-white text-sm font-medium flex items-center"
+                            className="bg-[#F68D13] lg:px-20 lg:h-14 cursor-pointer text-white text-sm font-medium flex items-center"
                             onClick={() => navigate('/contact')}
                         >
-                            <TextHover customClass="!text-lg" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-lg">→</span>
+                            <TextHover customClass="!text-xl" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-xl">→</span>
                         </motion.button>
                     </div>
 
@@ -637,7 +637,7 @@ const Home = () => {
             {/* Orange Box */}
             <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-20 xl:px-28 px-8">
                 <OrangeCard
-                    title="Big ideas? Stuck brand?"
+                    title="Big ideas but stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />

@@ -70,7 +70,7 @@ const Service = () => {
                 {/* Orange Box */}
                 <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-10 xl:px-16 px-6">
                     <OrangeCard
-                        title="Big ideas? Stuck brand?"
+                        title="Big ideas but stuck brand?"
                         description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                         buttonText="Speak to Experts"
                     />

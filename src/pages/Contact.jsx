@@ -314,7 +314,7 @@ const Contact = () => {
                                                 <option value="Upto INR 50,000">Upto INR 50,000</option>
                                                 <option value="INR 50,000 - INR 2,00,000">INR 50,000 - INR 2,00,000</option>
                                                 <option value="INR 2,00,000 - INR 5,00,000">INR 2,00,000 - INR 5,00,000</option>
-                                                <option value="Above INR 5,00,000">Above INR 5,00,000+</option>
+                                                <option value="INR 5,00,000">INR 5,00,000+</option>
                                             </select>
                                         </div>
 
@@ -335,7 +335,7 @@ const Contact = () => {
                                         <button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full bg-[#F68D13] hover:bg-[#E07D0F] text-white font-bold py-3.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            className="w-full bg-[#F68D13] text-white font-bold py-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                                         >
                                             {loading ? (
                                                 <span className="flex items-center justify-center gap-2">
@@ -343,7 +343,7 @@ const Contact = () => {
                                                     Sending...
                                                 </span>
                                             ) : (
-                                                "Build With Winz"
+                                                <TextHover text="Build With Winz" />
                                             )}
                                         </button>
                                     </form>

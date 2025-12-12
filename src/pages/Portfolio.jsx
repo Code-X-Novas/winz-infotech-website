@@ -22,7 +22,7 @@ const portfolios = {
         Banner3: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106532/Banner_01_qtr3b9.jpg", type: "Gym Banner" },
         Banner2: { url: "https://res.cloudinary.com/dooejuv06/image/upload/v1755106534/Banner_01_copy_dpened.jpg", type: "Gym Banner" },
     },
-    Fitness_And_Gym_Creatives:{
+    Fitness_And_Social_Media:{
         Gym_Creatives1:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835002/01_qlaafe.jpg",type:"Gym Banner"},
         Gym_Creatives2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835008/02_rucd9y.jpg",type:"Gym Banner"},
         Gym_Creatives3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833399/03_je83wo.jpg",type:"Gym Banner"},
@@ -100,7 +100,7 @@ const categories = [
     'All',
     'Banner',
     'Brochure',
-    'Fitness And Gym Creatives',
+    'Fitness And Social Media',
     'Business Card',
     'Flyer',
     'Hoardings',
@@ -516,7 +516,7 @@ const Portfolio = () => {
             {/* Orange Box */}
             <section className="bg-white px-8 lg:px-20 xl:px-28 lg:py-10 py-5 mx-auto ">
                 <OrangeCard
-                    title="Big ideas? Stuck brand?"
+                    title="Big ideas but stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."
                     buttonText="Speak to Experts"
                 />
