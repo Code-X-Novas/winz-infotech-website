@@ -27,7 +27,7 @@ const portfolios = {
         Gym_Creatives2:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756835008/02_rucd9y.jpg",type:"Gym Banner"},
         Gym_Creatives3:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833399/03_je83wo.jpg",type:"Gym Banner"},
         Gym_Creatives4:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833397/04_wrzu6m.jpg",type:"Gym Banner"},
-        Gym_Creatives5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/05_llthnd.jpgg",type:"Gym Banner"},
+        Gym_Creatives5:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/05_llthnd.jpg",type:"Gym Banner"},
         Gym_Creatives6:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/06_wzdi7w.jpg",type:"Gym Banner"},
         Gym_Creatives7:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/07_cpl4qn.jpg",type:"Gym Banner"},
         Gym_Creatives8:{url:"https://res.cloudinary.com/dooejuv06/image/upload/v1756833398/08_dty8ls.jpg",type:"Social Media"},
