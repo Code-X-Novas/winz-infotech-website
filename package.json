@@ -20,6 +20,7 @@
     "gsap": "^3.13.0",
     "lucide-react": "^0.534.0",
     "react": "^19.1.0",
+    "react-calendly": "^4.4.0",
     "react-dom": "^19.1.0",
     "react-helmet": "^6.1.0",
     "react-horizontal-scrolling-menu": "^8.2.0",
