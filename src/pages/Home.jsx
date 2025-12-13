@@ -373,7 +373,7 @@ const Home = () => {
                 </div>
 
                 {/* Card */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 lg:px-10">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -381,10 +381,10 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 lg:p-10 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                            className="bg-white p-8 lg:p-12 xl:p-14 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
                         >
-                            <div className="mb-6 flex justify-start">{service.icon}</div>
-                            <h3 className="text-xl lg:text-2xl font-medium mb-3">{service.title}</h3>
+                            <div className="mb-8 flex justify-start">{service.icon}</div>
+                            <h3 className="text-xl lg:text-2xl font-medium mb-4">{service.title}</h3>
                             <p className="text-gray-600 text-sm lg:text-base leading-relaxed">{service.desc}</p>
                         </motion.div>
                     ))}
@@ -517,7 +517,7 @@ const Home = () => {
             {/* Clients Who Trust Us */}
             <section className="w-full bg-[#f5f5f5] py-10">
                 {/* heading */}
-                <div className="lg:px-20 xl:px-28 px-8">
+                <div className="lg:px-20 xl:px-28 px-6">
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
                         <span className="text-[#F68D13]">Clients</span> Who Trust Us
                     </h2>
@@ -566,22 +566,22 @@ const Home = () => {
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                         breakpoints={{
                             0: {
-                                spaceBetween: 15,     // mobile
+                                spaceBetween: 10,     // mobile
                                 slidesPerView: 2,    // mobile shows 2 videos
                                 centeredSlides: false,
                             },
                             768: {
-                                spaceBetween: 20,     // tablet
+                                spaceBetween: 12,     // tablet
                                 slidesPerView: 3,    // tablet shows 3 videos
                                 centeredSlides: true,
                             },
                             1024: {
-                                spaceBetween: 20,
+                                spaceBetween: 8,
                                 slidesPerView: 3,   // laptop and up
                                 centeredSlides: true,
                             },
                             1280: {
-                                spaceBetween: 20,
+                                spaceBetween: 2,
                                 slidesPerView: 5,   // desktop shows 5 videos
                                 centeredSlides: true,
                             },

@@ -70,7 +70,7 @@
 @media (min-width: 1024px) {
     .portrait-card-container {
         aspect-ratio: 9/16;
-        max-height: 85vh;
+        max-height: 105vh;
     }
 }
 
@@ -78,7 +78,14 @@
 @media (min-width: 1440px) {
     .portrait-card-container {
         aspect-ratio: 9/16;
-        max-height: 90vh;
+        max-height: 110vh;
+    }
+}
+
+/* Force reduced gap on large desktop */
+@media (min-width: 1280px) {
+    .portrait-swiper .swiper-slide {
+        margin-right: 2px !important;
     }
 }
 
