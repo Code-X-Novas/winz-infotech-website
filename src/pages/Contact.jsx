@@ -172,11 +172,11 @@ const Contact = () => {
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaPhoneAlt className="w-4 h-4 text-white" />
+                                                    <FaPhoneAlt className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                                 </div>
-                                                <h3 className="text-lg font-bold text-gray-800">Contact</h3>
+                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">Contact</h3>
                                             </div>
-                                            <div className="space-y-1 text-gray-600 text-md ml-11">
+                                            <div className="space-y-1 text-gray-600 text-xs sm:text-md ml-11">
                                                 <a href="tel:+917203030730" className="block hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1">
                                                     +917203030730
                                                 </a>
@@ -192,11 +192,11 @@ const Contact = () => {
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaEnvelope className="w-4 h-4 text-white" />
+                                                    <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                                 </div>
-                                                <h3 className="text-lg font-bold text-gray-800">Email</h3>
+                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">Email</h3>
                                             </div>
-                                            <div className="text-gray-600 text-md ml-11">
+                                            <div className="text-gray-600 text-xs sm:text-md ml-11">
                                                 <a 
                                                     href="mailto:info@winzinfotech.com" 
                                                     className="hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1 break-all inline-block"
@@ -212,11 +212,11 @@ const Contact = () => {
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaWhatsapp className="w-4 h-4 text-white" />
+                                                    <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                                 </div>
-                                                <h3 className="text-lg font-bold text-gray-800">WhatsApp</h3>
+                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">WhatsApp</h3>
                                             </div>
-                                            <div className="text-gray-600 text-md ml-11">
+                                            <div className="text-gray-600 text-xs sm:text-md ml-11">
                                                 <a 
                                                     href="https://wa.me/917203030730" 
                                                     target="_blank"
@@ -260,7 +260,7 @@ const Contact = () => {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
                                             />
                                         </div>
 
@@ -273,7 +273,7 @@ const Contact = () => {
                                                 value={formData.contactNo}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
                                             />
                                         </div>
 
@@ -286,7 +286,7 @@ const Contact = () => {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
                                             />
                                         </div>
 
@@ -298,7 +298,7 @@ const Contact = () => {
                                                 placeholder="Business Name/Link"
                                                 value={formData.businessName}
                                                 onChange={handleInputChange}
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all"
                                             />
                                         </div>
 
@@ -308,7 +308,7 @@ const Contact = () => {
                                                 name="budget"
                                                 value={formData.budget}
                                                 onChange={handleInputChange}
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all cursor-pointer"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all cursor-pointer"
                                             >
                                                 <option value="" disabled>Select Budget Range</option>
                                                 <option value="Upto INR 50,000">Upto INR 50,000</option>
@@ -327,7 +327,7 @@ const Contact = () => {
                                                 onChange={handleInputChange}
                                                 rows={6}
                                                 required
-                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all resize-y"
+                                                className="w-full bg-white border border-gray-300 px-4 py-3 text-sm md:text-base text-gray-800 placeholder-gray-500 focus:outline-none focus:border-[#F68D13] focus:ring-1 focus:ring-[#F68D13] transition-all resize-y"
                                             />
                                         </div>
 

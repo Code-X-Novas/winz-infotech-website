@@ -545,7 +545,7 @@ const Home = () => {
             <section className="bg-[#f5f5f5] pt-10">
                 {/* heading */}
                 <div className="lg:px-20 xl:px-28 px-8">
-                    <h2 className="xl:text-5xl leading-relaxed md:text-4xl text-3xl font-medium">
+                    <h2 className="xl:text-5xl md:leading-relaxed md:text-4xl text-3xl font-medium">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
                 </div>
