@@ -152,7 +152,7 @@ const Contact = () => {
                                         transition={{ duration: 0.8 }}
                                         className="relative w-full h-full flex items-center"
                                     >
-                                        <div className="lg:mt-47.5 w-full lg:w-[60%] h-[600px] lg:ml-65 lg:h-[650px] overflow-hidden shadow-2xl">
+                                        <div className="lg:mt-47.5 w-full lg:w-[60%] h-[350px] sm:h-[450px] lg:ml-65 lg:h-[650px] overflow-hidden shadow-2xl">
                                             <img 
                                                 src="/demo.jpg" 
                                                 alt="Office" 
@@ -166,17 +166,17 @@ const Contact = () => {
                                         initial={{ opacity: 0, x: -50 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.6, delay: 0.3 }}
-                                        className="absolute left-4 sm:left-8 lg:left-12 top-12 lg:mt-70 sm:top-16 bg-white shadow-2xl p-6 w-[260px] sm:w-[300px] hover:shadow-[0_15px_50px_rgba(0,0,0,0.2)] transition-all duration-300 space-y-6 rounded-none"
+                                        className="absolute left-auto right-4 sm:left-8 sm:right-auto lg:left-12 top-8 lg:mt-70 sm:top-16 bg-white shadow-2xl p-3 sm:p-6 w-[180px] sm:w-[300px] hover:shadow-[0_15px_50px_rgba(0,0,0,0.2)] transition-all duration-300 space-y-3 sm:space-y-6 rounded-none"
                                     >
                                         {/* Contact Section */}
                                         <div>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaPhoneAlt className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                                            <div className="flex items-center gap-1.5 sm:gap-3 mb-1.5 sm:mb-3">
+                                                <div className="bg-[#F68D13] p-1.5 sm:p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaPhoneAlt className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-white" />
                                                 </div>
-                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">Contact</h3>
+                                                <h3 className="text-[9px] sm:text-xl md:text-2xl font-medium text-gray-800">Contact</h3>
                                             </div>
-                                            <div className="space-y-1 text-gray-600 text-xs sm:text-md ml-11">
+                                            <div className="space-y-0.5 sm:space-y-1 text-gray-600 text-[8px] sm:text-base md:text-base ml-6 sm:ml-12">
                                                 <a href="tel:+917203030730" className="block hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1">
                                                     +917203030730
                                                 </a>
@@ -190,13 +190,13 @@ const Contact = () => {
 
                                         {/* Email Section */}
                                         <div>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                                            <div className="flex items-center gap-1.5 sm:gap-3 mb-1.5 sm:mb-3">
+                                                <div className="bg-[#F68D13] p-1.5 sm:p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaEnvelope className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-white" />
                                                 </div>
-                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">Email</h3>
+                                                <h3 className="text-[9px] sm:text-xl md:text-2xl font-medium text-gray-800">Email</h3>
                                             </div>
-                                            <div className="text-gray-600 text-xs sm:text-md ml-11">
+                                            <div className="text-gray-600 text-[8px] sm:text-base md:text-base ml-6 sm:ml-12">
                                                 <a 
                                                     href="mailto:info@winzinfotech.com" 
                                                     className="hover:text-[#F68D13] transition-all duration-300 hover:translate-x-1 break-all inline-block"
@@ -210,13 +210,13 @@ const Contact = () => {
 
                                         {/* WhatsApp Section */}
                                         <div>
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <div className="bg-[#F68D13] p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
-                                                    <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                                            <div className="flex items-center gap-1.5 sm:gap-3 mb-1.5 sm:mb-3">
+                                                <div className="bg-[#F68D13] p-1.5 sm:p-2.5 rounded-full transition-transform duration-300 hover:scale-110">
+                                                    <FaWhatsapp className="w-2.5 h-2.5 sm:w-5 sm:h-5 text-white" />
                                                 </div>
-                                                <h3 className="text-sm sm:text-lg font-bold text-gray-800">WhatsApp</h3>
+                                                <h3 className="text-[9px] sm:text-xl md:text-2xl font-medium text-gray-800">WhatsApp</h3>
                                             </div>
-                                            <div className="text-gray-600 text-xs sm:text-md ml-11">
+                                            <div className="text-gray-600 text-[8px] sm:text-base md:text-base ml-6 sm:ml-12">
                                                 <a 
                                                     href="https://wa.me/917203030730" 
                                                     target="_blank"
