@@ -556,13 +556,13 @@ const Home = () => {
                         modules={[Autoplay]}
                         autoplay={{
                             delay: 2000,
-                            disableOnInteraction: true,
-                            reverseDirection: false,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
                         }}
                         loop={true}
                         speed={1000}
                         grabCursor={true}
-                        centeredSlides={false}
+                        centeredSlides={true}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                         breakpoints={{
                             0: {
@@ -591,9 +591,10 @@ const Home = () => {
                         {/* side card */}
                         {colors.map((bg, index) => (
                             <SwiperSlide key={index} className="portrait-slide">
-                                <div className={`portrait-card-container transition-all duration-500 ease-out ${playingIndex === index ? '!w-[110%] !h-[100%] z-20' : ''}`}>
-                                    <div className={`portrait-slide-card bg-center transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
-                                    <div className={`absolute inset-0 flex flex-col items-center justify-center portrait-slide-top ease-out duration-500 ${playingIndex === index ? 'bg-black/20' : ''}`}>
+                                {({ isActive }) => (
+                                    <div className={`portrait-card-container transition-all duration-500 ease-out ${playingIndex === index ? '!w-[110%] !h-[100%] z-20' : isActive ? 'scale-110 z-10' : 'scale-80 opacity-70'}`}>
+                                        <div className={`portrait-slide-card bg-center transition-all duration-500 ${playingIndex === index ? 'blur-sm' : ''}`} />
+                                        <div className={`absolute inset-0 flex flex-col items-center justify-center portrait-slide-top ease-out duration-500 ${playingIndex === index ? 'bg-black/20' : ''}`}>
                                         {
                                             playingIndex == index ? (
                                                 <video
@@ -628,6 +629,7 @@ const Home = () => {
                                         }
                                     </div>
                                 </div>
+                                )}
                             </SwiperSlide>
                         ))}
                     </Swiper>
