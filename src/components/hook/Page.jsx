@@ -1,7 +1,7 @@
 const Page = () => {
     return (
         <div>
-            <section className="text-center px-4 sm:px-8 max-w-4xl mx-auto mb-12">
+            <section className="text-center px-4 sm:px-6 max-w-4xl mx-auto mb-12">
                 <button className="bg-[#FC8A10] sm:mb-10 mb-4 hover:bg-orange-500 md:text-2xl text-base text-white font-semibold sm:py-4 py-2 sm:px-6 px-4 ">
                     Book Free Consultation Call
                 </button>
@@ -23,7 +23,7 @@ const Page = () => {
                 <img src="/line.png" alt="" />
             </div>
 
-            <section className="text-center md:py-5 py-3 px-4 sm:px-8 max-w-[1200px] mx-auto">
+            <section className="text-center md:py-5 py-3 px-4 sm:px-6 max-w-[1200px] mx-auto">
                 <h2 className="text-lg sm:text-3xl md:text-[40px] font-extrabold underline mb-4">
                     You’re Tired of:
                 </h2>

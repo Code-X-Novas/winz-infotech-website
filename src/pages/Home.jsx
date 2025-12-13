@@ -265,7 +265,7 @@ const Home = () => {
                 structuredData={homeStructuredData}
             />
             {/* Main Section */}
-            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-8 lg:px-20 xl:px-28 lg:py-10 bg-white">
+            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 xl:px-28 lg:py-10 bg-white">
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 mt-5 md:mt-0 pb-5">
                     {/* Hero Title */}
@@ -361,7 +361,7 @@ const Home = () => {
             </section>
 
             {/* Our Services */}
-            <section className="bg-[#f5f5f5] px-8 lg:px-20 xl:px-28 py-10">
+            <section className="bg-[#f5f5f5] px-6 lg:px-20 xl:px-28 py-10">
                 {/* heading */}
                 <div className="mb-12">
                     <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium">
@@ -401,7 +401,7 @@ const Home = () => {
             </section>
 
             {/* Swiper */}
-            <section className="w-full bg-[#f5f5f5] mx-auto lg:px-20 px-8 xl:px-28 md:py-12 py-8 relative">
+            <section className="w-full bg-[#f5f5f5] mx-auto lg:px-20 px-6 xl:px-28 md:py-12 py-8 relative">
                 <h2 className="xl:text-5xl md:text-4xl text-3xl font-medium text-center mb-8">
                     <span className="text-[#F68D13]">Growth Stories</span> - Not Just Campaigns
                 </h2>
@@ -544,7 +544,7 @@ const Home = () => {
             {/* Proof over Promises scrolling color card */}
             <section className="bg-[#f5f5f5] pt-10">
                 {/* heading */}
-                <div className="lg:px-20 xl:px-28 px-8">
+                <div className="lg:px-20 xl:px-28 px-6">
                     <h2 className="xl:text-5xl md:leading-relaxed md:text-4xl text-3xl font-medium">
                         Proof Over Promises, <br /> Watch the <span className="text-[#F68D13]">Wins.</span>
                     </h2>
@@ -637,7 +637,7 @@ const Home = () => {
             </section>
 
             {/* Orange Box */}
-            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-20 xl:px-28 px-8">
+            <section className="bg-[#f5f5f5] py-5 md:py-10 lg:px-20 xl:px-28 px-6">
                 <OrangeCard
                     title="Big ideas but stuck brand?"
                     description="Wherever You Are in Your Journey, We're Here to Understand, Strategize, and Deliver.Just honest conversations, sharp execution, and results that move the business. Let’s explore what’s possible together."

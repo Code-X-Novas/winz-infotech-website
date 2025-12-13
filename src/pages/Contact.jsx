@@ -104,7 +104,7 @@ const Contact = () => {
             {/* Main Contact Section with Orange Background */}
             <div className="relative w-full mt-20 overflow-hidden bg-white">
                 {/* Orange Background with Clean Triangular Cuts */}
-                <div className="relative px-4 sm:px-8 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16 overflow-hidden">
+                <div className="relative px-4 sm:px-6 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16 overflow-hidden">
                     
                     {/* Orange Decorative Cut - Top Left Side */}
                     <div className="absolute left-0 lg:left-40 top-0 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[800px] lg:h-[400px] -ml-20 md:-ml-32 -mt-10 z-0 pointer-events-none">
@@ -239,7 +239,7 @@ const Contact = () => {
                                 className="order-1 lg:order-2 flex flex-col"
                             >
                                 {/* Heading - Let's Build Something Big! */}
-                                <div className="mb-6 -mt-8 lg:mb-8 px-6 sm:px-8 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
+                                <div className="mb-6 -mt-8 lg:mb-8 px-6 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
                                     <h1 className="text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight leading-tight text-black">
                                         Let's Build
                                     </h1>
