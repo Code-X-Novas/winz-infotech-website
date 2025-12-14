@@ -373,7 +373,7 @@ const Home = () => {
                 </div>
 
                 {/* Card */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 lg:px-10">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-x-10 lg:gap-16 lg:px-10">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -381,11 +381,11 @@ const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 lg:p-12 xl:p-14 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                            className="bg-white p-3 sm:p-8 lg:p-12 xl:p-14  hover:shadow-lg duration-300 flex flex-col shadow-[#ecad65] shadow text-center transition-shadow"
                         >
-                            <div className="mb-8 flex justify-start">{service.icon}</div>
-                            <h3 className="text-xl lg:text-2xl font-medium mb-4">{service.title}</h3>
-                            <p className="text-gray-600 text-sm lg:text-base leading-relaxed">{service.desc}</p>
+                            <div className="mt-2 sm:mt-0 mb-2 sm:mb-8 flex justify-center sm:justify-start">{service.icon}</div>
+                            <h3 className="text-base sm:text-xl lg:text-2xl font-normal sm:font-medium mb-2 sm:mb-4">{service.title}</h3>
+                            <p className="text-gray-600 text-xs sm:text-sm lg:text-base leading-tight sm:leading-relaxed">{service.desc}</p>
                         </motion.div>
                     ))}
                 </div>
