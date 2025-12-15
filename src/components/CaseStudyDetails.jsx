@@ -32,7 +32,7 @@ const CaseStudyDetails = () => {
             {/* Content */}
             <section className="flex md:flex-row flex-col mb-10 xl:mb-0">
                 {/* Left Side */}
-                <div className="md:w-[45%] md:h-[40vh] h-[19vh] bg-white sticky top-16 flex flex-col items-start justify-start px-8 lg:px-16 xl:px-20 md:py-12 py-6 z-10">
+                <div className="md:w-[45%] 2xl:h-[40vh] lg:h-[55vh] md:h-[40vh] h-[19vh] bg-white sticky top-16 flex flex-col items-start justify-start px-8 lg:px-16 xl:px-20 md:py-12 py-6 z-10">
                     <h1 className="xl:text-5xl lg:text-[38px] md:text-3xl text-2xl font-medium text-black mb-2 leading-snug capitalize">
                         {caseStudy.title}{" "}
                         <span className="text-[#F68D13]">{caseStudy.city}</span>
