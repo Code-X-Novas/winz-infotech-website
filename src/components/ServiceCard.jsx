@@ -85,17 +85,17 @@ const serviceData = [
         ],
         price: 24999,
     },
-    // {
-    //     title: "Lead Generation",
-    //     description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes.",
-    //     images: [
-    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337729/Gemini_Generated_Image_x8v9d4x8v9d4x8v9_jjabgl.png",
-    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
-    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
-    //         "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
-    //     ],
-    //     price: 24999,
-    // },
+    {
+        title: "Lead Generation",
+        description: "Leads that don’t just fill your CRM they convert. We build funnels, creatives, and copy that get the right people to say yes.",
+        images: [
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337729/Gemini_Generated_Image_x8v9d4x8v9d4x8v9_jjabgl.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_ch17ench17ench17_vzy8bk.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_oz01xgoz01xgoz01_pzwhn8.png",
+            "https://res.cloudinary.com/dooejuv06/image/upload/v1755337726/Gemini_Generated_Image_5mazs65mazs65maz_h0p6a5.png",
+        ],
+        price: 24999,
+    },
     {
         title: "Website Development",
         description: "We craft fast, responsive, and goal-focused websites built to turn visitors into buyers and scale with your brand.",

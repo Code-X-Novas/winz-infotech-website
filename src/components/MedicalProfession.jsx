@@ -1,13 +1,13 @@
-import ContactForm from "../../../Hook/src/components/Contact";
-import Footer from "../../../Hook/src/components/Footer";
-import Groth from "../../../Hook/src/components/Groth";
-import GrowthFAQ from "../../../Hook/src/components/GrothFAQ";
-import ClinicPromo from "../../../Hook/src/components/Home";
-import Include from "../../../Hook/src/components/Include";
-import Page from "../../../Hook/src/components/Page";
-import Results from "../../../Hook/src/components/Result";
-import SideShow from "../../../Hook/src/components/SideShow";
-import Testimonial from "../../../Hook/src/components/Testimonials";
+import ContactForm from "./hook/Contact";
+import Footer from "./hook/Footer";
+import Groth from "./hook/Groth";
+import GrowthFAQ from "./hook/GrothFAQ";
+import ClinicPromo from "./hook/Home";
+import Include from "./hook/Include";
+import Page from "./hook/Page";
+import Results from "./hook/Result";
+import SideShow from "./hook/SideShow";
+import Testimonial from "./hook/Testimonials";
 
 function MedicalProfession() {
     return (

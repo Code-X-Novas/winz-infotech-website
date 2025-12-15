@@ -88,23 +88,47 @@ const Footer = ({ className = "" }) => {
 
                             {/* Quick Links & Landing Pages */}
                             <div className="flex lg:w-auto w-full justify-evenly flex-row gap-6 lg:gap-12 text-sm text-gray-700 text-center lg:text-left lg:mt-8">
-                                {/* Main Services */}
+                                {/* Our Expertise */}
                                 <div className="space-y-3 mb-6 md:mb-0">
                                     <h3 className="font-bold min-w-[100px] text-[#FC8A10]">
                                         OUR EXPERTISE
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/services")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
                                             Branding
                                         </li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/services")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
                                             Lead Generation
                                         </li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">
-                                            Performance Marketing
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/services")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >                                           
+                                        Content Creation       
                                         </li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer"bring>
-                                            Social Media Management
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/services")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >                                           
+                                        Social Media Management
                                         </li>
                                     </ul>
                                 </div>
@@ -115,10 +139,39 @@ const Footer = ({ className = "" }) => {
                                         LANDING PAGES
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li onClick={() => navigate("/medicalprofession")} className="hover:text-[#FC8A10] cursor-pointer">Medical Professionals</li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">Real Estate</li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">D2C Brands</li>
-                                        <li className="hover:text-[#FC8A10] cursor-pointer">Spas & Salons</li>
+                                        <li 
+                                            onClick={() => navigate("/medicalprofession")} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
+                                            Medical Professionals
+                                        </li>
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/portfolio")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
+                                            Real Estate
+                                        </li>
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/portfolio")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
+                                            D2C Brands
+                                        </li>
+                                        <li 
+                                            onClick={() => {
+                                                navigate("/portfolio")
+                                                scrollTo({smooth: true, top: 0});
+                                            }} 
+                                            className="hover:text-[#FC8A10] cursor-pointer"
+                                        >
+                                            Spas & Salons
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

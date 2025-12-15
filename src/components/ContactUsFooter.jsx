@@ -32,16 +32,40 @@ const ContactUsFooter = () => {
                                 OUR EXPERTISE
                             </h3>
                             <ul className="flex flex-col gap-y-2 text-sm md:text-base text-gray-700">
-                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                <li 
+                                    onClick={() => {
+                                        navigate("/services")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
                                     Branding
                                 </li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                <li 
+                                    onClick={() => {
+                                        navigate("/services")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
                                     Lead Generation
                                 </li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                <li 
+                                    onClick={() => {
+                                        navigate("/services")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
                                     Perfomance Marketing
                                 </li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">
+                                <li 
+                                    onClick={() => {
+                                        navigate("/services")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
                                     Social Media Management
                                 </li>
                             </ul>
@@ -53,10 +77,39 @@ const ContactUsFooter = () => {
                                 GROWTH VERTICAL
                             </h3>
                             <ul className="space-y-1 text-sm md:text-base text-gray-700">
-                                <li onClick={() => navigate("/medicalprofession")} className="hover:text-[#FC8A10] cursor-pointer">Medical Professionals</li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">Real Estate</li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">D2C Brands</li>
-                                <li className="hover:text-[#FC8A10] cursor-pointer">Spas & Salons</li>
+                                <li 
+                                    onClick={() => navigate("/medicalprofession")} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
+                                    Medical Professionals
+                                </li>
+                                <li 
+                                    onClick={() => {
+                                        navigate("/portfolio")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
+                                    Real Estate
+                                </li>
+                                <li 
+                                    onClick={() => {
+                                        navigate("/portfolio")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
+                                    D2C Brands
+                                </li>
+                                <li 
+                                    onClick={() => {
+                                        navigate("/portfolio")
+                                        scrollTo({smooth: true, top: 0});
+                                    }} 
+                                    className="hover:text-[#FC8A10] cursor-pointer"
+                                >
+                                    Spas & Salons
+                                </li>
                             </ul>
                         </div>
                     </div>
