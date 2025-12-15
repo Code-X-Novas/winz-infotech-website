@@ -159,7 +159,7 @@ const About = () => {
                         <div className="flex flex-col md:flex-row gap-6 lg:gap-10 items-start px-8 lg:px-20 xl:px-28">
                             <div className="md:w-1/2 w-full flex justify-center">
                                 <img
-                                    src={work1Image}
+                                    src="/founder.jpg"
                                     alt="Founder"
                                     className="shadow-lg w-[90%] sm:w-[80%] lg:w-[85%] h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                                 />
