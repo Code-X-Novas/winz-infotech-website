@@ -383,7 +383,7 @@ const Home = () => {
                             viewport={{ once: true }}
                             className="bg-white p-3 sm:p-8 lg:p-12 xl:p-14  hover:shadow-lg duration-300 flex flex-col shadow-[#ecad65] shadow text-center transition-shadow"
                         >
-                            <div className="mt-2 sm:mt-0 mb-2 sm:mb-8 flex justify-center sm:justify-start">{service.icon}</div>
+                            <div className="mt-2 sm:mt-0 mb-2 sm:mb-8 flex justify-center sm:justify-center">{service.icon}</div>
                             <h3 className="text-base sm:text-xl lg:text-2xl font-normal sm:font-medium mb-2 sm:mb-4">{service.title}</h3>
                             <p className="text-gray-600 text-xs sm:text-sm lg:text-base leading-tight sm:leading-relaxed">{service.desc}</p>
                         </motion.div>
