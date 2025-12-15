@@ -355,7 +355,7 @@ const Home = () => {
                     <img
                         src={teamImage}
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg 2xl:mr-24 xl:mr-4 xl:scale-x-140"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg 2xl:mr-24 xl:mr-18 xl:scale-x-140"
                     />
                 </motion.div>
             </section>
