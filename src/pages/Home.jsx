@@ -265,7 +265,7 @@ const Home = () => {
                 structuredData={homeStructuredData}
             />
             {/* Main Section */}
-            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 xl:px-28 lg:py-10 bg-white">
+            <section className="w-full mt-20 flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 xl:px-22 2xl:px-28 lg:py-10 bg-white">
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 mt-5 md:mt-0 pb-5">
                     {/* Hero Title */}
@@ -355,7 +355,7 @@ const Home = () => {
                     <img
                         src={teamImage}
                         alt="Team Work"
-                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg xl:mr-24 xl:scale-x-140"
+                        className="w-full md:max-w-md md:h-auto sm:h-[500px] h-[300px] shadow-lg 2xl:mr-24 xl:mr-4 xl:scale-x-140"
                     />
                 </motion.div>
             </section>
