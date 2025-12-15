@@ -31,7 +31,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center lg:space-x-8 space-x-4 text-xs lg:text-base font-medium">
+                <div className="hidden md:flex items-center lg:space-x-8 space-x-4 text-xs lg:text-lg font-medium">
                     {menuItems.map((item) => (
                         <Link
                             key={item.path}

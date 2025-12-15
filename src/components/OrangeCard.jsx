@@ -10,7 +10,7 @@ const OrangeCard = ({ title, description, buttonText }) => {
     const navigate = useNavigate();
 
     const onButtonClick = () => {
-        navigate('/contact');
+        navigate('/contactus');
     };
 
     return (

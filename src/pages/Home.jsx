@@ -318,7 +318,7 @@ const Home = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.4 }}
                             className="bg-[#F68D13] lg:px-20 lg:h-14 cursor-pointer text-white text-sm font-medium flex items-center"
-                            onClick={() => navigate('/contact')}
+                            onClick={() => navigate('/contactus')}
                         >
                             <TextHover customClass="!text-xl" text="Let's Talk" /> <span className="lg:-translate-x-5 -mt-0.5 -translate-x-2 text-xl">→</span>
                         </motion.button>

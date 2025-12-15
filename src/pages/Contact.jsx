@@ -96,7 +96,7 @@ const Contact = () => {
                 title="Contact Us - Let's Build Your Next Big Thing | Winz Infotech"
                 description="Ready to transform your business? Contact Winz Infotech for expert digital marketing, web development, and branding services. Get a free consultation today."
                 keywords="contact winz infotech, digital marketing consultation, web development quote, branding services contact, free consultation"
-                url="/contact"
+                url="/contactus"
                 image="/logoNew.png"
                 structuredData={contactStructuredData}
             />
