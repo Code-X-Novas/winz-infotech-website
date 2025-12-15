@@ -38,7 +38,7 @@ const CaseStudyDetails = () => {
                         <span className="text-[#F68D13]">{caseStudy.city}</span>
                     </h1>
 
-                    <h3 className="text-black lg:text-4xl md:text-2xl text-xl md:mt-4 mt-0 font-normal">
+                    <h3 className="text-black lg:text-4xl md:text-2xl text-lg md:mt-4 mt-0 font-normal">
                         {caseStudy.subtitle}
                     </h3>
                 </div>
