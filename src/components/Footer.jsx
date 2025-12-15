@@ -80,7 +80,7 @@ const Footer = ({ className = "" }) => {
                                     alt="Logo"
                                     className="md:h-16 h-14 w-auto mx-auto lg:mx-0"
                                 />
-                                <p className="text-sm lg:mt-10 mt-5 text-gray-600">
+                                <p className="text-sm lg:text-base lg:mt-10 mt-5 text-gray-600">
                                     A creative agency that blends design with performance. From
                                     branding to influencer campaigns — we execute ideas that move.
                                 </p>
@@ -91,17 +91,17 @@ const Footer = ({ className = "" }) => {
                                 {/* Main Services */}
                                 <div className="space-y-3 mb-6 md:mb-0">
                                     <h3 className="font-bold min-w-[100px] text-[#FC8A10]">
-                                        MAIN SERVICES
+                                        OUR EXPERTISE
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
                                         <li className="hover:text-[#FC8A10] cursor-pointer">
                                             Branding
                                         </li>
                                         <li className="hover:text-[#FC8A10] cursor-pointer">
-                                            Perfomance Marketing
+                                            Lead Generation
                                         </li>
                                         <li className="hover:text-[#FC8A10] cursor-pointer">
-                                            Lead Generation
+                                            Performance Marketing
                                         </li>
                                         <li className="hover:text-[#FC8A10] cursor-pointer"bring>
                                             Social Media Management
@@ -115,7 +115,10 @@ const Footer = ({ className = "" }) => {
                                         LANDING PAGES
                                     </h3>
                                     <ul className="space-y-1 text-gray-700">
-                                        <li onClick={() => navigate("/medicalprofession")} className="hover:text-[#FC8A10] cursor-pointer">Doctors & Medical Professionals</li>
+                                        <li onClick={() => navigate("/medicalprofession")} className="hover:text-[#FC8A10] cursor-pointer">Medical Professionals</li>
+                                        <li className="hover:text-[#FC8A10] cursor-pointer">Real Estate</li>
+                                        <li className="hover:text-[#FC8A10] cursor-pointer">D2C Brands</li>
+                                        <li className="hover:text-[#FC8A10] cursor-pointer">Spas & Salons</li>
                                     </ul>
                                 </div>
                             </div>

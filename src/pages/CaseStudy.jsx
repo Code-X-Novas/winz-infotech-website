@@ -61,69 +61,240 @@ const categories = [
 
 const case_study = [
     {
+        id: 1,
+        subtitle: "From Low Trust to Local Authority",
         title: "Visa & Immigration Consultant –",
         city: "Nagpur",
-        objective: "To position the consultancy as a trusted expert in Nagpur and increase revenue by 3× within 2 months.",
-        challenge: "Low visibility online, a generic website, fake enquiries and inconsistent content caused low trust and minimal lead flow.",
-        solution: "Redesigned the website with a streamlined enquiry funnel, SEO-optimized service pages for target countries, and weekly informative reel content with active comment engagement. Launched targeted Meta Ads campaigns with geo-based retargeting.",
-        results: [
-            "4× more qualified leads in 60 days",
-            "+250% organic engagement from visa-related reels content",
-            "Conversion rate increased from 2% to 9%",
-        ],
+
+        objective:
+            "The mission was clear: build trust, attract serious applicants, and 3× revenue in just 60 days. This wasn’t about chasing traffic—it was about creating authority, improving lead quality, and building a predictable enquiry engine in the Nagpur market.",
+
+        challenge: {
+            heading: "Even with genuine visa services, the brand was struggling to grow.",
+            points: [
+                "A generic, outdated website with no clear enquiry journey",
+                "Flood of fake and unqualified enquiries wasting time and money",
+                "Social media that posted but didn’t educate or build credibility",
+                "Country confusion leading to low trust and poor conversions",
+            ],
+            conclusion:
+                "The result? Inconsistent leads, low confidence from prospects, and stalled revenue growth.",
+        },
+
+        strategy: {
+            heading:
+                "Winz Infotech rolled out a full-funnel growth system focused on trust first, performance second.",
+            points: [
+                "Conversion-First Website: Redesigned the website with a clean enquiry funnel, strong trust elements, and clear service positioning.",
+                "SEO with Intent, Not Vanity: Built country-specific visa pages targeting high-intent searches to attract ready-to-act users.",
+                "Authority-Building Content: Launched weekly educational reels breaking down visa timelines, processes, and common myths plus active comment replies to humanize the brand and build trust.",
+                "Smart Performance Marketing: Ran highly targeted Meta Ads with geo-based targeting and retargeting to filter noise and attract only serious applicants.",
+            ],
+            conclusion: "Every action was designed to remove doubt and amplify intent."
+        },
+
+        results: {
+            days: "60 Days",
+            heading: "The transformation was fast and measurable:",
+            points: [
+                "4× more qualified leads in 60 days",
+                "+250% organic engagement from visa education reels",
+                "Conversion rate jumped from 2% to 9%",
+                "Positioned as a trusted immigration authority in Nagpur",
+            ],
+        },
+
+        outcome:
+            "By combining strategy, education, and performance, Winz Infotech transformed a struggling consultancy into a high-trust, lead-driven immigration brand with scalable and sustainable growth.",
     },
 
     {
+        id: 2,
+        subtitle: "From Walk-Ins to a Scalable Booking Machine",
         title: "Beauty Salon –",
         city: "Mumbai",
-        objective: "To boost beauty salon bookings, increase the average order value, and enhance brand visibility across Mumbai and its metro suburbs.",
-        challenge: "Fragmented branding, inconsistent social presence, and a poorly converting booking engine led to missed income.",
-        solution: "Created a brand identity with styled color system and high-conversion landing pages. Scheduled regular UGC & awareness videos featuring real clients. Amplified reach with Instagram/Facebook ads and influencer collaborations.",
-        results: [
-            "5× revenue increased in just 3 months",
-            "40% increase in monthly appointments",
-            "+1,200 new Instagram followers in 120 days",
-            "Booking funnel conversion rate improved by 33%",
-        ],
+
+        objective:
+            "The goal was to boost monthly salon bookings, increase the average order value per client, and build strong brand visibility across Mumbai and key metro suburbs. This wasn’t just about more footfall, it was about creating a repeatable, high-value booking system.",
+
+        challenge: {
+            heading: "Despite offering quality services, the salon was losing revenue at multiple touchpoints.",
+            points: [
+                "Fragmented branding with no consistent visual identity",
+                "Inconsistent social media presence with low recall",
+                "A poorly converting booking engine causing drop-offs",
+                "Heavy dependence on walk-ins and discounts for sales",
+            ],
+            conclusion:
+                "The result? Missed appointments, low average bills, and slowgrowth",
+        },
+
+        strategy: {
+            heading:
+                "Winz Infotech implemented a brand-led performance strategy designed to convert attention into appointments.",
+            points: [
+                "Brand Identity That Stands Out: Created a cohesive brand system with a refined color palette, styling guidelines, and premium salon positioning.",
+                "High-Conversion Booking Pages: Designed landing pages optimized for mobile bookings, quick service selection, and friction-free appointment flow.",
+                "Real Client, Real Results Content: Rolled out consistent UGC and awareness videos featuring real clients, transformations, and testimonials—building instant trust.",
+                "Amplified Reach with Performance + Influence: Scaled visibility using Instagram & Facebook ads, supported by strategic micro-influencer collaborations across Mumbai suburbs.",
+            ],
+            conclusion: "Every step focused on higher intent, higher value, and higher retention."
+        },
+
+        results: {
+            days: "90 - 120 Days",
+            heading: "The salon experienced rapid, scalable growth:",
+            points: [
+                "5× revenue growth in just 3 months",
+                "40% increase in monthly appointments",
+                "+1,200 Instagram followers in 120 days",
+                "33% improvement in booking funnel conversion rate",
+            ],
+        },
+
+        outcome:
+            "By combining strong branding, social proof, and performance marketing, Winz Infotech transformed the salon into a modern, appointment-driven beauty brand no longer dependent on walk-ins or discounts.",
     },
 
     {
+        id: 3,
+        subtitle: "From Invisible to In-Demand",
         title: "Architect –",
         city: "Ahmedabad, Gujarat",
-        objective: "Establish a top-of-mind brand as a visionary architect in Ahmedabad and generate high‑value project enquiries.",
-        challenge: "No digital presence, minimal portfolio online, and little differentiation in a crowded design market.",
-        solution: "Designed a clean, visual-first website showcasing past projects. Developed brand-led graphic design assets and brochures. Ran performance marketing targeting local real estate developers and builders with portfolio ads.",
-        results: [
-            "5 high-value project leads within the first 2 months",
-            "Portfolio site saw a 5 minutes+ average session duration",
-            "Reduced fake leads and increased show-up rate",
-        ],
+
+        objective:
+            "The goal was to establish the architect as a top-of-mind, visionary design brand in Ahmedabad and generate high-value project enquiries from serious developers and premium residential clients. This wasn’t about mass leads. It was about quality, credibility, and long-term positioning.",
+
+        challenge: {
+            heading: "Despite strong design capability, the architect lacked a digital foundation.",
+            points: [
+                "No online presence to showcase design philosophy or completed projects",
+                "A minimal, scattered portfolio that failed to impress decision-makers",
+                "No clear brand story or visual differentiation in a crowded market",
+                "High dependence on referrals with unpredictable lead flow",
+            ],
+            conclusion:
+                "As a result, premium opportunities were being missed.",
+        },
+
+        strategy: {
+            heading:
+                "Winz Infotech crafted a brand-first growth framework tailored for high-value professional services.",
+            points: [
+                "Visual-First Portfolio Website: Designed a clean, immersive website focused on large visuals, project storytelling, and architectural credibility built to hold attention, not rush clicks.",
+                "Strong Brand Assets & Collateral: Developed refined graphic design assets, brochures, and presentation materials to elevate brand perception during client meetings and proposals.",
+                "Precision Performance Marketing: Ran high-intent ad campaigns targeting local real estate developers, builders, and serious homeowners using portfolio-led creatives instead of generic ads.",
+            ],
+            conclusion: "Every step was focused on attracting decision-makers, not browsers."
+        },
+
+        results: {
+            days: "First 60 Days",
+            heading: "The impact was immediate and measurable:",
+            points: [
+                "5 high-value project enquiries within the first 2 months",
+                "5+ minutes average session duration on the portfolio website",
+                "Significant reduction in fake leads",
+                "Higher enquiry show-up and meeting conversion rate",
+            ],
+        },
+
+        outcome:
+            "By combining strong visual branding, strategic positioning, and intent-driven marketing, Winz Infotech helped transform the architect into a recognizable, premium design authority in Ahmedabad with quality leads to match the positioning.",
     },
 
     {
+        id: 4,
+        subtitle: "From Low Visibility to Go-To Wellness Expert",
         title: "Dietician –",
         city: "Delhi",
-        objective: "Grow monthly client consultations from 12-15 to 35+, especially among young professionals seeking wellness.",
-        challenge: "Lacks authority, low content output, and poor visibility in local SEO and social media.",
-        solution: "Launched content-driven Instagram and blog strategy (infographics, diet hacks, testimonials). Developed downloadable lead magnet ('7-Day Delhi Clean Meal Plan') and set up lead generation ads targeting Delhi working professionals.",
-        results: [
-            "Tripled new consultations in 60 days",
-            "Downloadable plan converted at 28% CTR",
-            "Instagram engagement increased by 285%",
-        ],
+
+        objective:
+            "The goal was to scale monthly client consultations from 12–15 to 35+, with a strong focus on young, working professionals in Delhi looking for sustainable wellness solutions. This wasn’t about viral content, it was about credibility, education, and consistent lead flow.",
+
+        challenge: {
+            heading: "Despite having the right knowledge, the dietician struggled to be seen and trusted online.",
+            points: [
+                "Low authority perception in a highly competitive wellness space",
+                "Inconsistent content with limited educational value",
+                "Weak visibility in local SEO and social media discovery",
+                "No structured system to capture and nurture leads",
+            ],
+            conclusion:
+                "As a result, enquiries were sporadic and growth remained stagnant.",
+        },
+
+        strategy: {
+            heading:
+                "Winz Infotech executed a content-led lead generation system designed to educate first and convert next.",
+            points: [
+                "Authority-Driven Content Engine: Launched a consistent Instagram and blog strategy featuring infographics, practical diet hacks, before-after testimonials, and myth-busting wellness content.",
+                "High-Value Lead Magnet: Created a downloadable “7-Day Delhi Clean Meal Plan”, tailored for busy professionals offering immediate value while capturing high-intent leads.",
+                "Precision Lead Generation Ads: Deployed targeted ads focused on Delhi-based working professionals, driving traffic directly to the lead magnet instead of a generic consultation pitch.",
+            ],
+            conclusion: "Every move was built to educate, build trust, and convert without hard selling."
+        },
+
+        results: {
+            days: "60 Days",
+            heading: "The results reflected strong intent and authority growth:",
+            points: [
+                "3× increase in new consultations within 60 days",
+                "28% click-through rate on the downloadable meal plan",
+                "+285% growth in Instagram engagement",
+                "More informed, high-intent clients booking consultations",
+            ],
+        },
+
+        outcome:
+            "By combining education-first content, smart lead magnets, and targeted advertising, Winz Infotech transformed the dietician into a trusted wellness authority in Delhi with predictable consultation growth and stronger client quality.",
     },
 
     {
+        id: 5,
+        subtitle: "Turning Interest into Site Visits",
         title: "Real Estate Builder –",
         city: "Surat",
-        objective: "Generate qualified inquiries and increase site visits for the upcoming luxury residential project.",
-        challenge: "Generic branding, low online presence among Surat homebuyers, and unoptimized landing pages.",
-        solution: "Built a custom website with a landing page including virtual walkthrough videos, interactive floor plans, and inquiry forms. Launched a performance campaign on Google and Facebook/Instagram targeting local demographic and interest segments. Tracked pixel‑based retargeting to visitors.",
-        results: [
-            "Generated 150+ quality leads in the first month",
-            "Cost-per-lead dropped 40% average month over month",
-            "Website engagement time spiked by 62%",
-        ],
+
+        objective:
+            "The objective was to generate high-quality enquiries and increase on-site visits for an upcoming luxury residential project in Surat. This wasn’t about mass leads it was about attracting serious homebuyers and investors with strong purchase intent.",
+
+        challenge: {
+            heading: "Despite being a premium project, the brand lacked premium perception online.",
+            points: [
+                "Generic branding that failed to reflect the luxury positioning",
+                "Low digital visibility among Surat-based homebuyers",
+                "Landing pages that were uninspiring and poorly optimized for enquiries",
+                "No structured retargeting to re-engage interested visitors",
+            ],
+            conclusion:
+                "As a result, enquiries were inconsistent and site visits were difficult to scale.",
+        },
+
+        strategy: {
+            heading:
+                "Winz Infotech executed a performance-led real estate funnel designed to convert curiosity into action.",
+            points: [
+                "Custom Website & Conversion-Focused Landing Page: Built a dedicated website and landing page featuring virtual walkthrough videos, interactive floor plans, and friction-free enquiry forms designed to keep buyers engaged longer.",
+                "Precision Performance Marketing: Launched Google Search and Facebook/Instagram campaigns targeting local demographics, income brackets, and interest-based segments relevant to luxury homebuyers.",
+                "Pixel-Based Retargeting System: Implemented advanced pixel tracking and retargeting to bring back high-intent visitors who didn’t enquire on their first visit.",
+            ],
+            conclusion: "Every step was optimized to qualify interest and drive site visits, not just clicks."
+        },
+
+        results: {
+            days: "First 30 Days",
+            heading: "The campaign delivered fast, scalable results:",
+            points: [
+                "150+ high-quality leads generated in the first month",
+                "40% reduction in cost-per-lead month over month",
+                "62% increase in average website engagement time",
+                "Strong pipeline of site visits from intent-driven prospects",
+            ],
+        },
+
+        outcome:
+            "By combining premium presentation, smart targeting, and data-driven retargeting, Winz Infotech helped position the project as a must-consider luxury address in Surat with leads that converted into real site visits.",
     },
 ];
 
